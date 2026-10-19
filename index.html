@@ -2,211 +2,204 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#18392c">
-<meta name="description" content="Evara Woodhouse, a peaceful mountain stay in Shangarh, Sainj Valley, Himachal Pradesh.">
-<title>Evara Woodhouse | Shangarh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17372b">
+<meta name="description" content="Discover Evara Woodhouse, a peaceful mountain stay in Shangarh, Sainj Valley, Himachal Pradesh.">
+<title>Evara Woodhouse — A Himalayan Hideaway</title>
 
 <style>
 :root{
-  --green:#193b2d;
-  --deep:#10291f;
-  --cream:#f7f4eb;
-  --white:#fffdf8;
-  --gold:#d9bd88;
-  --text:#29392e;
-  --muted:#70786f;
-  --line:#e6e0d4;
+  --forest:#17372b;
+  --forest-dark:#0d2119;
+  --cream:#f8f5ed;
+  --paper:#fffdf8;
+  --gold:#d7bb87;
+  --text:#26382d;
+  --muted:#74796f;
+  --border:#e5e0d5;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:75px}
 body{
-  margin:0;background:var(--white);color:var(--text);
+  margin:0;background:var(--paper);color:var(--text);
   font-family:Arial,Helvetica,sans-serif;line-height:1.65;
 }
 a{color:inherit;text-decoration:none}
-img{width:100%;height:100%;display:block;object-fit:cover}
+img{display:block;width:100%;height:100%;object-fit:cover}
 button{font:inherit}
 .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
 section{padding:76px 0}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
-h2{font-size:clamp(30px,4vw,48px);line-height:1.12;margin:12px 0 18px}
+h1,h2,h3{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+}
+h2{font-size:clamp(30px,4vw,47px);line-height:1.12;margin:12px 0 18px}
 p{margin:0 0 15px}
 .eyebrow{
   font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  font-weight:bold;color:#9b8053;
+  font-weight:bold;color:#987a4b;
 }
 .muted{color:var(--muted)}
 .btn{
   min-height:42px;padding:11px 17px;border-radius:40px;
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:7px;font-size:12px;font-weight:bold;transition:.2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  font-size:12px;font-weight:bold;transition:background .2s,transform .2s;
 }
 .btn:hover{transform:translateY(-2px)}
-.btn-dark{background:var(--green);color:white}
-.btn-light{background:var(--cream);color:var(--green)}
-.btn-outline{border:1px solid #ffffffb5;color:white;background:#ffffff10}
-.photo{overflow:hidden;border-radius:16px;background:#e0e6d9}
+.btn-dark{background:var(--forest);color:white}
+.btn-light{background:var(--cream);color:var(--forest)}
+.btn-outline{border:1px solid #ffffffad;color:white;background:#ffffff0c}
+.photo{overflow:hidden;border-radius:15px;background:#e2e7dc}
 .photo img{transition:transform .4s}
 .photo:hover img{transform:scale(1.025)}
-.section-head{text-align:center;max-width:650px;margin:0 auto 35px}
-.section-head p{font-size:14px;color:var(--muted)}
+.section-head{text-align:center;max-width:650px;margin:0 auto 32px}
+.section-head p{font-size:13px;color:var(--muted)}
 
 /* HEADER */
 header{
-  position:sticky;top:0;z-index:100;
-  background:#fffdf8f5;backdrop-filter:blur(12px);
-  border-bottom:1px solid #18392c15;
+  position:sticky;top:0;z-index:100;background:#fffdf8f5;
+  backdrop-filter:blur(12px);border-bottom:1px solid #17372b18;
 }
-.nav{
-  min-height:70px;display:flex;align-items:center;
-  justify-content:space-between;gap:15px;
-}
-.brand{display:flex;align-items:center;gap:9px;color:var(--green)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--forest)}
 .brand-icon{
-  width:39px;height:39px;border:1px solid #b6c4b5;
+  width:39px;height:39px;border:1px solid #b8c5b5;
   border-radius:50%;display:grid;place-items:center;font-size:22px;
 }
-.brand-name{font:21px Georgia,serif;letter-spacing:2px;line-height:1.1}
+.brand-name{font:22px Georgia,serif;letter-spacing:2px;line-height:1.1}
 .brand-name small{display:block;font:8px Arial;letter-spacing:3px;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:18px;font-size:12px}
+.nav-links{display:flex;align-items:center;gap:17px;font-size:12px}
 .nav-links a:hover{color:#9b8053}
-.menu-btn{
-  display:none;background:none;border:0;color:var(--green);
-  font-size:25px;padding:5px;
-}
+.menu-btn{display:none;border:0;background:none;color:var(--forest);font-size:26px;padding:5px}
 
 /* HERO */
 .hero{
-  min-height:610px;position:relative;isolation:isolate;
-  display:flex;align-items:center;overflow:hidden;color:white;
-  background:var(--deep);
+  position:relative;isolation:isolate;overflow:hidden;
+  background:var(--forest-dark);color:white;
+  min-height:600px;display:flex;align-items:center;
 }
-.hero:before{
-  content:"";position:absolute;inset:0;z-index:-2;
-  background:url("hero-night.png") center 48%/cover no-repeat;
+.hero-image{
+  position:absolute;inset:0;z-index:-2;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#10291f;
 }
-.hero:after{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(90deg,rgba(8,23,16,.78),rgba(8,23,16,.28)),
-  linear-gradient(0deg,rgba(8,23,16,.50),transparent 65%);
+.hero-image img{
+  width:100%;height:100%;
+  object-fit:contain;
+  object-position:center;
 }
-.hero-content{padding:90px 0;max-width:740px}
-.hero .eyebrow{color:#e5cea5}
+/* Overlay keeps text readable without changing the image */
+.hero-image:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(7,22,15,.74),rgba(7,22,15,.18)),
+             linear-gradient(0deg,rgba(7,22,15,.52),transparent 65%);
+}
+.hero-content{padding:80px 0;max-width:760px}
+.hero .eyebrow{color:#e3cca3}
 .hero h1{
-  font-size:clamp(56px,8vw,94px);line-height:.95;
-  letter-spacing:-2.5px;margin:22px 0;
+  font-size:clamp(55px,8vw,91px);line-height:.96;
+  letter-spacing:-2px;margin:20px 0;
 }
-.hero p{font-size:16px;max-width:510px;color:#f4f2eb}
-.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.hero p{font-size:16px;max-width:500px;color:#f3f0e8}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 .hero-points{
-  display:flex;flex-wrap:wrap;gap:10px 22px;
-  border-top:1px solid #ffffff65;margin-top:35px;
-  padding-top:18px;font-size:11px;
+  display:flex;flex-wrap:wrap;gap:9px 20px;
+  border-top:1px solid #ffffff65;margin-top:32px;
+  padding-top:16px;font-size:11px;
 }
 .hero-points span:before{content:"✦";color:var(--gold);margin-right:7px}
 
 /* ABOUT */
 .about-grid,.split{
-  display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;
+  display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;
 }
-.about-photo{height:410px}
+.about-photo{height:400px}
 .about-copy p{font-size:14px;color:var(--muted)}
 
 /* ROOMS */
 .rooms{background:var(--cream)}
-.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.room-card{
-  background:var(--white);border:1px solid var(--line);
-  border-radius:16px;overflow:hidden;
-}
-.room-photo{height:245px}
-.room-info{padding:19px}
-.room-info h3{font-size:24px;line-height:1.2;margin:0 0 10px}
-.room-info p{font-size:13px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.room-card{background:var(--paper);border:1px solid var(--border);border-radius:15px;overflow:hidden}
+.room-photo{height:235px}
+.room-info{padding:18px}
+.room-info h3{font-size:23px;line-height:1.2;margin:0 0 10px}
+.room-info p{font-size:12px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}
 .tag{background:#eaf0e7;border-radius:30px;padding:5px 9px;font-size:10px}
-.room-info .btn{font-size:11px}
 
 /* EXPERIENCE */
-.experience{background:var(--green);color:white}
+.experience{background:var(--forest);color:white}
 .experience .eyebrow{color:var(--gold)}
 .experience .muted{color:#d3ded5}
-.experience-photo{height:390px}
-.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:23px}
-.feature{
-  border:1px solid #ffffff30;border-radius:12px;
-  padding:13px 6px;text-align:center;font-size:11px;
-}
-.feature-icon{display:block;font-size:22px;color:var(--gold);margin-bottom:5px}
+.experience-photo{height:380px}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}
+.feature{border:1px solid #ffffff30;border-radius:11px;padding:12px 5px;text-align:center;font-size:10px}
+.feature-icon{display:block;font-size:21px;color:var(--gold);margin-bottom:4px}
 
 /* NEARBY */
-.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.place-card{border:1px solid var(--line);border-radius:15px;overflow:hidden}
-.place-photo{height:205px}
-.place-info{padding:17px}
-.place-info h3{font-size:22px;margin:0 0 7px}
-.place-info p{font-size:13px;color:var(--muted);margin:0}
+.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.place-card{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.place-photo{height:200px}
+.place-info{padding:15px}
+.place-info h3{font-size:22px;margin:0 0 6px}
+.place-info p{font-size:12px;color:var(--muted);margin:0}
 
 /* DINING */
 .dining{background:#f0ede3}
-.dining-photo{height:350px}
-.note{padding:13px;background:white;border-radius:10px;font-size:12px;color:var(--muted);margin:17px 0}
+.dining-photo{height:340px}
+.note{padding:12px;background:white;border-radius:10px;font-size:12px;color:var(--muted);margin:15px 0}
 
-/* FACILITIES AND STAY */
-.stay-photo{height:390px}
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}
-.tile{padding:13px;background:var(--cream);border-radius:11px}
-.tile small{display:block;color:var(--muted);font-size:11px}
+/* STAY DETAILS */
+.stay-photo{height:370px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:18px 0}
+.tile{padding:12px;background:var(--cream);border-radius:10px}
+.tile small{display:block;color:var(--muted);font-size:10px}
 .tile strong{font-size:13px}
-details{border-top:1px solid var(--line);padding:14px 0}
+details{border-top:1px solid var(--border);padding:13px 0}
 summary{cursor:pointer;font-size:13px;font-weight:bold}
 details p{font-size:12px;color:var(--muted);margin:10px 0 0}
 .amenities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}
-.amenity{
-  display:flex;align-items:center;gap:9px;
-  padding:10px;background:var(--cream);border-radius:10px;font-size:11px;
-}
+.amenity{display:flex;align-items:center;gap:8px;padding:9px;background:var(--cream);border-radius:10px;font-size:11px}
 .amenity-icon{
-  width:31px;height:31px;flex:0 0 31px;border-radius:9px;
-  background:#e0e9dc;display:grid;place-items:center;font-size:17px;
+  width:30px;height:30px;flex:0 0 30px;border-radius:9px;
+  background:#e0e9dc;display:grid;place-items:center;font-size:16px;
 }
 
 /* GREEN LIVING */
 .green-living{background:#edf0e7}
-.green-photo{height:370px}
-.green-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:20px}
-.green-item{background:#ffffffc9;border-radius:10px;padding:11px;font-size:12px}
+.green-photo{height:350px}
+.green-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}
+.green-item{background:#ffffffc9;border-radius:9px;padding:10px;font-size:11px}
 
 /* GALLERY */
 .gallery{
   display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  grid-auto-rows:170px;gap:10px;
+  grid-auto-rows:165px;gap:9px;
 }
-.gallery a{display:block;overflow:hidden;border-radius:12px;background:#e0e6d9}
+.gallery a{display:block;overflow:hidden;border-radius:11px;background:#e2e7dc}
 .gallery a:first-child,.gallery a:nth-child(6){grid-row:span 2}
-.gallery img{transition:transform .4s}
+.gallery img{transition:transform .35s}
 .gallery a:hover img{transform:scale(1.05)}
 
-/* CONTACT */
+/* LOCATION & CONTACT */
 .location{background:var(--cream)}
-.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
-.location-copy p{font-size:14px;color:var(--muted)}
-.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+.location-copy p{font-size:13px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:20px}
 .contact-button{
-  display:flex;align-items:center;gap:10px;min-height:70px;
-  padding:11px;background:white;border:1px solid var(--line);
-  border-radius:12px;transition:.2s;
+  display:flex;align-items:center;gap:9px;min-height:65px;padding:10px;
+  background:white;border:1px solid var(--border);border-radius:11px;
+  transition:.2s;
 }
-.contact-button:hover{border-color:#a8b9a5;transform:translateY(-2px)}
+.contact-button:hover{border-color:#9db39d;transform:translateY(-2px)}
 .contact-icon{
-  width:36px;height:36px;flex:0 0 36px;border-radius:50%;
-  display:grid;place-items:center;background:#e6eee3;font-size:19px;
+  width:34px;height:34px;flex:0 0 34px;border-radius:50%;
+  display:grid;place-items:center;background:#e6eee3;font-size:18px;
 }
-.contact-button strong{display:block;font-size:12px}
+.contact-button strong{display:block;font-size:11px}
 .contact-button small{display:block;font-size:10px;color:var(--muted)}
 .map-card{
-  min-height:330px;position:relative;overflow:hidden;border-radius:18px;
+  min-height:320px;position:relative;overflow:hidden;border-radius:16px;
   background:linear-gradient(135deg,#e1e8d8,#b8cbb4 55%,#e9e2d1);
 }
 .map-card:before,.map-card:after{
@@ -214,46 +207,41 @@ details p{font-size:12px;color:var(--muted);margin:10px 0 0}
   border-radius:45%;transform:rotate(-25deg);
 }
 .map-card:after{inset:10% -20%;transform:rotate(25deg)}
-.map-pin{position:absolute;top:38%;left:50%;font-size:36px;z-index:2}
-.map-label{
-  position:absolute;bottom:16px;left:16px;z-index:3;
-  background:white;border-radius:11px;padding:12px 15px;
-}
+.map-pin{position:absolute;top:38%;left:50%;font-size:34px;z-index:2}
+.map-label{position:absolute;bottom:15px;left:15px;z-index:3;background:white;border-radius:10px;padding:11px 14px}
 .map-label strong,.map-label small{display:block}
 .map-label small{font-size:10px;color:var(--muted)}
 
 /* FOOTER */
-footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:24px}
-.footer-title{font:24px Georgia,serif;letter-spacing:2px}
+footer{background:#10291f;color:#edf1e9;padding:42px 0 18px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:22px}
+.footer-title{font:23px Georgia,serif;letter-spacing:2px}
 .footer-col h4{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
-.footer-col a{display:block;font-size:12px;color:#cbd6cb;margin:8px 0}
+.footer-col a{display:block;font-size:11px;color:#cbd6cb;margin:7px 0}
 .footer-bottom{
-  border-top:1px solid #ffffff25;margin-top:28px;padding-top:15px;
-  display:flex;justify-content:space-between;gap:10px;
-  color:#c0cdc1;font-size:10px;
+  border-top:1px solid #ffffff25;margin-top:25px;padding-top:14px;
+  display:flex;justify-content:space-between;gap:10px;color:#c0cdc1;font-size:10px;
 }
 .float-wa{
-  position:fixed;right:14px;bottom:14px;z-index:90;
-  background:#15834b;color:white;padding:11px 15px;
-  border-radius:40px;font-size:11px;font-weight:bold;
-  box-shadow:0 5px 20px #0002;
+  position:fixed;right:12px;bottom:12px;z-index:90;
+  background:#16814a;color:white;padding:10px 13px;
+  border-radius:40px;font-size:11px;font-weight:bold;box-shadow:0 5px 20px #0002;
 }
 
 /* TABLET */
 @media(max-width:850px){
-  .nav-links{gap:11px;font-size:11px}
-  .room-photo{height:210px}
-  .room-info{padding:14px}
-  .room-info h3{font-size:21px}
-  .about-grid,.split{gap:25px}
+  .nav-links{gap:10px;font-size:11px}
+  .room-photo{height:205px}
+  .room-info{padding:13px}
+  .room-info h3{font-size:20px}
+  .about-grid,.split{gap:24px}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-/* PHONE */
+/* MOBILE */
 @media(max-width:600px){
-  html{scroll-padding-top:65px}
-  section{padding:52px 0}
+  html{scroll-padding-top:63px}
+  section{padding:50px 0}
   .wrap{width:calc(100% - 30px)}
   .nav{min-height:62px}
   .brand-icon{width:34px;height:34px;font-size:19px}
@@ -261,68 +249,73 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
   .menu-btn{display:block}
   .nav-links{
     display:none;position:absolute;top:62px;left:0;right:0;
-    padding:15px;background:var(--white);
+    padding:13px 15px;background:var(--paper);
     box-shadow:0 12px 20px #18392c15;
     flex-direction:column;align-items:stretch;gap:0;
   }
   .nav-links.open{display:flex}
-  .nav-links a{padding:10px 7px;font-size:13px}
-  .nav-links .btn{margin-top:6px}
-  .hero{min-height:570px;min-height:72svh}
-  .hero:before{background-position:57% center}
-  .hero:after{
-    background:linear-gradient(90deg,rgba(8,23,16,.72),rgba(8,23,16,.25)),
-    linear-gradient(0deg,rgba(8,23,16,.55),transparent 70%);
+  .nav-links a{padding:9px 6px;font-size:13px}
+  .nav-links .btn{margin-top:5px}
+  .hero{
+    min-height:0;min-height:calc(100svh - 62px);
+    display:flex;align-items:center;
   }
-  .hero-content{padding:55px 0}
-  .hero .eyebrow{font-size:9px;letter-spacing:1.7px;line-height:1.8}
-  .hero h1{font-size:clamp(45px,12.5vw,68px);line-height:.98;letter-spacing:-1.5px;margin:19px 0}
+  .hero-image img{
+    object-fit:contain;
+    object-position:center;
+  }
+  .hero-image:after{
+    background:linear-gradient(90deg,rgba(7,22,15,.58),rgba(7,22,15,.12)),
+               linear-gradient(0deg,rgba(7,22,15,.72),rgba(7,22,15,.08));
+  }
+  .hero-content{padding:50px 0 44px}
+  .hero .eyebrow{font-size:9px;letter-spacing:1.5px;line-height:1.8}
+  .hero h1{font-size:clamp(44px,11.5vw,64px);line-height:.99;letter-spacing:-1.3px;margin:18px 0}
   .hero p{font-size:13px;line-height:1.7;max-width:380px}
-  .hero-buttons{gap:8px;margin-top:19px}
-  .btn{font-size:11px;padding:10px 14px;min-height:39px}
-  .hero-points{font-size:10px;gap:8px 14px;margin-top:26px;padding-top:15px}
-  h2{font-size:clamp(29px,8vw,38px);letter-spacing:-.5px}
-  .section-head{margin-bottom:25px}
+  .hero-buttons{gap:8px;margin-top:18px}
+  .btn{font-size:10px;padding:10px 13px;min-height:38px}
+  .hero-points{font-size:9px;gap:8px 12px;margin-top:25px;padding-top:14px}
+  h2{font-size:clamp(29px,8vw,37px);letter-spacing:-.4px}
+  .section-head{margin-bottom:24px}
   .section-head p{font-size:12px}
-  .about-grid,.split,.location-grid{grid-template-columns:1fr;gap:22px}
-  .about-photo{height:270px;order:-1}
-  .about-copy p{font-size:13px}
-  .room-grid,.place-grid{grid-template-columns:1fr;gap:15px}
-  .room-photo{height:240px}
-  .room-info{padding:17px}
-  .room-info h3{font-size:23px}
+  .about-grid,.split,.location-grid{grid-template-columns:1fr;gap:20px}
+  .about-photo{height:260px;order:-1}
+  .about-copy p{font-size:12px}
+  .room-grid,.place-grid{grid-template-columns:1fr;gap:14px}
+  .room-photo{height:230px}
+  .room-info{padding:16px}
+  .room-info h3{font-size:22px}
   .room-info p{font-size:12px}
   .feature-grid{grid-template-columns:repeat(2,1fr)}
-  .experience-photo,.dining-photo,.green-photo{height:270px}
-  .place-photo{height:220px}
-  .place-info{padding:15px}
-  .stay-photo{height:270px;order:-1}
+  .experience-photo,.dining-photo,.green-photo{height:260px}
+  .place-photo{height:210px}
+  .stay-photo{height:260px;order:-1}
   .amenity{font-size:10px;padding:8px;gap:7px}
-  .amenity-icon{width:29px;height:29px;flex-basis:29px}
+  .amenity-icon{width:28px;height:28px;flex-basis:28px}
   .green-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .green-item{font-size:11px;padding:9px}
-  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:135px;gap:8px}
+  .green-item{font-size:10px;padding:9px}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:130px;gap:8px}
   .contact-grid{gap:8px}
-  .contact-button{padding:9px;gap:8px;min-height:65px}
-  .contact-icon{width:32px;height:32px;flex-basis:32px;font-size:17px}
-  .contact-button strong{font-size:11px}
+  .contact-button{padding:8px;gap:7px;min-height:62px}
+  .contact-icon{width:30px;height:30px;flex-basis:30px;font-size:16px}
+  .contact-button strong{font-size:10px}
   .contact-button small{font-size:9px}
-  .map-card{min-height:250px}
-  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 15px}
+  .map-card{min-height:240px}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
   .footer-title{font-size:21px}
-  .footer-col a{font-size:11px}
+  .footer-col a{font-size:10px}
   .footer-bottom{flex-direction:column;gap:5px}
-  .float-wa{right:10px;bottom:10px;padding:10px 12px;font-size:10px}
+  .float-wa{right:9px;bottom:9px;padding:9px 11px;font-size:10px}
 }
 
-/* VERY SMALL PHONES */
+/* EXTRA SMALL PHONES */
 @media(max-width:360px){
   .wrap{width:calc(100% - 24px)}
-  .hero h1{font-size:44px}
-  .hero-buttons .btn{padding:9px 11px;font-size:10px}
-  .hero-points{font-size:9px}
-  .contact-button{gap:6px;padding:7px}
-  .contact-icon{width:28px;height:28px;flex-basis:28px}
+  .hero h1{font-size:43px}
+  .hero-buttons .btn{padding:9px 10px;font-size:9px}
+  .hero-points{font-size:8px;gap:7px}
+  .contact-button{gap:5px;padding:6px}
+  .contact-icon{width:27px;height:27px;flex-basis:27px}
 }
 </style>
 </head>
@@ -335,9 +328,7 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <span class="brand-icon">⌂</span>
       <span class="brand-name">EVARA<small>WOODHOUSE</small></span>
     </a>
-
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -353,7 +344,11 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
 
 <main>
 
+<!-- HERO: image element ensures full image is visible -->
 <section class="hero" id="home">
+  <div class="hero-image">
+    <img src="hero-night.png" alt="Evara Woodhouse illuminated against the night sky">
+  </div>
   <div class="wrap hero-content">
     <div class="eyebrow">Shangarh · Sainj Valley · Himachal Pradesh</div>
     <h1>Evara<br>Woodhouse</h1>
@@ -392,7 +387,6 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <h2>Find your kind of quiet.</h2>
       <p>Comfortable wooden rooms with big windows and running balconies. Choose the view that feels right for your stay.</p>
     </div>
-
     <div class="room-grid">
       <article class="room-card">
         <div class="room-photo"><img src="family-room.png" alt="Family Room" loading="lazy"></div>
@@ -407,7 +401,7 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <article class="room-card">
         <div class="room-photo"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></div>
         <div class="room-info">
-          <h3>Standard Room<br>(Front View)</h3>
+          <h3>Standard Room (Front View)</h3>
           <p>A cosy wooden room with a bright window and running balcony.</p>
           <div class="tags"><span class="tag">Front View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
           <a class="btn btn-dark" href="https://wa.me/919667824966?text=I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Front%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
@@ -417,7 +411,7 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <article class="room-card">
         <div class="room-photo"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></div>
         <div class="room-info">
-          <h3>Standard Room<br>(Back View)</h3>
+          <h3>Standard Room (Back View)</h3>
           <p>A peaceful wooden room with big windows and a running balcony.</p>
           <div class="tags"><span class="tag">Back View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
           <a class="btn btn-dark" href="https://wa.me/919667824966?text=I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Back%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
@@ -501,7 +495,6 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
         <div class="tile"><small>Booking</small><strong>WhatsApp Enquiry</strong></div>
         <div class="tile"><small>Payment</small><strong>Cash or UPI</strong></div>
       </div>
-
       <details>
         <summary>Facilities at the Property</summary>
         <div class="amenities">
@@ -514,17 +507,14 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
         </div>
         <p>Room heater is available on request at an additional charge.</p>
       </details>
-
       <details>
         <summary>Guest Information</summary>
         <p>Please carry valid government photo identification for check-in. Contact the property team for special requirements.</p>
       </details>
-
       <details>
         <summary>Bonfire & Transport</summary>
         <p>Bonfire is available on request. Contact the property team to ask about transport or pick-up support.</p>
       </details>
-
       <details>
         <summary>Road & Weather</summary>
         <p>Mountain weather and road conditions can change. Check local conditions before travelling.</p>
@@ -540,12 +530,12 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <h2>Built with nature in mind.</h2>
       <p class="muted">Evara Woodhouse brings together wooden architecture, natural surroundings and a slower mountain rhythm. Enjoy the landscape while helping keep the area peaceful and clean.</p>
       <div class="green-list">
-        <div class="green-item">🌲 Locally sourced timber</div>
+        <div class="green-item">🌲 Wooden architecture</div>
         <div class="green-item">☀️ Natural daylight</div>
         <div class="green-item">💧 Water from a local source</div>
         <div class="green-item">🥬 Local food sourcing</div>
         <div class="green-item">♻️ Responsible waste practices</div>
-        <div class="green-item">🌿 Care for the surroundings</div>
+        <div class="green-item">🌿 Care for surroundings</div>
       </div>
     </div>
     <div class="photo green-photo">
@@ -565,7 +555,7 @@ footer{background:#122d21;color:#edf1e9;padding:45px 0 18px}
       <a href="family-room.png" target="_blank"><img src="family-room.png" alt="Family Room" loading="lazy"></a>
       <a href="balcony-mountain-view.png" target="_blank"><img src="balcony-mountain-view.png" alt="Balcony mountain view" loading="lazy"></a>
       <a href="hero-night.png" target="_blank"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></a>
-      <a href="gallery-flower-meadow.jpg" target="_blank"><img src="gallery-flower-meadow.jpg" alt="Mountain flowers" loading="lazy"></a>
+      <a href="gallery-flower-meadow.jpg" target="_blank"><img src="gallery-flower-meadow.jpg" alt="Flowers in a mountain meadow" loading="lazy"></a>
       <a href="common-area-interior-view.jpg" target="_blank"><img src="common-area-interior-view.jpg" alt="Wooden common area" loading="lazy"></a>
       <a href="gallery-mountain-pasture.jpg" target="_blank"><img src="gallery-mountain-pasture.jpg" alt="Mountain pasture" loading="lazy"></a>
       <a href="gallery-misty-valley.jpg" target="_blank"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></a>
