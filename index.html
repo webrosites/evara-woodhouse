@@ -6,85 +6,109 @@
 <meta name="theme-color" content="#102b20">
 
 <title>Evara Woodhouse | A Mountain Stay in Shangarh</title>
+<meta name="description" content="Evara Woodhouse is a quiet wooden mountain stay in Shangarh, Sainj Valley, Himachal Pradesh. Wooden rooms, big windows, running balconies and Himalayan views.">
 
-<meta name="description" content="Discover Evara Woodhouse in Shangarh, Sainj Valley, Himachal Pradesh. Explore our wooden rooms, mountain views and peaceful Himalayan surroundings.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Evara Woodhouse | A Mountain Stay in Shangarh">
+<meta property="og:description" content="A quiet mountain stay above Shangarh meadows. Wooden warmth, open views and the calming beauty of the Himalayas.">
+<meta property="og:image" content="hero-night.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102b20'/%3E%3Cpath d='M14 31 32 16l18 15M19 28v20h26V28M27 48V37h10v11' fill='none' stroke='%23d7bd83' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Evara Woodhouse",
+  "description": "A quiet wooden mountain stay in Shangarh, Sainj Valley, Himachal Pradesh.",
+  "telephone": "+918920246727",
+  "email": "evaraatshangarh@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shangarh, Sainj Valley",
+    "addressRegion": "Himachal Pradesh",
+    "addressCountry": "IN"
+  },
+  "sameAs": ["https://www.instagram.com/evaraatshangarh/"]
+}
+</script>
+
 <style>
 :root {
   --forest: #102b20;
+  --forest-deep: #071b12;
   --forest-light: #1c4432;
   --cream: #f8f6ef;
   --cream-dark: #eee9dc;
   --gold: #d7bd83;
+  --gold-dark: #7d6732;
   --text: #24372c;
-  --muted: #72796f;
+  --muted: #5f675c;
   --white: #ffffff;
   --radius: 18px;
   --shadow: 0 14px 40px rgba(20,40,28,.10);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--cream);
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+img { display: block; max-width: 100%; color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ICONS (inline SVG sprite) */
+.ic {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
 }
 
-button {
-  font: inherit;
-}
-
-.container {
-  width: min(1180px, 90%);
-  margin: auto;
-}
+.container { width: min(1180px, 90%); margin: auto; }
 
 .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #a18b5d;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
   margin-bottom: 14px;
 }
 
 .section-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(32px, 4.5vw, 53px);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 500;
-  line-height: 1.13;
-  letter-spacing: -.8px;
+  line-height: 1.15;
+  letter-spacing: -.6px;
 }
 
 .section-copy {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   max-width: 570px;
   margin-top: 18px;
 }
@@ -92,16 +116,12 @@ button {
 .section-heading {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 44px;
+  margin: 0 auto 48px;
 }
 
-.section-heading .section-copy {
-  margin-left: auto;
-  margin-right: auto;
-}
+.section-heading .section-copy { margin-left: auto; margin-right: auto; }
 
 /* HEADER */
-
 header {
   height: 78px;
   background: rgba(248,246,239,.97);
@@ -120,12 +140,7 @@ header {
   gap: 20px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 .brand-icon {
   width: 47px;
@@ -135,11 +150,14 @@ header {
   display: grid;
   place-items: center;
   color: var(--forest);
-  font-size: 25px;
+  font-size: 24px;
 }
 
+.brand-text { display: block; }
+
 .brand-name {
-  font-family: "Playfair Display", serif;
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 25px;
   line-height: 1;
   letter-spacing: 3px;
@@ -147,34 +165,31 @@ header {
 }
 
 .brand-sub {
-  font-size: 8px;
-  letter-spacing: 4px;
+  display: block;
+  font-size: 9px;
+  letter-spacing: 4.5px;
   margin-top: 7px;
   color: var(--forest);
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 23px;
-}
+.nav-links { display: flex; align-items: center; gap: 24px; }
 
 .nav-links a {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   transition: color .2s;
 }
 
-.nav-links a:hover {
-  color: #a18b5d;
-}
+.nav-links a:hover { color: var(--gold-dark); }
 
-.nav-cta {
+.nav-links .nav-cta {
   background: var(--forest);
-  color: white !important;
-  padding: 12px 18px;
+  color: #fff;
+  padding: 11px 20px;
   border-radius: 30px;
 }
+
+.nav-links .nav-cta:hover { color: #fff; background: var(--forest-light); }
 
 .menu-toggle {
   display: none;
@@ -182,145 +197,104 @@ header {
   border: 0;
   color: var(--forest);
   font-size: 29px;
+  line-height: 1;
   cursor: pointer;
+  padding: 6px;
 }
 
 /* BUTTONS */
-
 .btn {
-  min-height: 45px;
-  padding: 12px 20px;
+  min-height: 46px;
+  padding: 12px 22px;
   border-radius: 40px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 9px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   border: 1px solid transparent;
   transition: transform .2s, background .2s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-}
+.btn:hover { transform: translateY(-2px); }
+.btn-light { background: var(--cream); color: var(--forest); }
+.btn-outline { border-color: rgba(255,255,255,.75); color: #fff; background: rgba(0,0,0,.15); }
+.btn-dark { background: var(--forest); color: #fff; }
+.btn-dark:hover { background: var(--forest-light); }
 
-.btn-light {
-  background: var(--cream);
-  color: var(--forest);
-}
-
-.btn-outline {
-  border-color: rgba(255,255,255,.7);
-  color: white;
-  background: rgba(0,0,0,.10);
-}
-
-.btn-dark {
-  background: var(--forest);
-  color: white;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: var(--forest);
-}
-
-/* HERO */
-
+/* HERO
+   Desktop: full-width photo, text sits on top of it.
+   Mobile/tablet: the whole photo is shown at its natural ratio,
+   and the title block slides up over its bottom edge. */
 .hero {
   position: relative;
-  min-height: 650px;
-  background: #102b20;
-  color: white;
+  background: var(--forest-deep);
+  color: #fff;
   isolation: isolate;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.hero-photo {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #102b20;
 }
 
 .hero-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* Overlay adds contrast without hiding the full photograph */
-.hero::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background:
-    linear-gradient(90deg,
-      rgba(5,22,15,.76) 0%,
-      rgba(5,22,15,.47) 55%,
-      rgba(5,22,15,.12) 100%),
-    linear-gradient(0deg,
-      rgba(5,22,15,.63) 0%,
-      transparent 55%);
+  height: auto;
 }
 
 .hero-content {
-  width: min(1180px, 90%);
-  margin: auto;
-  padding: 80px 0 65px;
+  position: relative;
+  margin-top: -17vw;
+  padding: 8vw 0 44px;
+  background: linear-gradient(180deg,
+    rgba(7,27,18,0) 0,
+    rgba(7,27,18,.82) 10vw,
+    var(--forest-deep) 19vw);
 }
+
+.hero-inner { width: 90%; margin: auto; }
 
 .hero-location {
-  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-weight: 700;
-  color: #e4d3a8;
-  margin-bottom: 25px;
+  color: #e9d9ae;
+  margin-bottom: 14px;
 }
 
+.hero-location .ic { font-size: 16px; }
+
 .hero h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 500;
-  font-size: clamp(52px, 8vw, 100px);
-  line-height: .99;
-  letter-spacing: -2px;
-  max-width: 780px;
-  text-wrap: balance;
+  font-size: clamp(46px, 12vw, 70px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
 }
 
 .hero-description {
   max-width: 560px;
-  font-size: 16px;
-  line-height: 1.9;
-  margin: 25px 0 28px;
-  color: rgba(255,255,255,.91);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 18px 0 24px;
+  color: rgba(255,255,255,.92);
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+.hero-actions { display: grid; gap: 10px; }
+.hero-actions .btn { width: 100%; }
 
 .hero-highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
-  margin-top: 35px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255,255,255,.36);
-  max-width: 720px;
-  font-size: 11px;
-  color: rgba(255,255,255,.94);
+  gap: 8px 22px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.3);
+  font-size: 12.5px;
+  color: rgba(255,255,255,.95);
 }
 
 .hero-highlights span::before {
@@ -329,15 +303,40 @@ header {
   margin-right: 8px;
 }
 
-/* GENERAL SECTIONS */
+@media (min-width: 901px) {
+  .hero { min-height: max(660px, 54vw); display: flex; }
 
-section {
-  padding: 95px 0;
+  .hero-photo { position: absolute; inset: 0; z-index: -2; }
+
+  .hero-photo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  .hero-content {
+    margin: 0;
+    padding: 90px 0 70px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background:
+      linear-gradient(90deg, rgba(5,22,15,.80) 0%, rgba(5,22,15,.45) 40%, rgba(5,22,15,0) 68%),
+      linear-gradient(0deg, rgba(5,22,15,.72) 0%, rgba(5,22,15,0) 55%);
+  }
+
+  .hero-inner { width: min(1180px, 90%); }
+  .hero h1 { font-size: clamp(56px, 6.2vw, 90px); }
+  .hero-description { font-size: 16px; }
+  .hero-actions { display: flex; flex-wrap: wrap; }
+  .hero-actions .btn { width: auto; }
+  .hero-highlights { max-width: 620px; }
 }
 
-.about {
-  background: var(--cream);
-}
+/* SECTIONS */
+section { padding: 95px 0; }
+
+.about { background: var(--cream); }
 
 .about-grid {
   display: grid;
@@ -354,21 +353,11 @@ section {
   box-shadow: var(--shadow);
 }
 
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about .btn {
-  margin-top: 25px;
-}
+.about-image img { width: 100%; height: 100%; object-fit: cover; }
+.about .btn { margin-top: 26px; }
 
 /* ROOMS */
-
-.rooms {
-  background: #f0ede3;
-}
+.rooms { background: #f0ede3; }
 
 .room-grid {
   display: grid;
@@ -384,16 +373,9 @@ section {
   transition: transform .25s, box-shadow .25s;
 }
 
-.room-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
+.room-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 
-.room-image {
-  height: 255px;
-  background: #dce3d6;
-  overflow: hidden;
-}
+.room-image { height: 255px; background: #dce3d6; overflow: hidden; }
 
 .room-image img {
   width: 100%;
@@ -402,63 +384,43 @@ section {
   transition: transform .5s;
 }
 
-.room-card:hover .room-image img {
-  transform: scale(1.04);
-}
+.room-card:hover .room-image img { transform: scale(1.04); }
 
-.room-content {
-  padding: 24px;
-}
+.room-content { padding: 24px; }
 
 .room-label {
-  color: #9a8250;
-  font-size: 9px;
+  color: var(--gold-dark);
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
 }
 
 .room-content h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 25px;
   line-height: 1.25;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 8px 0 10px;
 }
 
-.room-content p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 19px;
-}
-
-.room-content .btn {
-  width: 100%;
-}
+.room-content p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.room-content .btn { width: 100%; }
 
 /* FEATURES */
-
-.features {
-  background: var(--forest);
-  color: white;
-}
-
-.features .section-title {
-  color: white;
-}
-
-.features .section-copy {
-  color: #c6d0c5;
-}
+.features { background: var(--forest); color: #fff; }
+.features .section-title { color: #fff; }
+.features .section-copy { color: #c6d0c5; }
+.features .eyebrow { color: var(--gold); }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 15px;
+  gap: 16px;
 }
 
 .feature {
-  padding: 24px 16px;
+  padding: 28px 16px;
   border: 1px solid rgba(255,255,255,.13);
   background: rgba(255,255,255,.045);
   border-radius: 14px;
@@ -466,69 +428,52 @@ section {
 }
 
 .feature-icon {
-  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(215,189,131,.45);
+  color: var(--gold);
   font-size: 26px;
-  margin-bottom: 12px;
 }
 
-.feature h3 {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.feature p {
-  font-size: 11px;
-  color: #c6d0c5;
-  margin-top: 6px;
-}
+.feature h3 { font-size: 15px; font-weight: 600; }
+.feature p { font-size: 13px; color: #c6d0c5; margin-top: 6px; line-height: 1.6; }
 
 /* EXPERIENCE */
-
-.experience {
-  background: var(--cream);
-}
+.experience { background: var(--cream); }
 
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 45px;
+  gap: 50px;
   align-items: center;
 }
 
 .experience-photo {
-  height: 410px;
+  height: 420px;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--cream-dark);
+  box-shadow: var(--shadow);
 }
 
-.experience-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.experience-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-.experience-list {
-  list-style: none;
-  margin-top: 25px;
-}
+.experience-list { list-style: none; margin: 24px 0 28px; }
 
 .experience-list li {
   padding: 12px 0;
   border-bottom: 1px solid #e3dfd3;
-  font-size: 13px;
+  font-size: 14.5px;
 }
 
-.experience-list li span {
-  color: #a18b5d;
-  margin-right: 10px;
-}
+.experience-list li span { color: var(--gold-dark); margin-right: 10px; }
 
 /* DINING */
-
-.dining {
-  background: #eee9dc;
-}
+.dining { background: #eee9dc; }
 
 .dining-box {
   display: grid;
@@ -536,43 +481,32 @@ section {
   overflow: hidden;
   border-radius: 22px;
   background: var(--forest);
-  color: white;
+  color: #fff;
 }
 
-.dining-image {
-  min-height: 350px;
-  background: #dce3d6;
-}
+.dining-image { min-height: 360px; background: #dce3d6; }
 
 .dining-image img {
   width: 100%;
   height: 100%;
-  min-height: 350px;
+  min-height: 360px;
   object-fit: cover;
 }
 
 .dining-content {
-  padding: clamp(25px, 5vw, 55px);
+  padding: clamp(26px, 5vw, 56px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
-.dining-content .section-title {
-  color: white;
-}
-
-.dining-content p {
-  font-size: 13px;
-  color: #d3dacf;
-  margin: 18px 0 23px;
-}
+.dining-content .eyebrow { color: var(--gold); }
+.dining-content .section-title { color: #fff; }
+.dining-content p.dining-text { font-size: 15px; color: #d3dacf; margin: 18px 0 24px; }
 
 /* GALLERY */
-
-.gallery {
-  background: #fffdf8;
-}
+.gallery { background: #fffdf8; }
 
 .gallery-grid {
   display: grid;
@@ -585,15 +519,11 @@ section {
   border-radius: 13px;
   overflow: hidden;
   background: #e1e5d9;
+  cursor: zoom-in;
 }
 
-.gallery-item.tall {
-  grid-row: span 2;
-}
-
-.gallery-item.wide {
-  grid-column: span 2;
-}
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
 
 .gallery-item img {
   width: 100%;
@@ -602,15 +532,44 @@ section {
   transition: transform .4s;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.gallery-item:hover img { transform: scale(1.05); }
+
+#lightbox {
+  border: 0;
+  background: transparent;
+  max-width: 96vw;
+  max-height: 92vh;
+  margin: auto;
+  overflow: visible;
+}
+
+#lightbox::backdrop { background: rgba(5,18,12,.92); }
+
+#lightbox img {
+  max-width: 96vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+}
+
+#lightboxClose {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 /* GREEN LIVING */
-
-.green-living {
-  background: #e9eee4;
-}
+.green-living { background: #e9eee4; }
 
 .green-grid {
   display: grid;
@@ -620,99 +579,89 @@ section {
 }
 
 .green-image {
-  height: 380px;
+  height: 390px;
   border-radius: var(--radius);
   overflow: hidden;
   background: #dce3d6;
 }
 
-.green-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.green-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .green-points {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 26px;
 }
 
 .green-point {
-  padding: 12px;
+  padding: 13px 14px;
   border-radius: 10px;
-  background: rgba(255,255,255,.65);
-  font-size: 12px;
+  background: rgba(255,255,255,.7);
+  font-size: 14px;
 }
 
-.green-point span {
-  color: #4b7553;
-  margin-right: 6px;
-}
+.green-point span { color: #3f6b48; margin-right: 6px; font-weight: 700; }
 
 /* LOCATION */
-
-.location {
-  background: #f0ede3;
-}
+.location { background: #f0ede3; }
 
 .location-grid {
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
+  grid-template-columns: .9fr 1.1fr;
   align-items: center;
-  gap: 45px;
+  gap: 48px;
 }
 
-.location-description {
-  color: var(--muted);
+.location-description { color: var(--muted); font-size: 15px; margin-top: 16px; }
+.location-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+
+.contact-title {
+  margin-top: 28px;
   font-size: 14px;
-  margin-top: 16px;
+  color: var(--muted);
 }
 
-.location-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
+.contact-list { display: flex; flex-wrap: wrap; gap: 14px 20px; margin-top: 14px; }
 
-.contact-icons {
+.contact-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 64px;
 }
 
 .contact-icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--forest);
-  color: white;
-  font-size: 20px;
-  transition: transform .2s;
+  color: #fff;
+  font-size: 22px;
+  transition: transform .2s, background .2s;
 }
 
-.contact-icon:hover {
-  transform: translateY(-3px);
-  background: var(--forest-light);
+.contact-item:hover .contact-icon { transform: translateY(-3px); background: var(--forest-light); }
+
+.contact-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.2;
 }
 
 .map-card {
-  min-height: 350px;
-  background: #dce3d6;
+  min-height: 360px;
   border-radius: var(--radius);
-  padding: 30px;
+  padding: 28px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   position: relative;
   overflow: hidden;
-  background-image:
-    radial-gradient(circle at 70% 25%, #c6d4bd 0 2px, transparent 3px),
-    linear-gradient(135deg, #dce6d3, #b7cbb6);
+  background: linear-gradient(135deg, #dce6d3, #b7cbb6);
 }
 
 .map-card::before,
@@ -722,18 +671,28 @@ section {
   width: 150%;
   height: 90px;
   left: -20%;
-  border: 2px solid rgba(255,255,255,.45);
+  border: 2px solid rgba(255,255,255,.5);
   border-radius: 50%;
   transform: rotate(-22deg);
 }
 
-.map-card::before {
-  top: 35%;
-}
+.map-card::before { top: 35%; }
+.map-card::after { top: 58%; transform: rotate(18deg); }
 
-.map-card::after {
-  top: 58%;
-  transform: rotate(18deg);
+.map-pin {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--gold);
+  font-size: 28px;
+  box-shadow: 0 10px 24px rgba(16,43,32,.35);
 }
 
 .map-label {
@@ -745,81 +704,38 @@ section {
   box-shadow: var(--shadow);
 }
 
-.map-label h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-}
-
-.map-label p {
-  font-size: 11px;
-  color: var(--muted);
-}
+.map-label h3 { font-family: "Playfair Display", Georgia, serif; font-size: 21px; }
+.map-label p { font-size: 13px; color: var(--muted); }
 
 /* STAY DETAILS */
-
-.stay-details {
-  background: var(--cream);
-}
+.stay-details { background: var(--cream); }
 
 .stay-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 15px;
+  gap: 16px;
 }
 
 .stay-card {
-  background: white;
+  background: #fff;
   border: 1px solid #ebe7dc;
   border-radius: 14px;
-  padding: 23px 18px;
+  padding: 24px 20px;
 }
 
-.stay-card .icon {
-  font-size: 24px;
-}
-
-.stay-card h3 {
-  font-size: 13px;
-  margin: 10px 0 5px;
-}
-
-.stay-card p {
-  font-size: 12px;
-  color: var(--muted);
-}
+.stay-card .icon { font-size: 26px; color: var(--forest-light); display: block; }
+.stay-card h3 { font-size: 15px; margin: 12px 0 4px; }
+.stay-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
 /* BOOKING CTA */
-
-.booking {
-  background: var(--forest);
-  color: white;
-  text-align: center;
-}
-
-.booking .section-title {
-  color: white;
-  max-width: 700px;
-  margin: auto;
-}
-
-.booking .section-copy {
-  color: #d0d9ce;
-  margin: 18px auto 26px;
-}
-
-.booking-note {
-  color: #d9c99e;
-  font-size: 11px;
-  margin-top: 16px;
-}
+.booking { background: var(--forest); color: #fff; text-align: center; }
+.booking .eyebrow { color: var(--gold); }
+.booking .section-title { color: #fff; max-width: 700px; margin: auto; }
+.booking .section-copy { color: #d0d9ce; margin: 18px auto 28px; }
+.booking-note { color: #d9c99e; font-size: 13px; margin-top: 18px; }
 
 /* FOOTER */
-
-footer {
-  background: #0a2117;
-  color: #dfe5dc;
-  padding: 40px 0 25px;
-}
+footer { background: #0a2117; color: #dfe5dc; padding: 44px 0 26px; }
 
 .footer-main {
   display: flex;
@@ -827,34 +743,37 @@ footer {
   align-items: center;
   gap: 25px;
   flex-wrap: wrap;
-  padding-bottom: 25px;
+  padding-bottom: 26px;
   border-bottom: 1px solid rgba(255,255,255,.13);
 }
 
-footer .brand-name,
-footer .brand-sub {
-  color: white;
-}
+footer .brand-name, footer .brand-sub { color: #fff; }
+footer .brand-icon { color: #fff; border-color: #718a78; }
 
-footer .brand-icon {
-  color: white;
-  border-color: #718a78;
-}
-
-.footer-social {
-  display: flex;
-  gap: 10px;
-}
+.footer-social { display: flex; gap: 18px; }
 
 .footer-social a {
-  width: 42px;
-  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #c8d2c6;
+}
+
+.footer-social .fs-icon {
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.2);
-  font-size: 18px;
+  border: 1px solid rgba(255,255,255,.25);
+  font-size: 19px;
+  color: #fff;
+  transition: background .2s;
 }
+
+.footer-social a:hover .fs-icon { background: rgba(255,255,255,.1); }
 
 .footer-bottom {
   display: flex;
@@ -862,12 +781,11 @@ footer .brand-icon {
   gap: 15px;
   flex-wrap: wrap;
   padding-top: 20px;
-  font-size: 10px;
+  font-size: 12.5px;
   color: #aebcb0;
 }
 
 /* FLOATING WHATSAPP */
-
 .whatsapp-float {
   position: fixed;
   z-index: 900;
@@ -877,431 +795,174 @@ footer .brand-icon {
   align-items: center;
   gap: 8px;
   background: #168452;
-  color: white;
-  padding: 14px 19px;
+  color: #fff;
+  padding: 13px 19px;
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
-  box-shadow: 0 8px 25px rgba(0,0,0,.20);
+  box-shadow: 0 8px 25px rgba(0,0,0,.22);
 }
 
-/* IMAGE FALLBACK */
-
-img {
-  color: transparent;
-}
-
-img:not([src]),
-img[src=""] {
-  visibility: hidden;
-}
+.whatsapp-float .ic { font-size: 22px; }
 
 /* TABLET */
-
-@media (max-width: 900px) {
-  .nav-links {
-    gap: 13px;
-  }
-
-  .nav-links a {
-    font-size: 10px;
-  }
-
-  .about-grid,
-  .experience-grid,
-  .green-grid {
-    gap: 30px;
-  }
-
-  .room-grid {
-    gap: 14px;
-  }
-
-  .room-image {
-    height: 210px;
-  }
-
-  .room-content {
-    padding: 18px;
-  }
-
-  .feature-grid,
-  .stay-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-  }
-
-  .gallery-grid {
-    grid-auto-rows: 160px;
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-  html {
-    scroll-padding-top: 72px;
-  }
-
-  header {
-    height: 72px;
-  }
-
-  .container {
-    width: 90%;
-  }
-
-  .brand {
-    gap: 9px;
-  }
-
-  .brand-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-  }
-
-  .brand-name {
-    font-size: 23px;
-    letter-spacing: 2px;
-  }
-
-  .brand-sub {
-    font-size: 7px;
-    letter-spacing: 3.5px;
-    margin-top: 5px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+@media (max-width: 980px) {
+  .menu-toggle { display: block; }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 72px;
+    top: 100%;
     left: 0;
     right: 0;
     background: var(--cream);
-    padding: 18px 5% 23px;
+    padding: 14px 5% 24px;
     box-shadow: 0 14px 20px rgba(0,0,0,.08);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
+  .nav-links.open { display: flex; }
 
   .nav-links a {
-    padding: 12px 0;
-    font-size: 13px;
+    padding: 13px 0;
+    font-size: 15px;
     border-bottom: 1px solid #e7e3d8;
   }
 
   .nav-links .nav-cta {
-    margin-top: 12px;
+    margin-top: 14px;
     text-align: center;
-    padding: 13px;
+    padding: 14px;
+    border-bottom: 0;
   }
+}
 
-  section {
-    padding: 68px 0;
-  }
+@media (max-width: 900px) {
+  .about-grid, .experience-grid, .green-grid { gap: 30px; }
+  .room-grid { gap: 14px; }
+  .room-image { height: 210px; }
+  .room-content { padding: 18px; }
+  .feature-grid, .stay-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .gallery-grid { grid-auto-rows: 160px; }
+}
 
-  .section-heading {
-    margin-bottom: 30px;
-  }
+/* MOBILE */
+@media (max-width: 650px) {
+  html { scroll-padding-top: 72px; }
+  header { height: 72px; }
+  .brand { gap: 9px; }
+  .brand-icon { width: 42px; height: 42px; font-size: 22px; }
+  .brand-name { font-size: 23px; letter-spacing: 2px; }
+  .brand-sub { font-size: 8.5px; letter-spacing: 3.5px; margin-top: 5px; }
 
-  .section-title {
-    font-size: 35px;
-    letter-spacing: -.5px;
-  }
+  section { padding: 68px 0; }
+  .section-heading { margin-bottom: 30px; }
+  .section-title { font-size: 34px; }
 
-  .section-copy {
-    font-size: 13px;
-  }
-
-  /* Keep the entire hero image visible on phones */
-  .hero {
-    min-height: unset;
-    display: block;
-    background: #102b20;
-  }
-
-  .hero-photo {
-    inset: 0;
-    align-items: flex-start;
-    background: #102b20;
-  }
-
-  .hero-photo img {
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    object-position: top center;
-  }
-
-  .hero::after {
-    background:
-      linear-gradient(180deg,
-        rgba(5,22,15,.03) 0%,
-        rgba(5,22,15,.18) 22%,
-        rgba(5,22,15,.77) 49%,
-        #071b12 82%,
-        #071b12 100%);
-  }
-
-  .hero-content {
-    width: 90%;
-    padding: clamp(260px, 72vw, 410px) 0 35px;
-  }
-
-  .hero-location {
-    font-size: 9px;
-    letter-spacing: 2px;
-    line-height: 1.8;
-    margin-bottom: 18px;
-  }
-
-  .hero h1 {
-    font-size: clamp(47px, 12vw, 67px);
-    line-height: .99;
-    letter-spacing: -1.5px;
-  }
-
-  .hero-description {
-    font-size: 14px;
-    line-height: 1.8;
-    margin: 19px 0 22px;
-  }
-
-  .hero-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    min-height: 47px;
-  }
-
-  .hero-highlights {
-    gap: 10px 15px;
-    margin-top: 25px;
-    padding-top: 17px;
-    font-size: 10px;
-    line-height: 1.6;
-  }
-
-  .about-grid,
-  .experience-grid,
-  .green-grid,
-  .location-grid {
+  .about-grid, .experience-grid, .green-grid, .location-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .about-image {
+  .about-image, .experience-photo, .green-image {
     height: auto;
     aspect-ratio: 4 / 3;
   }
 
-  .room-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+  .room-grid { grid-template-columns: 1fr; gap: 18px; }
+  .room-image { height: auto; aspect-ratio: 4 / 3; }
+  .room-content { padding: 22px; }
 
-  .room-image {
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
+  .feature-grid { gap: 10px; }
+  .feature { padding: 22px 10px; }
+  .feature-icon { width: 50px; height: 50px; font-size: 24px; }
+  .feature h3 { font-size: 14px; }
+  .feature p { font-size: 12.5px; }
 
-  .room-content {
-    padding: 21px;
-  }
+  .dining-box { grid-template-columns: 1fr; }
+  .dining-image, .dining-image img { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+  .dining-content { padding: 28px 23px; }
 
-  .room-content h3 {
-    font-size: 24px;
-  }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); grid-auto-rows: 145px; gap: 9px; }
 
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 10px;
-  }
+  .green-points { gap: 8px; }
+  .green-point { font-size: 13px; padding: 11px 10px; }
 
-  .feature {
-    padding: 20px 10px;
-  }
+  .map-card { min-height: 280px; padding: 18px; }
 
-  .feature h3 {
-    font-size: 12px;
-  }
+  .stay-grid { gap: 10px; }
+  .stay-card { padding: 18px 14px; }
+  .stay-card h3 { font-size: 14px; }
+  .stay-card p { font-size: 12.5px; }
 
-  .experience-photo {
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
+  .footer-main { align-items: flex-start; flex-direction: column; }
+  .footer-bottom { flex-direction: column; gap: 7px; }
 
-  .dining-box {
-    grid-template-columns: 1fr;
-  }
-
-  .dining-image,
-  .dining-image img {
-    min-height: 0;
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
-
-  .dining-content {
-    padding: 28px 23px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    grid-auto-rows: 145px;
-    gap: 9px;
-  }
-
-  .gallery-item.tall {
-    grid-row: span 2;
-  }
-
-  .gallery-item.wide {
-    grid-column: span 2;
-  }
-
-  .green-image {
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
-
-  .green-points {
-    gap: 8px;
-  }
-
-  .green-point {
-    font-size: 11px;
-    padding: 11px 9px;
-  }
-
-  .location-grid {
-    gap: 25px;
-  }
-
-  .map-card {
-    min-height: 260px;
-    padding: 20px;
-  }
-
-  .stay-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 10px;
-  }
-
-  .stay-card {
-    padding: 17px 13px;
-  }
-
-  .stay-card h3 {
-    font-size: 12px;
-  }
-
-  .stay-card p {
-    font-size: 11px;
-  }
-
-  .booking .section-title {
-    font-size: 34px;
-  }
-
-  .footer-main {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .whatsapp-float {
-    right: 12px;
-    bottom: 12px;
-    padding: 12px 15px;
-    font-size: 11px;
-  }
+  .whatsapp-float { right: 12px; bottom: 12px; padding: 12px 16px; font-size: 13px; }
 }
 
-/* SMALL PHONES */
-
 @media (max-width: 380px) {
-  .hero-content {
-    padding-top: 72vw;
-  }
-
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .hero-location {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-
-  .section-title {
-    font-size: 31px;
-  }
-
-  .gallery-grid {
-    grid-auto-rows: 125px;
-  }
+  .hero h1 { font-size: 42px; }
+  .hero-location { font-size: 11px; letter-spacing: 1.5px; }
+  .section-title { font-size: 30px; }
+  .gallery-grid { grid-auto-rows: 125px; }
+  .contact-list { gap: 12px 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: .01ms !important;
-  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ICON SPRITE: all icons are real SVG, no emojis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></symbol>
+    <symbol id="i-parking" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9.5 17V7h3.5a3 3 0 0 1 0 6H9.5"/></symbol>
+    <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.5 2"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10h7"/><path d="M8.5 13.5h4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </defs>
+</svg>
+
 <header>
   <div class="container navbar">
 
     <a href="#home" class="brand" aria-label="Evara Woodhouse Home">
-      <span class="brand-icon">⌂</span>
-      <span>
+      <span class="brand-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
+      <span class="brand-text">
         <span class="brand-name">EVARA</span>
-        <span class="brand-sub" style="display:block">WOODHOUSE</span>
+        <span class="brand-sub">WOODHOUSE</span>
       </span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
 
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#rooms">Rooms</a>
+      <a href="#facilities">Facilities</a>
       <a href="#experience">Experience</a>
-      <a href="#dining">Dining</a>
       <a href="#gallery">Gallery</a>
-      <a href="#location">Location</a>
-      <a class="nav-cta" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
-        Enquire Now ↗
-      </a>
+      <a href="#location">Contact</a>
+      <a class="nav-cta" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">Enquire Now ↗</a>
     </nav>
 
   </div>
@@ -1310,8 +971,7 @@ img[src=""] {
 <main>
 
 <!-- HERO -->
-
-<section class="hero" id="home">
+<section class="hero" id="home" style="padding:0">
 
   <div class="hero-photo">
     <img src="hero-night.png"
@@ -1320,48 +980,48 @@ img[src=""] {
   </div>
 
   <div class="hero-content">
+    <div class="hero-inner">
 
-    <p class="hero-location">
-      Shangarh · Sainj Valley · Himachal Pradesh
-    </p>
+      <p class="hero-location">
+        <svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>
+        Shangarh · Sainj Valley · Himachal Pradesh
+      </p>
 
-    <h1>Evara<br>Woodhouse</h1>
+      <h1>Evara<br>Woodhouse</h1>
 
-    <p class="hero-description">
-      A quiet mountain stay above Shangarh meadows.
-      Discover wooden warmth, open views and the calming
-      beauty of the Himalayas.
-    </p>
+      <p class="hero-description">
+        A quiet mountain stay above Shangarh meadows.
+        Discover wooden warmth, open views and the calming
+        beauty of the Himalayas.
+      </p>
 
-    <div class="hero-actions">
-      <a href="#rooms" class="btn btn-light">Explore Rooms ↓</a>
+      <div class="hero-actions">
+        <a href="#rooms" class="btn btn-light">Explore Rooms ↓</a>
+        <a class="btn btn-outline"
+           href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay."
+           target="_blank" rel="noopener">
+          <svg class="ic" aria-hidden="true" style="font-size:19px"><use href="#i-whatsapp"/></svg>
+          WhatsApp Enquiry
+        </a>
+      </div>
 
-      <a class="btn btn-outline"
-         href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
-        WhatsApp Enquiry ↗
-      </a>
+      <div class="hero-highlights">
+        <span>Mountain Views</span>
+        <span>Wooden Architecture</span>
+        <span>Beside Shangarh Meadow</span>
+      </div>
+
     </div>
-
-    <div class="hero-highlights">
-      <span>Mountain Views</span>
-      <span>Wooden Architecture</span>
-      <span>Beside Shangarh Meadow</span>
-    </div>
-
   </div>
 </section>
 
 <!-- ABOUT -->
-
 <section class="about" id="about">
   <div class="container about-grid">
 
     <div>
       <p class="eyebrow">Welcome to Evara</p>
-
-      <h2 class="section-title">
-        Not just a stay,<br>a Himalayan abode.
-      </h2>
+      <h2 class="section-title">Not just a stay,<br>a Himalayan abode.</h2>
 
       <p class="section-copy">
         Evara Woodhouse is a boutique mountain stay in Shangarh,
@@ -1379,16 +1039,13 @@ img[src=""] {
     </div>
 
     <div class="about-image">
-      <img src="property-exterior.jpg"
-           alt="Evara Woodhouse property exterior"
-           loading="lazy">
+      <img src="property-exterior.jpg" alt="Evara Woodhouse property exterior" loading="lazy">
     </div>
 
   </div>
 </section>
 
 <!-- ROOMS -->
-
 <section class="rooms" id="rooms">
   <div class="container">
 
@@ -1405,19 +1062,13 @@ img[src=""] {
 
       <article class="room-card">
         <div class="room-image">
-          <img src="family-room.png"
-               alt="Family Room at Evara Woodhouse"
-               loading="lazy">
+          <img src="family-room.png" alt="Family Room at Evara Woodhouse" loading="lazy">
         </div>
-
         <div class="room-content">
           <span class="room-label">Room Collection 01</span>
           <h3>Family Room</h3>
-          <p>
-            A welcoming wooden space for families, with big windows
-            and a running balcony.
-          </p>
-          <a class="btn btn-dark"
+          <p>A welcoming wooden space for families, with big windows and a running balcony.</p>
+          <a class="btn btn-dark" target="_blank" rel="noopener"
              href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Family%20Room.">
             Enquire About This Room ↗
           </a>
@@ -1426,19 +1077,13 @@ img[src=""] {
 
       <article class="room-card">
         <div class="room-image">
-          <img src="standard-room-front.jpg"
-               alt="Standard Room with front view"
-               loading="lazy">
+          <img src="standard-room-front.jpg" alt="Standard Room with front view" loading="lazy">
         </div>
-
         <div class="room-content">
           <span class="room-label">Room Collection 02</span>
           <h3>Standard Room — Front View</h3>
-          <p>
-            A warm wooden room with large windows and a running
-            balcony to enjoy the surroundings.
-          </p>
-          <a class="btn btn-dark"
+          <p>A warm wooden room with large windows and a running balcony to enjoy the surroundings.</p>
+          <a class="btn btn-dark" target="_blank" rel="noopener"
              href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Standard%20Room%20Front%20View.">
             Enquire About This Room ↗
           </a>
@@ -1447,19 +1092,13 @@ img[src=""] {
 
       <article class="room-card">
         <div class="room-image">
-          <img src="standard-room-back.jpg"
-               alt="Standard Room with back view"
-               loading="lazy">
+          <img src="standard-room-back.jpg" alt="Standard Room with back view" loading="lazy">
         </div>
-
         <div class="room-content">
           <span class="room-label">Room Collection 03</span>
           <h3>Standard Room — Back View</h3>
-          <p>
-            A comfortable wooden retreat with big windows and
-            a running balcony.
-          </p>
-          <a class="btn btn-dark"
+          <p>A comfortable wooden retreat with big windows and a running balcony.</p>
+          <a class="btn btn-dark" target="_blank" rel="noopener"
              href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Standard%20Room%20Back%20View.">
             Enquire About This Room ↗
           </a>
@@ -1471,65 +1110,61 @@ img[src=""] {
 </section>
 
 <!-- FACILITIES -->
-
 <section class="features" id="facilities">
   <div class="container">
 
     <div class="section-heading">
       <p class="eyebrow">Thoughtful Comforts</p>
       <h2 class="section-title">The little things matter.</h2>
-      <p class="section-copy">
-        Essential comforts to make your mountain stay easy
-        and relaxing.
-      </p>
+      <p class="section-copy">Essential comforts to make your mountain stay easy and relaxing.</p>
     </div>
 
     <div class="feature-grid">
 
       <div class="feature">
-        <span class="feature-icon">⌁</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-wifi"/></svg></span>
         <h3>Wi-Fi</h3>
         <p>Stay connected during your visit.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">🅿️</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-parking"/></svg></span>
         <h3>Parking</h3>
         <p>Parking facility for guests.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">♨️</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-water"/></svg></span>
         <h3>Hot Water</h3>
         <p>Hot water for everyday comfort.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">🧹</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
         <h3>Housekeeping</h3>
         <p>Housekeeping and laundry facilities.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">🔥</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg></span>
         <h3>Room Heater</h3>
         <p>Available on request at an additional charge.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">🌿</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></span>
         <h3>Nature</h3>
         <p>Peaceful surroundings and mountain air.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">💳</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span>
         <h3>Easy Payments</h3>
         <p>Cash and UPI accepted.</p>
       </div>
 
       <div class="feature">
-        <span class="feature-icon">🪵</span>
+        <span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
         <h3>Wooden Interiors</h3>
         <p>Warm wooden spaces throughout your stay.</p>
       </div>
@@ -1539,27 +1174,20 @@ img[src=""] {
 </section>
 
 <!-- EXPERIENCE -->
-
 <section class="experience" id="experience">
   <div class="container experience-grid">
 
     <div class="experience-photo">
-      <img src="common-area-terrace.jpg"
-           alt="Terrace and mountain views at Evara Woodhouse"
-           loading="lazy">
+      <img src="common-area-terrace.jpg" alt="Terrace and mountain views at Evara Woodhouse" loading="lazy">
     </div>
 
     <div>
       <p class="eyebrow">Slow Down · Look Around</p>
-
-      <h2 class="section-title">
-        Let the mountains<br>set the pace.
-      </h2>
+      <h2 class="section-title">Let the mountains<br>set the pace.</h2>
 
       <p class="section-copy">
         Make room for quiet mornings, fresh mountain air,
-        unhurried conversations and the natural beauty
-        of Shangarh.
+        unhurried conversations and the natural beauty of Shangarh.
       </p>
 
       <ul class="experience-list">
@@ -1569,7 +1197,7 @@ img[src=""] {
         <li><span>✦</span> A peaceful base for exploring Sainj Valley</li>
       </ul>
 
-      <a class="btn btn-dark"
+      <a class="btn btn-dark" target="_blank" rel="noopener"
          href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20more%20details%20about%20the%20stay.">
         Plan Your Stay ↗
       </a>
@@ -1579,31 +1207,24 @@ img[src=""] {
 </section>
 
 <!-- DINING -->
-
 <section class="dining" id="dining">
   <div class="container">
-
     <div class="dining-box">
 
       <div class="dining-image">
-        <img src="common-area-interior-view.jpg"
-             alt="Warm shared interior space at Evara Woodhouse"
-             loading="lazy">
+        <img src="common-area-interior-view.jpg" alt="Warm shared interior space at Evara Woodhouse" loading="lazy">
       </div>
 
       <div class="dining-content">
         <p class="eyebrow">A Taste of the Mountains</p>
+        <h2 class="section-title">Good moments,<br>shared slowly.</h2>
 
-        <h2 class="section-title">
-          Good moments,<br>shared slowly.
-        </h2>
-
-        <p>
+        <p class="dining-text">
           Enjoy the relaxed atmosphere of the property and ask
           our team about dining options available during your stay.
         </p>
 
-        <a class="btn btn-light"
+        <a class="btn btn-light" target="_blank" rel="noopener"
            href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20information%20about%20dining%20options.">
           Ask About Dining ↗
         </a>
@@ -1614,7 +1235,6 @@ img[src=""] {
 </section>
 
 <!-- GALLERY -->
-
 <section class="gallery" id="gallery">
   <div class="container">
 
@@ -1622,94 +1242,38 @@ img[src=""] {
       <p class="eyebrow">Photo Gallery</p>
       <h2 class="section-title">Moments from Evara.</h2>
       <p class="section-copy">
-        A glimpse of our rooms, shared spaces and the landscapes
-        around Shangarh.
+        A glimpse of our rooms, shared spaces and the landscapes around Shangarh. Tap any photo to view it larger.
       </p>
     </div>
 
     <div class="gallery-grid">
-
-      <div class="gallery-item tall">
-        <img src="family-room.png"
-             alt="Family Room"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="balcony-mountain-view.png"
-             alt="Balcony and mountain view"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="hero-night.png"
-             alt="Evara Woodhouse at night"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="gallery-flower-meadow.jpg"
-             alt="Flowers in a mountain meadow"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="common-area-terrace.jpg"
-             alt="Terrace with a mountain view"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item tall">
-        <img src="gallery-mountain-pasture.jpg"
-             alt="Mountain pasture"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="gallery-misty-valley.jpg"
-             alt="Misty mountain valley"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="property-exterior.jpg"
-             alt="Property exterior"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="gallery-shangarh-temple.jpg"
-             alt="Traditional temple and meadow"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="gallery-green-meadow.jpg"
-             alt="Green mountain meadow"
-             loading="lazy">
-      </div>
-
-      <div class="gallery-item">
-        <img src="standard-room-front.jpg"
-             alt="Standard room"
-             loading="lazy">
-      </div>
-
+      <div class="gallery-item tall"><img src="family-room.png" alt="Family Room" loading="lazy"></div>
+      <div class="gallery-item"><img src="balcony-mountain-view.png" alt="Balcony and mountain view" loading="lazy"></div>
+      <div class="gallery-item"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></div>
+      <div class="gallery-item"><img src="gallery-flower-meadow.jpg" alt="Flowers in a mountain meadow" loading="lazy"></div>
+      <div class="gallery-item"><img src="common-area-terrace.jpg" alt="Terrace with a mountain view" loading="lazy"></div>
+      <div class="gallery-item tall"><img src="gallery-mountain-pasture.jpg" alt="Mountain pasture" loading="lazy"></div>
+      <div class="gallery-item"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></div>
+      <div class="gallery-item"><img src="property-exterior.jpg" alt="Property exterior" loading="lazy"></div>
+      <div class="gallery-item"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple and meadow" loading="lazy"></div>
+      <div class="gallery-item"><img src="gallery-green-meadow.jpg" alt="Green mountain meadow" loading="lazy"></div>
+      <div class="gallery-item"><img src="standard-room-front.jpg" alt="Standard room" loading="lazy"></div>
     </div>
   </div>
 </section>
 
-<!-- GREEN LIVING -->
+<dialog id="lightbox" aria-label="Photo viewer">
+  <img id="lightboxImg" src="" alt="">
+  <button id="lightboxClose" aria-label="Close photo">✕</button>
+</dialog>
 
+<!-- GREEN LIVING -->
 <section class="green-living">
   <div class="container green-grid">
 
     <div>
       <p class="eyebrow">Closer to Nature</p>
-
-      <h2 class="section-title">
-        A gentler way<br>to experience the hills.
-      </h2>
+      <h2 class="section-title">A gentler way<br>to experience the hills.</h2>
 
       <p class="section-copy">
         Shangarh's landscapes invite us to slow down, appreciate
@@ -1725,22 +1289,18 @@ img[src=""] {
     </div>
 
     <div class="green-image">
-      <img src="gallery-green-meadow.jpg"
-           alt="Green meadow in the Himalayan landscape"
-           loading="lazy">
+      <img src="gallery-green-meadow.jpg" alt="Green meadow in the Himalayan landscape" loading="lazy">
     </div>
 
   </div>
 </section>
 
-<!-- LOCATION -->
-
+<!-- LOCATION & CONTACT -->
 <section class="location" id="location">
   <div class="container location-grid">
 
     <div>
-      <p class="eyebrow">Location & Contact</p>
-
+      <p class="eyebrow">Location &amp; Contact</p>
       <h2 class="section-title">Find us in Shangarh.</h2>
 
       <p class="location-description">
@@ -1750,92 +1310,84 @@ img[src=""] {
       </p>
 
       <div class="location-buttons">
-        <a class="btn btn-dark"
-           href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7"
-           target="_blank" rel="noopener">
-          Open Google Maps ↗
+        <a class="btn btn-dark" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener">
+          <svg class="ic" aria-hidden="true" style="font-size:18px"><use href="#i-pin"/></svg>
+          Open Google Maps
         </a>
       </div>
 
-      <p class="section-copy">
-        Have a question or planning a visit? Reach out using
-        any of the contact options below.
-      </p>
+      <p class="contact-title">Have a question or planning a visit? Reach out any way you like:</p>
 
-      <div class="contact-icons">
+      <div class="contact-list">
 
-        <a class="contact-icon"
-           href="https://wa.me/919667824966"
-           target="_blank" rel="noopener"
-           aria-label="WhatsApp" title="WhatsApp">◉</a>
+        <a class="contact-item" href="https://wa.me/919667824966" target="_blank" rel="noopener">
+          <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+          <span class="contact-label">WhatsApp</span>
+        </a>
 
-        <a class="contact-icon"
-           href="https://www.instagram.com/evaraatshangarh/"
-           target="_blank" rel="noopener"
-           aria-label="Instagram" title="Instagram">◎</a>
+        <a class="contact-item" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">
+          <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+          <span class="contact-label">Instagram</span>
+        </a>
 
-        <a class="contact-icon"
-           href="mailto:evaraatshangarh@gmail.com"
-           aria-label="Email" title="Email">✉</a>
+        <a class="contact-item" href="mailto:evaraatshangarh@gmail.com">
+          <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <span class="contact-label">Email</span>
+        </a>
 
-        <a class="contact-icon"
-           href="tel:+918920246727"
-           aria-label="Call property" title="Call">☎</a>
+        <a class="contact-item" href="tel:+918920246727">
+          <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
+          <span class="contact-label">Call</span>
+        </a>
 
       </div>
     </div>
 
-    <a class="map-card"
-       href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7"
-       target="_blank" rel="noopener"
+    <a class="map-card" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener"
        aria-label="Open Evara Woodhouse location in Google Maps">
-
+      <span class="map-pin"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span>
       <div class="map-label">
         <h3>Evara Woodhouse</h3>
         <p>Shangarh · Sainj Valley · Himachal Pradesh</p>
-        <p style="margin-top:8px">Open location ↗</p>
+        <p style="margin-top:6px;font-weight:600;color:var(--forest)">Open location ↗</p>
       </div>
-
     </a>
 
   </div>
 </section>
 
 <!-- STAY DETAILS -->
-
 <section class="stay-details">
   <div class="container">
 
     <div class="section-heading">
       <p class="eyebrow">Before You Arrive</p>
       <h2 class="section-title">The details, made simple.</h2>
-      <p class="section-copy">
-        A few useful things to know before your mountain getaway.
-      </p>
+      <p class="section-copy">A few useful things to know before your mountain getaway.</p>
     </div>
 
     <div class="stay-grid">
 
       <div class="stay-card">
-        <span class="icon">🕛</span>
+        <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span>
         <h3>Check-in</h3>
         <p>From 12:00 PM</p>
       </div>
 
       <div class="stay-card">
-        <span class="icon">🕚</span>
+        <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span>
         <h3>Check-out</h3>
         <p>By 11:00 AM</p>
       </div>
 
       <div class="stay-card">
-        <span class="icon">💳</span>
+        <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span>
         <h3>Payments</h3>
         <p>Cash and UPI accepted.</p>
       </div>
 
       <div class="stay-card">
-        <span class="icon">💬</span>
+        <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg></span>
         <h3>Reservations</h3>
         <p>Contact us directly for availability and enquiries.</p>
       </div>
@@ -1845,29 +1397,24 @@ img[src=""] {
 </section>
 
 <!-- BOOKING CTA -->
-
 <section class="booking">
   <div class="container">
 
     <p class="eyebrow">Your Mountains Are Calling</p>
-
-    <h2 class="section-title">
-      Find your quiet corner<br>in the Himalayas.
-    </h2>
+    <h2 class="section-title">Find your quiet corner<br>in the Himalayas.</h2>
 
     <p class="section-copy">
       Tell us your travel dates and room preference.
       Our team will help you with your enquiry.
     </p>
 
-    <a class="btn btn-light"
+    <a class="btn btn-light" target="_blank" rel="noopener"
        href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.%20Please%20share%20availability.">
-      Enquire on WhatsApp ↗
+      <svg class="ic" aria-hidden="true" style="font-size:19px"><use href="#i-whatsapp"/></svg>
+      Enquire on WhatsApp
     </a>
 
-    <p class="booking-note">
-      Room availability and details are confirmed directly by the property.
-    </p>
+    <p class="booking-note">Room availability and details are confirmed directly by the property.</p>
 
   </div>
 </section>
@@ -1875,58 +1422,61 @@ img[src=""] {
 </main>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="container">
 
     <div class="footer-main">
 
-      <a href="#home" class="brand">
-        <span class="brand-icon">⌂</span>
-        <span>
+      <a href="#home" class="brand" aria-label="Back to top">
+        <span class="brand-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
+        <span class="brand-text">
           <span class="brand-name">EVARA</span>
-          <span class="brand-sub" style="display:block">WOODHOUSE</span>
+          <span class="brand-sub">WOODHOUSE</span>
         </span>
       </a>
 
       <div class="footer-social">
 
-        <a href="https://wa.me/919667824966"
-           target="_blank" rel="noopener"
-           aria-label="WhatsApp">◉</a>
+        <a href="https://wa.me/919667824966" target="_blank" rel="noopener">
+          <span class="fs-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+          WhatsApp
+        </a>
 
-        <a href="https://www.instagram.com/evaraatshangarh/"
-           target="_blank" rel="noopener"
-           aria-label="Instagram">◎</a>
+        <a href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">
+          <span class="fs-icon"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+          Instagram
+        </a>
 
-        <a href="mailto:evaraatshangarh@gmail.com"
-           aria-label="Email">✉</a>
+        <a href="mailto:evaraatshangarh@gmail.com">
+          <span class="fs-icon"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          Email
+        </a>
 
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>© <span id="year"></span> Evara Woodhouse. All rights reserved.</p>
+      <p>© <span id="year">2026</span> Evara Woodhouse. All rights reserved.</p>
       <p>Shangarh, Sainj Valley, Himachal Pradesh</p>
     </div>
 
   </div>
 </footer>
 
-<a class="whatsapp-float"
-   href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay."
-   target="_blank" rel="noopener">
-  ◉ WhatsApp Enquiry ↗
+<a class="whatsapp-float" target="_blank" rel="noopener"
+   href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
+  <svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  WhatsApp
 </a>
 
 <script>
+/* Mobile menu */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", function () {
   const isOpen = navLinks.classList.toggle("open");
-
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.textContent = isOpen ? "✕" : "☰";
 });
@@ -1939,7 +1489,28 @@ document.querySelectorAll("#navLinks a").forEach(function (link) {
   });
 });
 
+/* Footer year */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Gallery lightbox */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".gallery-item img").forEach(function (img) {
+  img.addEventListener("click", function () {
+    lightboxImg.src = img.getAttribute("src");
+    lightboxImg.alt = img.alt;
+    if (typeof lightbox.showModal === "function") lightbox.showModal();
+  });
+});
+
+document.getElementById("lightboxClose").addEventListener("click", function () {
+  lightbox.close();
+});
+
+lightbox.addEventListener("click", function (e) {
+  if (e.target === lightbox || e.target === lightboxImg) lightbox.close();
+});
 </script>
 
 </body>
