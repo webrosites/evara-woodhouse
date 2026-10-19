@@ -1,70 +1,570 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#203d31">
-<meta name="description" content="A quiet mountain stay above Shangarh meadows. Discover Evara Woodhouse in Sainj Valley, Himachal Pradesh.">
-<title>Evara Woodhouse | Shangarh, Himachal Pradesh</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#18392c">
+<meta name="description" content="Discover Evara Woodhouse, a peaceful mountain stay in Shangarh, Sainj Valley, Himachal Pradesh.">
+<title>Evara Woodhouse | Shangarh</title>
+
 <style>
-:root{--green:#203d31;--green2:#2f5140;--cream:#f7f4eb;--paper:#fffdf8;--ink:#26362c;--muted:#68746a;--gold:#b68b5b;--line:#e5e0d5;--r:22px;--shadow:0 15px 42px #1f35230f}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}img{width:100%;height:100%;display:block;object-fit:cover}button{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.section{padding:82px 0}.eyebrow{color:#8a704a;font-size:.74rem;letter-spacing:.18em;font-weight:700;text-transform:uppercase}.head{text-align:center;max-width:700px;margin:0 auto 36px}.head h2,.copy h2,.green-copy h2{font:400 clamp(2.15rem,4.4vw,3.4rem)/1.12 Georgia,serif;letter-spacing:-.035em;margin:10px 0 15px}.head p,.muted{color:var(--muted)}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border-radius:999px;padding:12px 19px;font-size:.9rem;font-weight:700;border:1px solid transparent;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--green);color:#fff}.light{background:var(--cream);color:var(--green)}.outline{border-color:#ffffff9c;color:white;background:#ffffff12}.top{position:sticky;top:0;z-index:20;background:#fffdf8f2;backdrop-filter:blur(12px);border-bottom:1px solid #203d3118}.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;color:var(--green);line-height:1}.mark{height:40px;width:40px;border:1px solid #b7c4b4;border-radius:50%;display:grid;place-items:center;font-size:1.25rem}.brand strong{display:block;font:1.25rem Georgia,serif;letter-spacing:.09em}.brand small{font-size:.62rem;letter-spacing:.24em}.links{display:flex;align-items:center;gap:21px;font-size:.86rem;color:#45564a}.links a:hover{color:var(--gold)}.toggle{display:none;background:none;border:0;font-size:1.55rem;color:var(--green)}.hero{position:relative;isolation:isolate;overflow:hidden;min-height:650px;display:flex;align-items:center;color:white;background:#1b3027}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url('hero-night.png') center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0d2018d9,#0d20188a 48%,#0d201821),linear-gradient(0deg,#0d20184d,transparent 50%)}.hero-copy{max-width:680px;padding:85px 0 70px}.hero .eyebrow{color:#e6d2b0}.hero h1{font:400 clamp(3.7rem,8vw,6.7rem)/.96 Georgia,serif;letter-spacing:-.05em;margin:17px 0 22px}.hero p{max-width:530px;color:#f1eee6;font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.points{display:flex;flex-wrap:wrap;gap:12px 24px;border-top:1px solid #ffffff45;padding-top:20px;margin-top:45px;font-size:.83rem;color:#f2eee5}.points span:before{content:"✦";color:#e2c79d;margin-right:8px}.about-grid,.split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}.photo{border-radius:var(--r);overflow:hidden;background:#dfe6d8;box-shadow:var(--shadow)}.about-photo{height:470px}.copy p{color:var(--muted)}.copy .btn{margin-top:14px}.rooms{background:var(--cream)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 8px 25px #23322608}.card-photo{height:265px;background:#dfe6d8}.card-body{padding:22px}.card h3{font:400 1.5rem/1.25 Georgia,serif;margin:0 0 9px}.card p{color:var(--muted);font-size:.92rem;margin:0 0 15px}.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}.pill{background:#edf0e8;color:#435847;padding:5px 9px;border-radius:999px;font-size:.73rem}.text-link{color:var(--green);font-weight:700;font-size:.9rem}.dark{background:var(--green);color:white}.dark .eyebrow{color:#e0c69d}.dark .head p,.dark p{color:#d8e0d6}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}.feature{border:1px solid #ffffff2b;border-radius:15px;padding:14px 10px;text-align:center;font-size:.86rem}.feature span{display:block;color:#e2c99f;font-size:1.35rem;margin-bottom:5px}.split-photo{height:400px}.attractions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.attraction{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}.attraction-photo{height:210px}.attraction-body{padding:17px 19px}.attraction h3{font:400 1.3rem Georgia,serif;margin:0 0 5px}.attraction p{color:var(--muted);font-size:.9rem;margin:0}.dining{background:#f0ede3}.dining-photo{height:330px}.note{padding:12px 15px;background:#ffffffad;border-radius:12px;color:#59665a;font-size:.86rem;margin:18px 0}.stay-photo{height:420px}.stay-info h2{font:400 clamp(2.1rem,4vw,3rem)/1.1 Georgia,serif;margin:10px 0}.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:23px 0}.tile{background:var(--cream);padding:14px;border-radius:13px}.tile small{display:block;color:var(--muted);font-size:.76rem}.tile strong{font-size:.97rem}.accordion details{border-top:1px solid var(--line);padding:13px 0}.accordion summary{font-weight:700;cursor:pointer}.accordion p{font-size:.91rem;color:var(--muted);margin-bottom:0}.green{background:#edf0e7}.green-photo{height:410px}.green-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}.green-item{background:#ffffffa8;border-radius:11px;padding:11px 12px;font-size:.88rem}.green-item:before{content:"✓";color:#557452;font-weight:bold;margin-right:8px}.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:185px;gap:12px}.gallery a{overflow:hidden;border-radius:15px;background:#dfe6d8}.gallery a:first-child,.gallery a:nth-child(6){grid-row:span 2}.gallery img{transition:transform .4s}.gallery a:hover img{transform:scale(1.04)}.location{background:var(--cream)}.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:stretch}.location-copy h2{font:400 clamp(2.2rem,4vw,3.2rem)/1.1 Georgia,serif;margin:10px 0}.location-copy p{color:var(--muted)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:23px}.contact{background:white;border:1px solid var(--line);border-radius:14px;padding:14px}.contact small{display:block;color:var(--muted);font-size:.75rem}.contact strong{font-size:.88rem;overflow-wrap:anywhere}.map{min-height:350px;border-radius:var(--r);position:relative;overflow:hidden;background:linear-gradient(135deg,#dfe7d7,#b8cbb5 50%,#e9e2d1)}.map:before,.map:after{content:"";position:absolute;inset:-20%;border:2px solid #ffffff85;transform:rotate(-24deg);border-radius:45%}.map:after{transform:rotate(28deg);inset:12% -20%}.pin{position:absolute;z-index:1;left:54%;top:38%;font-size:2.5rem}.map-label{position:absolute;z-index:2;left:20px;bottom:20px;background:white;border-radius:13px;padding:14px 17px;box-shadow:var(--shadow)}.map-label strong,.map-label small{display:block}.map-label small{font-size:.8rem;color:var(--muted)}footer{background:#172f25;color:#e9eee5;padding:48px 0 18px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.25fr;gap:28px}.footer-brand strong{font:1.5rem Georgia,serif;letter-spacing:.1em}.footer-brand p,.footer-col a{font-size:.87rem;color:#cbd6cb}.footer-col h4{color:#e2c99f;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}.footer-col a{display:block;margin:7px 0}.footer-bottom{border-top:1px solid #ffffff25;margin-top:30px;padding-top:17px;display:flex;justify-content:space-between;gap:12px;font-size:.78rem;color:#b9c8bb}.float-wa{position:fixed;right:16px;bottom:16px;z-index:15;background:#1e7d50;color:white;border-radius:999px;padding:12px 16px;box-shadow:0 8px 24px #173c2b40;font-weight:bold;font-size:.88rem}
-@media(max-width:900px){.links{gap:11px;font-size:.79rem}.about-grid,.split{gap:28px}.card-photo{height:220px}.card-body{padding:17px}.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.wrap{width:calc(100% - 30px)}.section{padding:62px 0}.nav{height:66px}.toggle{display:block}.links{display:none;position:absolute;top:66px;left:0;right:0;background:var(--paper);padding:18px 22px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;font-size:1rem}.links.open{display:flex}.hero{min-height:660px}.hero-copy{padding:70px 0 55px}.hero h1{font-size:clamp(3.6rem,17vw,5.4rem)}.hero p{font-size:1rem}.points{gap:12px 17px;font-size:.77rem}.about-grid,.split,.location-grid{grid-template-columns:1fr}.about-photo{height:315px;order:-1}.cards,.attractions{grid-template-columns:1fr}.card-photo{height:270px}.feature-grid{grid-template-columns:repeat(2,1fr)}.split-photo{height:300px}.dining-photo{height:280px}.stay-photo{height:300px;order:-1}.green-photo{height:300px}.green-list{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:9px}.gallery a:first-child,.gallery a:nth-child(6){grid-row:span 1}.gallery a:nth-child(3){grid-row:span 2}.contact-grid{grid-template-columns:1fr 1fr}.map{min-height:290px}.footer-grid{grid-template-columns:1fr 1fr;gap:23px 15px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}.float-wa{right:11px;bottom:11px;padding:10px 13px}}
-@media(max-width:390px){.contact-grid,.tiles{grid-template-columns:1fr}.actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
+:root{
+  --green:#18392c;
+  --green2:#294b39;
+  --cream:#f5f1e7;
+  --white:#fffdf8;
+  --gold:#c4a779;
+  --text:#26372c;
+  --muted:#687369;
+  --border:#e6e0d4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--white);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+section{padding:90px 0}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:bold;color:#a18456}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+h2{font-size:clamp(34px,5vw,56px);line-height:1.12;margin:12px 0 20px;letter-spacing:-1.2px}
+p{margin:0 0 16px}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:50px;font-size:13px;font-weight:bold;transition:.25s;border:1px solid transparent}
+.btn:hover{transform:translateY(-3px)}
+.btn-dark{background:var(--green);color:white}
+.btn-light{background:var(--cream);color:var(--green)}
+.btn-outline{border-color:#ffffffa6;color:white;background:#ffffff12}
+.section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+.section-head p{color:var(--muted)}
+/* NAVIGATION */
+header{position:sticky;top:0;z-index:50;background:#fffdf8f2;backdrop-filter:blur(14px);border-bottom:1px solid #18392c18}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--green)}
+.brand-icon{height:42px;width:42px;border:1px solid #b8c7b7;border-radius:50%;display:grid;place-items:center;font-size:21px}
+.brand-name{font:22px Georgia,serif;letter-spacing:2px;line-height:1.1}
+.brand-name small{display:block;font:9px Arial,sans-serif;letter-spacing:3px;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:12px}
+.nav-links a:hover{color:#a18456}
+.menu-btn{display:none;background:none;border:0;font-size:27px;color:var(--green)}
+/* HERO */
+.hero{position:relative;min-height:690px;display:flex;align-items:center;color:white;background:var(--green);overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:url("property-exterior.jpg") center 48%/cover no-repeat;z-index:0}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#10271fe8 0%,#10271fb8 45%,#10271f30 100%),linear-gradient(0deg,#10271f70,transparent 60%);z-index:1}
+.hero-content{position:relative;z-index:2;padding:90px 0;max-width:720px}
+.hero .eyebrow{color:#e6d3af}
+.hero h1{font-size:clamp(58px,9vw,108px);line-height:.94;letter-spacing:-4px;margin:24px 0}
+.hero p{font-size:17px;max-width:520px;color:#f1eee6}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-points{display:flex;gap:14px 24px;flex-wrap:wrap;border-top:1px solid #ffffff50;margin-top:48px;padding-top:22px;font-size:12px}
+.hero-points span:before{content:"✦";color:var(--gold);margin-right:8px}
+/* ABOUT */
+.about-grid,.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.photo{overflow:hidden;border-radius:22px;background:#e0e6d9}
+.about-photo{height:500px}
+.about-copy p{color:var(--muted)}
+/* ROOMS */
+.rooms{background:var(--cream)}
+.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.room-card{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.25s}
+.room-card:hover{transform:translateY(-5px);box-shadow:0 16px 38px #1a33200e}
+.room-photo{height:290px;background:#dfe6d8}
+.room-info{padding:24px}
+.room-info h3{font-size:27px;line-height:1.2;margin:0 0 12px}
+.room-info p{font-size:14px;color:var(--muted)}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}
+.tag{background:#eaf0e7;border-radius:30px;padding:5px 10px;font-size:11px;color:#3b5944}
+/* EXPERIENCE */
+.experience{background:var(--green);color:white}
+.experience .eyebrow{color:#ddc49a}
+.experience .muted{color:#d5dfd6}
+.experience-photo{height:430px}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.feature{border:1px solid #ffffff2c;border-radius:14px;padding:17px 12px;text-align:center;font-size:13px}
+.feature-icon{font-size:26px;display:block;color:#e3c89c;margin-bottom:7px}
+/* PLACES */
+.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.place-card{border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.place-photo{height:230px}
+.place-info{padding:20px}
+.place-info h3{font-size:23px;margin:0 0 8px}
+.place-info p{font-size:13px;color:var(--muted);margin:0}
+/* DINING */
+.dining{background:#f0ede3}
+.dining-photo{height:390px}
+.note{background:#fffdf8;border-radius:12px;padding:14px;font-size:13px;color:var(--muted);margin:20px 0}
+/* STAY DETAILS */
+.stay-photo{height:440px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:25px 0}
+.tile{padding:16px;background:var(--cream);border-radius:13px}
+.tile small{display:block;font-size:11px;color:var(--muted)}
+.tile strong{font-size:15px}
+details{border-top:1px solid var(--border);padding:15px 0}
+summary{font-size:14px;font-weight:bold;cursor:pointer}
+details p{font-size:13px;color:var(--muted);margin:12px 0 0}
+/* FACILITIES */
+.amenities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.amenity{display:flex;align-items:center;gap:10px;padding:12px;background:#ffffff12;border:1px solid #ffffff25;border-radius:12px;font-size:13px}
+.amenity-icon{height:34px;width:34px;flex:0 0 34px;display:grid;place-items:center;background:#ffffff16;border-radius:9px;font-size:19px;color:#e6cda4}
+/* GREEN LIVING */
+.green-living{background:#edf0e7}
+.green-photo{height:420px}
+.green-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
+.green-item{background:#ffffffb5;border-radius:11px;padding:12px;font-size:13px}
+.green-item span{margin-right:7px}
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:190px;gap:12px}
+.gallery a{display:block;overflow:hidden;border-radius:14px;background:#dfe6d8}
+.gallery a:first-child,.gallery a:nth-child(6){grid-row:span 2}
+.gallery img{transition:transform .4s}
+.gallery a:hover img{transform:scale(1.05)}
+/* CONTACT */
+.location{background:var(--cream)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:stretch}
+.location-copy h2{font-size:clamp(36px,5vw,55px)}
+.location-copy p{color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px}
+.contact-button{min-height:84px;display:flex;align-items:center;gap:13px;background:white;border:1px solid var(--border);border-radius:15px;padding:14px;transition:.2s}
+.contact-button:hover{transform:translateY(-3px);border-color:#a9b9a7}
+.contact-icon{height:43px;width:43px;flex:0 0 43px;display:grid;place-items:center;background:#eaf0e7;border-radius:50%;font-size:22px;color:var(--green)}
+.contact-button strong{font-size:13px;display:block}
+.contact-button small{font-size:11px;color:var(--muted);display:block}
+.map-card{min-height:360px;position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#dfe7d7,#b9cbb5 55%,#e9e2d1)}
+.map-card:before,.map-card:after{content:"";position:absolute;inset:-20%;border:2px solid #ffffff8a;transform:rotate(-24deg);border-radius:45%}
+.map-card:after{transform:rotate(28deg);inset:12% -20%}
+.map-pin{position:absolute;top:38%;left:52%;font-size:40px;z-index:2}
+.map-label{position:absolute;bottom:20px;left:20px;background:white;border-radius:13px;padding:15px 18px;z-index:3;box-shadow:0 10px 30px #18392c18}
+.map-label strong,.map-label small{display:block}
+.map-label small{font-size:11px;color:var(--muted)}
+/* FOOTER */
+footer{background:#142c22;color:#edf1e9;padding:55px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px}
+.footer-title{font:25px Georgia,serif;letter-spacing:2px}
+.footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#e2c99f;margin:0 0 15px}
+.footer-col a{display:block;color:#cbd6cb;font-size:13px;margin:9px 0}
+.footer-col a:hover{color:white}
+.footer-bottom{border-top:1px solid #ffffff24;margin-top:35px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#b9c8bb}
+.float-wa{position:fixed;right:16px;bottom:16px;z-index:40;background:#18834c;color:white;border-radius:50px;padding:13px 18px;font-size:13px;font-weight:bold;box-shadow:0 8px 25px #18392c35}
+@media(max-width:900px){
+ .nav-links{gap:12px;font-size:11px}
+ .room-photo{height:230px}
+ .room-info{padding:17px}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
+ .about-grid,.split{gap:30px}
+}
+@media(max-width:700px){
+ section{padding:65px 0}
+ .wrap{width:calc(100% - 30px)}
+ .nav{height:67px}
+ .menu-btn{display:block}
+ .nav-links{display:none;position:absolute;top:67px;left:0;right:0;background:var(--white);padding:20px;box-shadow:0 15px 25px #18392c12;flex-direction:column;align-items:stretch;font-size:15px}
+ .nav-links.open{display:flex}
+ .hero{min-height:700px}
+ .hero-content{padding:75px 0}
+ .hero h1{font-size:clamp(58px,17vw,82px);letter-spacing:-2px}
+ .hero p{font-size:15px}
+ .hero-points{font-size:11px;gap:12px}
+ .about-grid,.split,.location-grid{grid-template-columns:1fr;gap:28px}
+ .about-photo{height:330px;order:-1}
+ .room-grid,.place-grid{grid-template-columns:1fr}
+ .room-photo{height:275px}
+ .feature-grid{grid-template-columns:repeat(2,1fr)}
+ .experience-photo,.dining-photo,.green-photo{height:300px}
+ .stay-photo{height:310px;order:-1}
+ .green-list{grid-template-columns:1fr}
+ .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:155px;gap:9px}
+ .contact-grid{gap:9px}
+ .contact-button{padding:10px;gap:9px}
+ .contact-icon{height:37px;width:37px;flex-basis:37px;font-size:19px}
+ .contact-button strong{font-size:12px}
+ .contact-button small{font-size:10px}
+ .map-card{min-height:300px}
+ .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px}
+ .footer-bottom{flex-direction:column}
+}
 </style>
 </head>
+
 <body>
-<header class="top"><div class="wrap nav">
-<a class="brand" href="#home"><span class="mark">⌂</span><span><strong>EVARA</strong><small>WOODHOUSE</small></span></a>
-<button class="toggle" id="toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="links" id="links"><a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#experience">Experience</a><a href="#dining">Dining</a><a href="#location">Location</a><a href="#gallery">Gallery</a><a class="btn primary" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">Book Your Stay ↗</a></nav>
-</div></header>
+
+<header>
+ <div class="wrap nav">
+  <a href="#home" class="brand" aria-label="Evara Woodhouse home">
+   <span class="brand-icon">⌂</span>
+   <span class="brand-name">EVARA<small>WOODHOUSE</small></span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">Home</a>
+   <a href="#about">About</a>
+   <a href="#rooms">Rooms</a>
+   <a href="#experience">Experience</a>
+   <a href="#dining">Dining</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#location">Location</a>
+   <a href="#location" class="btn btn-dark">Enquire Now ↗</a>
+  </nav>
+ </div>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Shangarh · Sainj Valley · Himachal Pradesh</div><h1>Evara<br>Woodhouse</h1><p>A quiet mountain stay above Shangarh meadows. Discover wooden warmth, open views and the calm of the Himalayas.</p><div class="actions"><a class="btn light" href="#rooms">Explore Rooms ↓</a><a class="btn outline" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">WhatsApp Enquiry ↗</a></div><div class="points"><span>Mountain Views</span><span>Wooden Architecture</span><span>Beside Shangarh Meadow</span></div></div></div></section>
-<section class="section"><div class="wrap about-grid"><div class="copy"><div class="eyebrow">About Evara</div><h2>Not just a stay,<br>a Himalayan abode.</h2><p>Evara Woodhouse is a boutique mountain stay in Shangarh, Himachal Pradesh. Come for the meadows, stay for the mountain air, warm wooden spaces and a slower rhythm of life.</p><p>Thoughtfully placed in nature, it is a welcoming base for exploring the beauty of Sainj Valley and the Great Himalayan National Park region.</p><a class="btn primary" href="#experience">Discover Evara →</a></div><div class="photo about-photo"><img src="property-exterior.jpg" alt="Evara Woodhouse property exterior" loading="lazy"></div></div></section>
-<section class="section rooms" id="rooms"><div class="wrap"><div class="head"><div class="eyebrow">Our Rooms</div><h2>Find your kind of quiet.</h2><p>Comfortable wooden rooms with big windows and running balconies. Choose the view that feels right for your stay.</p></div><div class="cards">
-<article class="card"><div class="card-photo"><img src="family-room.png" alt="Family Room at Evara Woodhouse" loading="lazy"></div><div class="card-body"><h3>Family Room</h3><p>A welcoming room for families to settle in, unwind and enjoy a peaceful mountain stay.</p><div class="pills"><span class="pill">Family-friendly</span><span class="pill">Big windows</span><span class="pill">Running balcony</span></div><a class="text-link" href="https://wa.me/919667824966?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Family%20Room." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>
-<article class="card"><div class="card-photo"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></div><div class="card-body"><h3>Standard Room <span style="font-size:1rem;color:#8a704a">(Front View)</span></h3><p>Wake up to open mountain and meadow views from a bright, comfortable room.</p><div class="pills"><span class="pill">Mountain view</span><span class="pill">Big windows</span><span class="pill">Running balcony</span></div><a class="text-link" href="https://wa.me/919667824966?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20%28Front%20View%29." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>
-<article class="card"><div class="card-photo"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></div><div class="card-body"><h3>Standard Room <span style="font-size:1rem;color:#8a704a">(Back View)</span></h3><p>A restful view towards village life and surrounding greenery, with the same warm wooden feel.</p><div class="pills"><span class="pill">Village & greenery</span><span class="pill">Big windows</span><span class="pill">Running balcony</span></div><a class="text-link" href="https://wa.me/919667824966?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20%28Back%20View%29." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>
-</div></div></section>
-<section class="section dark" id="experience"><div class="wrap split"><div><div class="eyebrow">The Evara Experience</div><h2>Mountains, meadows<br>and room to breathe.</h2><p>Set beside the famous Shangarh meadow, Evara Woodhouse offers a peaceful base for slow mornings, scenic walks and evenings spent taking in the mountain air.</p><div class="feature-grid"><div class="feature"><span>☀</span>Sunny Courtyard</div><div class="feature"><span>⌂</span>Social Balcony</div><div class="feature"><span>◌</span>Quiet Lounge</div><div class="feature"><span>♨</span>Bonfire on Request</div></div></div><div class="photo split-photo"><img src="balcony-mountain-view.png" alt="Mountain view from the balcony" loading="lazy"></div></div></section>
-<section class="section"><div class="wrap"><div class="head"><div class="eyebrow">Explore Nearby</div><h2>Nature, just beyond your door.</h2><p>Make time for the meadows, forest trails and beautiful corners of the Sainj Valley.</p></div><div class="attractions">
-<article class="attraction"><div class="attraction-photo"><img src="gallery-green-meadow.jpg" alt="Green meadow surrounded by mountains" loading="lazy"></div><div class="attraction-body"><h3>Shangarh Meadow</h3><p>Right in front of the property, a beautiful open meadow framed by mountains.</p></div></article>
-<article class="attraction"><div class="attraction-photo"><img src="gallery-misty-valley.jpg" alt="Misty Himalayan valley" loading="lazy"></div><div class="attraction-body"><h3>Sainj Valley Views</h3><p>Take in changing mountain light, misty valleys and peaceful natural scenery.</p></div></article>
-<article class="attraction"><div class="attraction-photo"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple in a green mountain setting" loading="lazy"></div><div class="attraction-body"><h3>Local Heritage</h3><p>Discover the region’s traditional architecture, village life and cultural character.</p></div></article>
-</div></div></section>
-<section class="section dining" id="dining"><div class="wrap split"><div class="copy"><div class="eyebrow">Dining at Evara</div><h2>Fresh food,<br>mountain flavours.</h2><p>The property kitchen serves breakfast, lunch, dinner and all-day bites, with a focus on a warm, simple meal after a day outdoors.</p><div class="note">Kitchen last orders: 10:00 PM. Ask the team about the available menu during your stay.</div><a class="btn primary" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20could%20you%20please%20share%20the%20current%20food%20menu%3F" target="_blank" rel="noopener">Ask About Dining ↗</a></div><div class="photo dining-photo"><img src="common-area-interior-view.jpg" alt="Warm wooden shared interior at Evara Woodhouse" loading="lazy"></div></div></section>
-<section class="section" id="stay"><div class="wrap split"><div class="photo stay-photo"><img src="common-area-terrace.jpg" alt="Shared terrace space at Evara Woodhouse" loading="lazy"></div><div class="stay-info"><div class="eyebrow">Booking & Stay Info</div><h2>Plan your stay.</h2><p class="muted">A few helpful details to make your visit smooth and enjoyable.</p><div class="tiles"><div class="tile"><small>Check-in</small><strong>12:00 PM</strong></div><div class="tile"><small>Check-out</small><strong>11:00 AM</strong></div><div class="tile"><small>Booking</small><strong>WhatsApp enquiry</strong></div><div class="tile"><small>Payment</small><strong>Cash or UPI</strong></div></div><div class="accordion">
-<details><summary>Guest Information</summary><p>Please carry valid government photo identification for check-in. For special requirements, contact the property team before arrival.</p></details>
-<details><summary>Facilities at the Property</summary><p>Wi-Fi, parking, housekeeping and laundry are available. Every room has a geyser. Room heaters are available on request at an additional charge.</p></details>
-<details><summary>Road, Snow & Weather</summary><p>Mountain weather and road conditions can change. Please check local conditions before travelling and allow extra time for the journey.</p></details>
-<details><summary>Bonfire & Transport</summary><p>Bonfire evenings are available on request. Ask the property team about transport or pick-up support from Sainj or Aut.</p></details>
-</div></div></div></section>
-<section class="section green" id="green"><div class="wrap split"><div class="green-copy"><div class="eyebrow">Green Living</div><h2>Built with nature in mind.</h2><p class="muted">Evara Woodhouse is built with locally sourced timber and designed to make the most of daylight and mountain comfort. The property values local sourcing and care for the surrounding ecology.</p><div class="green-list"><div class="green-item">Locally sourced timber</div><div class="green-item">Daylight & thermal comfort</div><div class="green-item">Water from a local waterfall</div><div class="green-item">Local food sourcing</div><div class="green-item">Composting organic waste</div><div class="green-item">Traditional planting</div></div></div><div class="photo green-photo"><img src="sunrise-mountain-view.jpg" alt="Mountain scenery in the Shangarh region" loading="lazy"></div></div></section>
-<section class="section" id="gallery"><div class="wrap"><div class="head"><div class="eyebrow">Photo Gallery</div><h2>Moments from Evara.</h2><p>A glimpse of the rooms, shared spaces and landscapes around Shangarh.</p></div><div class="gallery">
-<a href="family-room.png" target="_blank" rel="noopener" aria-label="View family room photo"><img src="family-room.png" alt="Family Room" loading="lazy"></a>
-<a href="balcony-mountain-view.png" target="_blank" rel="noopener" aria-label="View balcony photo"><img src="balcony-mountain-view.png" alt="Balcony and mountain view" loading="lazy"></a>
-<a href="hero-night.png" target="_blank" rel="noopener" aria-label="View property at night"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></a>
-<a href="gallery-flower-meadow.jpg" target="_blank" rel="noopener" aria-label="View flower meadow photo"><img src="gallery-flower-meadow.jpg" alt="Flowers in a mountain meadow" loading="lazy"></a>
-<a href="common-area-interior-view.jpg" target="_blank" rel="noopener" aria-label="View common interior photo"><img src="common-area-interior-view.jpg" alt="Wooden common area" loading="lazy"></a>
-<a href="gallery-mountain-pasture.jpg" target="_blank" rel="noopener" aria-label="View mountain pasture photo"><img src="gallery-mountain-pasture.jpg" alt="Mountain pasture" loading="lazy"></a>
-<a href="gallery-misty-valley.jpg" target="_blank" rel="noopener" aria-label="View misty valley photo"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></a>
-<a href="property-exterior.jpg" target="_blank" rel="noopener" aria-label="View property exterior photo"><img src="property-exterior.jpg" alt="Property exterior" loading="lazy"></a>
-<a href="gallery-shangarh-temple.jpg" target="_blank" rel="noopener" aria-label="View local temple photo"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple and meadow" loading="lazy"></a>
-<a href="standard-room-front.jpg" target="_blank" rel="noopener" aria-label="View standard front room photo"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></a>
-<a href="gallery-green-meadow.jpg" target="_blank" rel="noopener" aria-label="View green meadow photo"><img src="gallery-green-meadow.jpg" alt="Green mountain meadow" loading="lazy"></a>
-<a href="standard-room-back.jpg" target="_blank" rel="noopener" aria-label="View standard back room photo"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></a>
-</div></div></section>
-<section class="section location" id="location"><div class="wrap location-grid"><div class="location-copy"><div class="eyebrow">Location & Contact</div><h2>Find us in Shangarh.</h2><p>Evara Woodhouse<br>Shangarh, Sainj Valley, Kullu district,<br>Himachal Pradesh, India</p><a class="btn primary" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener">Open in Google Maps ↗</a><div class="contact-grid"><a class="contact" href="tel:+918920246727"><small>Call (Property)</small><strong>+91 89202 46727</strong></a><a class="contact" href="https://wa.me/919667824966" target="_blank" rel="noopener"><small>WhatsApp</small><strong>+91 96678 24966</strong></a><a class="contact" href="mailto:evaraatshangarh@gmail.com"><small>Email</small><strong>evaraatshangarh@gmail.com</strong></a><a class="contact" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener"><small>Instagram</small><strong>@evaraatshangarh</strong></a></div></div><a class="map" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener" aria-label="Open Evara Woodhouse in Google Maps"><span class="pin">📍</span><span class="map-label"><strong>Evara Woodhouse</strong><small>Shangarh · Himachal Pradesh<br>Tap to open map ↗</small></span></a></div></section>
+
+<!-- HERO -->
+<section class="hero" id="home">
+ <div class="wrap hero-content">
+  <div class="eyebrow">Shangarh · Sainj Valley · Himachal Pradesh</div>
+  <h1>Evara<br>Woodhouse</h1>
+  <p>A quiet mountain stay above Shangarh meadows. Discover wooden warmth, open views and the calming beauty of the Himalayas.</p>
+
+  <div class="hero-buttons">
+   <a class="btn btn-light" href="#rooms">Explore Rooms ↓</a>
+   <a class="btn btn-outline" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">WhatsApp Enquiry ↗</a>
+  </div>
+
+  <div class="hero-points">
+   <span>Mountain Views</span>
+   <span>Wooden Architecture</span>
+   <span>Beside Shangarh Meadow</span>
+  </div>
+ </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <div class="wrap about-grid">
+  <div class="about-copy">
+   <div class="eyebrow">Welcome to Evara</div>
+   <h2>Not just a stay,<br>a Himalayan abode.</h2>
+   <p>Evara Woodhouse is a boutique mountain stay in Shangarh, Himachal Pradesh. Come for the meadows, stay for the mountain air, warm wooden spaces and a slower rhythm of life.</p>
+   <p class="muted">Thoughtfully placed in nature, it is a welcoming base for exploring the beauty of Sainj Valley and the Great Himalayan National Park region.</p>
+   <a href="#experience" class="btn btn-dark">Discover Evara →</a>
+  </div>
+
+  <div class="photo about-photo">
+   <img src="property-exterior.jpg" alt="Evara Woodhouse property exterior" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- ROOMS -->
+<section class="rooms" id="rooms">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Our Rooms</div>
+   <h2>Find your kind of quiet.</h2>
+   <p>Comfortable wooden rooms with big windows and running balconies. Choose the view that feels right for your stay.</p>
+  </div>
+
+  <div class="room-grid">
+   <article class="room-card">
+    <div class="room-photo"><img src="family-room.png" alt="Family Room at Evara Woodhouse" loading="lazy"></div>
+    <div class="room-info">
+     <h3>Family Room</h3>
+     <p>A welcoming space for families, with natural wooden warmth, big windows and a running balcony.</p>
+     <div class="tags"><span class="tag">Family Stay</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
+     <a class="btn btn-dark" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20the%20Family%20Room." target="_blank" rel="noopener">Enquire About Room ↗</a>
+    </div>
+   </article>
+
+   <article class="room-card">
+    <div class="room-photo"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></div>
+    <div class="room-info">
+     <h3>Standard Room<br>(Front View)</h3>
+     <p>A cosy wooden room with a bright window, a running balcony and views to enjoy at your own pace.</p>
+     <div class="tags"><span class="tag">Front View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
+     <a class="btn btn-dark" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Front%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
+    </div>
+   </article>
+
+   <article class="room-card">
+    <div class="room-photo"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></div>
+    <div class="room-info">
+     <h3>Standard Room<br>(Back View)</h3>
+     <p>A peaceful wooden room with a comfortable atmosphere, big windows and a running balcony.</p>
+     <div class="tags"><span class="tag">Back View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
+     <a class="btn btn-dark" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Back%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+ <div class="wrap split">
+  <div>
+   <div class="eyebrow">The Evara Experience</div>
+   <h2>Slow down.<br>Breathe it all in.</h2>
+   <p class="muted">Wake up to fresh mountain air, step onto the balcony, take in the changing light and let the day unfold at its own pace.</p>
+
+   <div class="feature-grid">
+    <div class="feature"><span class="feature-icon">⌁</span>Mountain Air</div>
+    <div class="feature"><span class="feature-icon">⌂</span>Wooden Spaces</div>
+    <div class="feature"><span class="feature-icon">☼</span>Open Views</div>
+    <div class="feature"><span class="feature-icon">❋</span>Quiet Moments</div>
+   </div>
+
+   <div style="margin-top:28px">
+    <a class="btn btn-light" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20availability%20for%20my%20stay." target="_blank" rel="noopener">Plan Your Stay ↗</a>
+   </div>
+  </div>
+
+  <div class="photo experience-photo">
+   <img src="balcony-mountain-view.png" alt="Balcony and mountain view at Evara Woodhouse" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- NEARBY PLACES -->
+<section id="nearby">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Explore Shangarh</div>
+   <h2>Nature, culture and open skies.</h2>
+   <p>Discover the landscapes and local heritage that make the Shangarh region special.</p>
+  </div>
+
+  <div class="place-grid">
+   <article class="place-card">
+    <div class="place-photo"><img src="gallery-green-meadow.jpg" alt="Green meadow near Shangarh" loading="lazy"></div>
+    <div class="place-info"><h3>Shangarh Meadows</h3><p>Open green meadows, mountain views and peaceful walks surrounded by nature.</p></div>
+   </article>
+
+   <article class="place-card">
+    <div class="place-photo"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></div>
+    <div class="place-info"><h3>Sainj Valley</h3><p>Take in changing mountain light, misty valleys and the quiet beauty of the Himalayas.</p></div>
+   </article>
+
+   <article class="place-card">
+    <div class="place-photo"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple in the Shangarh region" loading="lazy"></div>
+    <div class="place-info"><h3>Local Heritage</h3><p>Discover traditional architecture, village life and the cultural character of the region.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- DINING -->
+<section class="dining" id="dining">
+ <div class="wrap split">
+  <div>
+   <div class="eyebrow">Dining at Evara</div>
+   <h2>Fresh food,<br>mountain flavours.</h2>
+   <p class="muted">Enjoy a warm, simple meal after a day outdoors. Contact the property team to ask about the current food menu and dining options.</p>
+   <div class="note">Please confirm available meals and timings with the property team during your enquiry.</div>
+   <a class="btn btn-dark" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20could%20you%20please%20share%20the%20current%20food%20menu%3F" target="_blank" rel="noopener">Ask About Dining ↗</a>
+  </div>
+
+  <div class="photo dining-photo">
+   <img src="common-area-interior-view.jpg" alt="Warm wooden shared interior at Evara Woodhouse" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- STAY INFORMATION -->
+<section id="stay">
+ <div class="wrap split">
+  <div class="photo stay-photo">
+   <img src="common-area-terrace.jpg" alt="Shared terrace space at Evara Woodhouse" loading="lazy">
+  </div>
+
+  <div>
+   <div class="eyebrow">Booking & Stay Information</div>
+   <h2>Plan your stay.</h2>
+   <p class="muted">A few helpful details to make your visit smooth and comfortable.</p>
+
+   <div class="tiles">
+    <div class="tile"><small>Check-in</small><strong>12:00 PM</strong></div>
+    <div class="tile"><small>Check-out</small><strong>11:00 AM</strong></div>
+    <div class="tile"><small>Booking</small><strong>WhatsApp Enquiry</strong></div>
+    <div class="tile"><small>Payment</small><strong>Cash or UPI</strong></div>
+   </div>
+
+   <details>
+    <summary>Guest Information</summary>
+    <p>Please carry valid government photo identification for check-in. For special requirements, contact the property team before arrival.</p>
+   </details>
+
+   <details>
+    <summary>Facilities at the Property</summary>
+    <div class="amenities">
+     <div class="amenity"><span class="amenity-icon">📶</span>Wi-Fi</div>
+     <div class="amenity"><span class="amenity-icon">🅿️</span>Parking</div>
+     <div class="amenity"><span class="amenity-icon">🚿</span>Hot Water</div>
+     <div class="amenity"><span class="amenity-icon">🧹</span>Housekeeping</div>
+     <div class="amenity"><span class="amenity-icon">🧺</span>Laundry</div>
+     <div class="amenity"><span class="amenity-icon">♨️</span>Room Heater on Request</div>
+    </div>
+    <p>Room heater is available at an additional charge.</p>
+   </details>
+
+   <details>
+    <summary>Road, Snow & Weather</summary>
+    <p>Mountain weather and road conditions can change. Please check local conditions before travelling and allow extra time for the journey.</p>
+   </details>
+
+   <details>
+    <summary>Bonfire & Transport</summary>
+    <p>Bonfire evenings are available on request. Contact the property team to ask about transport or pick-up support.</p>
+   </details>
+  </div>
+ </div>
+</section>
+
+<!-- GREEN LIVING -->
+<section class="green-living" id="green">
+ <div class="wrap split">
+  <div>
+   <div class="eyebrow">Green Living</div>
+   <h2>Built with nature in mind.</h2>
+   <p class="muted">Evara Woodhouse brings together wooden architecture, natural surroundings and a slower mountain rhythm. Enjoy the landscape while helping keep the area peaceful and clean.</p>
+
+   <div class="green-list">
+    <div class="green-item"><span>🌲</span>Locally sourced timber</div>
+    <div class="green-item"><span>☀️</span>Daylight and natural warmth</div>
+    <div class="green-item"><span>💧</span>Water from a local source</div>
+    <div class="green-item"><span>🥬</span>Local food sourcing</div>
+    <div class="green-item"><span>♻️</span>Responsible waste practices</div>
+    <div class="green-item"><span>🌿</span>Care for the surroundings</div>
+   </div>
+  </div>
+
+  <div class="photo green-photo">
+   <img src="sunrise-mountain-view.jpg" alt="Mountain scenery near Shangarh" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Photo Gallery</div>
+   <h2>Moments from Evara.</h2>
+   <p>A glimpse of the rooms, shared spaces and landscapes around Shangarh.</p>
+  </div>
+
+  <div class="gallery">
+   <a href="family-room.png" target="_blank" rel="noopener"><img src="family-room.png" alt="Family Room" loading="lazy"></a>
+   <a href="balcony-mountain-view.png" target="_blank" rel="noopener"><img src="balcony-mountain-view.png" alt="Balcony and mountain view" loading="lazy"></a>
+   <a href="hero-night.png" target="_blank" rel="noopener"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></a>
+   <a href="gallery-flower-meadow.jpg" target="_blank" rel="noopener"><img src="gallery-flower-meadow.jpg" alt="Flowers in a mountain meadow" loading="lazy"></a>
+   <a href="common-area-interior-view.jpg" target="_blank" rel="noopener"><img src="common-area-interior-view.jpg" alt="Wooden common area" loading="lazy"></a>
+   <a href="gallery-mountain-pasture.jpg" target="_blank" rel="noopener"><img src="gallery-mountain-pasture.jpg" alt="Mountain pasture" loading="lazy"></a>
+   <a href="gallery-misty-valley.jpg" target="_blank" rel="noopener"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></a>
+   <a href="property-exterior.jpg" target="_blank" rel="noopener"><img src="property-exterior.jpg" alt="Property exterior" loading="lazy"></a>
+   <a href="gallery-shangarh-temple.jpg" target="_blank" rel="noopener"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple and meadow" loading="lazy"></a>
+   <a href="standard-room-front.jpg" target="_blank" rel="noopener"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></a>
+   <a href="gallery-green-meadow.jpg" target="_blank" rel="noopener"><img src="gallery-green-meadow.jpg" alt="Green mountain meadow" loading="lazy"></a>
+   <a href="standard-room-back.jpg" target="_blank" rel="noopener"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></a>
+  </div>
+ </div>
+</section>
+
+<!-- LOCATION & CONTACT -->
+<section class="location" id="location">
+ <div class="wrap location-grid">
+  <div class="location-copy">
+   <div class="eyebrow">Location & Contact</div>
+   <h2>Find us in Shangarh.</h2>
+   <p>Evara Woodhouse<br>Shangarh, Sainj Valley, Kullu district,<br>Himachal Pradesh, India</p>
+
+   <a class="btn btn-dark" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener">Open Google Maps ↗</a>
+
+   <div class="contact-grid">
+    <a class="contact-button" href="tel:+918920246727" aria-label="Call Evara Woodhouse">
+     <span class="contact-icon">☎</span><span><strong>Call Us</strong><small>Tap to call</small></span>
+    </a>
+
+    <a class="contact-button" href="https://wa.me/919667824966" target="_blank" rel="noopener" aria-label="WhatsApp Evara Woodhouse">
+     <span class="contact-icon">◉</span><span><strong>WhatsApp</strong><small>Send an enquiry</small></span>
+    </a>
+
+    <a class="contact-button" href="mailto:evaraatshangarh@gmail.com" aria-label="Email Evara Woodhouse">
+     <span class="contact-icon">✉</span><span><strong>Email Us</strong><small>Send an email</small></span>
+    </a>
+
+    <a class="contact-button" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener" aria-label="Instagram Evara Woodhouse">
+     <span class="contact-icon">◎</span><span><strong>Instagram</strong><small>View our profile</small></span>
+    </a>
+   </div>
+  </div>
+
+  <a class="map-card" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener" aria-label="Open location in Google Maps">
+   <span class="map-pin">📍</span>
+   <span class="map-label"><strong>Evara Woodhouse</strong><small>Shangarh · Himachal Pradesh<br>Tap to open map ↗</small></span>
+  </a>
+ </div>
+</section>
+
 </main>
-<footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><strong>EVARA<br>WOODHOUSE</strong><p>A quiet stay above Shangarh meadows.</p></div><div class="footer-col"><h4>Explore</h4><a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#experience">Experience</a><a href="#dining">Dining</a><a href="#gallery">Gallery</a></div><div class="footer-col"><h4>Helpful Links</h4><a href="#stay">Booking & Stay Info</a><a href="#location">Location</a><a href="#green">Green Living</a><a href="#location">Contact</a></div><div class="footer-col"><h4>Get in Touch</h4><a href="tel:+918920246727">+91 89202 46727</a><a href="https://wa.me/919667824966" target="_blank" rel="noopener">WhatsApp: +91 96678 24966</a><a href="mailto:evaraatshangarh@gmail.com">evaraatshangarh@gmail.com</a><a href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">@evaraatshangarh</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Evara Woodhouse. All rights reserved.</span><span>Shangarh, Himachal Pradesh</span></div></div></footer>
-<a class="float-wa" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">WhatsApp ↗</a>
+
+<!-- FOOTER -->
+<footer>
+ <div class="wrap">
+  <div class="footer-grid">
+   <div>
+    <div class="footer-title">EVARA<br>WOODHOUSE</div>
+    <p style="font-size:13px;color:#cbd6cb;margin-top:15px">A quiet stay above Shangarh meadows.</p>
+   </div>
+
+   <div class="footer-col">
+    <h4>Explore</h4>
+    <a href="#home">Home</a>
+    <a href="#about">About Evara</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+   </div>
+
+   <div class="footer-col">
+    <h4>Information</h4>
+    <a href="#stay">Stay Information</a>
+    <a href="#dining">Dining</a>
+    <a href="#green">Green Living</a>
+    <a href="#location">Location</a>
+   </div>
+
+   <div class="footer-col">
+    <h4>Connect</h4>
+    <a href="tel:+918920246727">☎ Call the Property</a>
+    <a href="https://wa.me/919667824966" target="_blank" rel="noopener">◉ WhatsApp</a>
+    <a href="mailto:evaraatshangarh@gmail.com">✉ Email Us</a>
+    <a href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">◎ Instagram</a>
+   </div>
+  </div>
+
+  <div class="footer-bottom">
+   <span>© <span id="year"></span> Evara Woodhouse. All rights reserved.</span>
+   <span>Shangarh, Himachal Pradesh</span>
+  </div>
+ </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">◉ WhatsApp Enquiry ↗</a>
+
 <script>
-const toggle=document.getElementById('toggle'),links=document.getElementById('links');
-toggle.addEventListener('click',()=>{const opened=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));toggle.textContent=opened?'✕':'☰'});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
-document.getElementById('year').textContent=new Date().getFullYear();
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function(){
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+  menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click", function(){
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
