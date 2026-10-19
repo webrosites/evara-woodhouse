@@ -3,319 +3,1274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17372b">
-<meta name="description" content="Discover Evara Woodhouse, a peaceful mountain stay in Shangarh, Sainj Valley, Himachal Pradesh.">
-<title>Evara Woodhouse — A Himalayan Hideaway</title>
+<meta name="theme-color" content="#102b20">
+
+<title>Evara Woodhouse | A Mountain Stay in Shangarh</title>
+
+<meta name="description" content="Discover Evara Woodhouse in Shangarh, Sainj Valley, Himachal Pradesh. Explore our wooden rooms, mountain views and peaceful Himalayan surroundings.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --forest:#17372b;
-  --forest-dark:#0d2119;
-  --cream:#f8f5ed;
-  --paper:#fffdf8;
-  --gold:#d7bb87;
-  --text:#26382d;
-  --muted:#74796f;
-  --border:#e5e0d5;
+:root {
+  --forest: #102b20;
+  --forest-light: #1c4432;
+  --cream: #f8f6ef;
+  --cream-dark: #eee9dc;
+  --gold: #d7bd83;
+  --text: #24372c;
+  --muted: #72796f;
+  --white: #ffffff;
+  --radius: 18px;
+  --shadow: 0 14px 40px rgba(20,40,28,.10);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:75px}
-body{
-  margin:0;background:var(--paper);color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;line-height:1.65;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a{color:inherit;text-decoration:none}
-img{display:block;width:100%;height:100%;object-fit:cover}
-button{font:inherit}
-.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-section{padding:76px 0}
-h1,h2,h3{
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:400;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
-h2{font-size:clamp(30px,4vw,47px);line-height:1.12;margin:12px 0 18px}
-p{margin:0 0 15px}
-.eyebrow{
-  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  font-weight:bold;color:#987a4b;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
-.muted{color:var(--muted)}
-.btn{
-  min-height:42px;padding:11px 17px;border-radius:40px;
-  display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  font-size:12px;font-weight:bold;transition:background .2s,transform .2s;
+
+img {
+  display: block;
+  max-width: 100%;
 }
-.btn:hover{transform:translateY(-2px)}
-.btn-dark{background:var(--forest);color:white}
-.btn-light{background:var(--cream);color:var(--forest)}
-.btn-outline{border:1px solid #ffffffad;color:white;background:#ffffff0c}
-.photo{overflow:hidden;border-radius:15px;background:#e2e7dc}
-.photo img{transition:transform .4s}
-.photo:hover img{transform:scale(1.025)}
-.section-head{text-align:center;max-width:650px;margin:0 auto 32px}
-.section-head p{font-size:13px;color:var(--muted)}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #a18b5d;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4.5vw, 53px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -.8px;
+}
+
+.section-copy {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 570px;
+  margin-top: 18px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 44px;
+}
+
+.section-heading .section-copy {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* HEADER */
-header{
-  position:sticky;top:0;z-index:100;background:#fffdf8f5;
-  backdrop-filter:blur(12px);border-bottom:1px solid #17372b18;
+
+header {
+  height: 78px;
+  background: rgba(248,246,239,.97);
+  border-bottom: 1px solid rgba(16,43,32,.09);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
 }
-.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--forest)}
-.brand-icon{
-  width:39px;height:39px;border:1px solid #b8c5b5;
-  border-radius:50%;display:grid;place-items:center;font-size:22px;
+
+.navbar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
-.brand-name{font:22px Georgia,serif;letter-spacing:2px;line-height:1.1}
-.brand-name small{display:block;font:8px Arial;letter-spacing:3px;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:17px;font-size:12px}
-.nav-links a:hover{color:#9b8053}
-.menu-btn{display:none;border:0;background:none;color:var(--forest);font-size:26px;padding:5px}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 47px;
+  height: 47px;
+  border: 1px solid #a8b6a6;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--forest);
+  font-size: 25px;
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: 3px;
+  color: var(--forest);
+}
+
+.brand-sub {
+  font-size: 8px;
+  letter-spacing: 4px;
+  margin-top: 7px;
+  color: var(--forest);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: #a18b5d;
+}
+
+.nav-cta {
+  background: var(--forest);
+  color: white !important;
+  padding: 12px 18px;
+  border-radius: 30px;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--forest);
+  font-size: 29px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+
+.btn {
+  min-height: 45px;
+  padding: 12px 20px;
+  border-radius: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: var(--cream);
+  color: var(--forest);
+}
+
+.btn-outline {
+  border-color: rgba(255,255,255,.7);
+  color: white;
+  background: rgba(0,0,0,.10);
+}
+
+.btn-dark {
+  background: var(--forest);
+  color: white;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--forest);
+}
 
 /* HERO */
-.hero{
-  position:relative;isolation:isolate;overflow:hidden;
-  background:var(--forest-dark);color:white;
-  min-height:600px;display:flex;align-items:center;
-}
-.hero-image{
-  position:absolute;inset:0;z-index:-2;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;background:#10291f;
-}
-.hero-image img{
-  width:100%;height:100%;
-  object-fit:contain;
-  object-position:center;
-}
-/* Overlay keeps text readable without changing the image */
-.hero-image:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(7,22,15,.74),rgba(7,22,15,.18)),
-             linear-gradient(0deg,rgba(7,22,15,.52),transparent 65%);
-}
-.hero-content{padding:80px 0;max-width:760px}
-.hero .eyebrow{color:#e3cca3}
-.hero h1{
-  font-size:clamp(55px,8vw,91px);line-height:.96;
-  letter-spacing:-2px;margin:20px 0;
-}
-.hero p{font-size:16px;max-width:500px;color:#f3f0e8}
-.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.hero-points{
-  display:flex;flex-wrap:wrap;gap:9px 20px;
-  border-top:1px solid #ffffff65;margin-top:32px;
-  padding-top:16px;font-size:11px;
-}
-.hero-points span:before{content:"✦";color:var(--gold);margin-right:7px}
 
-/* ABOUT */
-.about-grid,.split{
-  display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;
+.hero {
+  position: relative;
+  min-height: 650px;
+  background: #102b20;
+  color: white;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
-.about-photo{height:400px}
-.about-copy p{font-size:14px;color:var(--muted)}
+
+.hero-photo {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #102b20;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Overlay adds contrast without hiding the full photograph */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(5,22,15,.76) 0%,
+      rgba(5,22,15,.47) 55%,
+      rgba(5,22,15,.12) 100%),
+    linear-gradient(0deg,
+      rgba(5,22,15,.63) 0%,
+      transparent 55%);
+}
+
+.hero-content {
+  width: min(1180px, 90%);
+  margin: auto;
+  padding: 80px 0 65px;
+}
+
+.hero-location {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #e4d3a8;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(52px, 8vw, 100px);
+  line-height: .99;
+  letter-spacing: -2px;
+  max-width: 780px;
+  text-wrap: balance;
+}
+
+.hero-description {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 25px 0 28px;
+  color: rgba(255,255,255,.91);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.36);
+  max-width: 720px;
+  font-size: 11px;
+  color: rgba(255,255,255,.94);
+}
+
+.hero-highlights span::before {
+  content: "✦";
+  color: var(--gold);
+  margin-right: 8px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 95px 0;
+}
+
+.about {
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-image {
+  height: 440px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--cream-dark);
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .btn {
+  margin-top: 25px;
+}
 
 /* ROOMS */
-.rooms{background:var(--cream)}
-.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.room-card{background:var(--paper);border:1px solid var(--border);border-radius:15px;overflow:hidden}
-.room-photo{height:235px}
-.room-info{padding:18px}
-.room-info h3{font-size:23px;line-height:1.2;margin:0 0 10px}
-.room-info p{font-size:12px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}
-.tag{background:#eaf0e7;border-radius:30px;padding:5px 9px;font-size:10px}
+
+.rooms {
+  background: #f0ede3;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.room-card {
+  background: #fffdf8;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(20,40,28,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.room-image {
+  height: 255px;
+  background: #dce3d6;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.room-card:hover .room-image img {
+  transform: scale(1.04);
+}
+
+.room-content {
+  padding: 24px;
+}
+
+.room-label {
+  color: #9a8250;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.room-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.room-content p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 19px;
+}
+
+.room-content .btn {
+  width: 100%;
+}
+
+/* FEATURES */
+
+.features {
+  background: var(--forest);
+  color: white;
+}
+
+.features .section-title {
+  color: white;
+}
+
+.features .section-copy {
+  color: #c6d0c5;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 15px;
+}
+
+.feature {
+  padding: 24px 16px;
+  border: 1px solid rgba(255,255,255,.13);
+  background: rgba(255,255,255,.045);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.feature-icon {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.feature h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.feature p {
+  font-size: 11px;
+  color: #c6d0c5;
+  margin-top: 6px;
+}
 
 /* EXPERIENCE */
-.experience{background:var(--forest);color:white}
-.experience .eyebrow{color:var(--gold)}
-.experience .muted{color:#d3ded5}
-.experience-photo{height:380px}
-.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}
-.feature{border:1px solid #ffffff30;border-radius:11px;padding:12px 5px;text-align:center;font-size:10px}
-.feature-icon{display:block;font-size:21px;color:var(--gold);margin-bottom:4px}
 
-/* NEARBY */
-.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.place-card{border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.place-photo{height:200px}
-.place-info{padding:15px}
-.place-info h3{font-size:22px;margin:0 0 6px}
-.place-info p{font-size:12px;color:var(--muted);margin:0}
+.experience {
+  background: var(--cream);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.experience-photo {
+  height: 410px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.experience-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience-list {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.experience-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e3dfd3;
+  font-size: 13px;
+}
+
+.experience-list li span {
+  color: #a18b5d;
+  margin-right: 10px;
+}
 
 /* DINING */
-.dining{background:#f0ede3}
-.dining-photo{height:340px}
-.note{padding:12px;background:white;border-radius:10px;font-size:12px;color:var(--muted);margin:15px 0}
 
-/* STAY DETAILS */
-.stay-photo{height:370px}
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:18px 0}
-.tile{padding:12px;background:var(--cream);border-radius:10px}
-.tile small{display:block;color:var(--muted);font-size:10px}
-.tile strong{font-size:13px}
-details{border-top:1px solid var(--border);padding:13px 0}
-summary{cursor:pointer;font-size:13px;font-weight:bold}
-details p{font-size:12px;color:var(--muted);margin:10px 0 0}
-.amenities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}
-.amenity{display:flex;align-items:center;gap:8px;padding:9px;background:var(--cream);border-radius:10px;font-size:11px}
-.amenity-icon{
-  width:30px;height:30px;flex:0 0 30px;border-radius:9px;
-  background:#e0e9dc;display:grid;place-items:center;font-size:16px;
+.dining {
+  background: #eee9dc;
+}
+
+.dining-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--forest);
+  color: white;
+}
+
+.dining-image {
+  min-height: 350px;
+  background: #dce3d6;
+}
+
+.dining-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+.dining-content {
+  padding: clamp(25px, 5vw, 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dining-content .section-title {
+  color: white;
+}
+
+.dining-content p {
+  font-size: 13px;
+  color: #d3dacf;
+  margin: 18px 0 23px;
+}
+
+/* GALLERY */
+
+.gallery {
+  background: #fffdf8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  grid-auto-rows: 190px;
+  gap: 13px;
+}
+
+.gallery-item {
+  border-radius: 13px;
+  overflow: hidden;
+  background: #e1e5d9;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
 /* GREEN LIVING */
-.green-living{background:#edf0e7}
-.green-photo{height:350px}
-.green-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}
-.green-item{background:#ffffffc9;border-radius:9px;padding:10px;font-size:11px}
 
-/* GALLERY */
-.gallery{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  grid-auto-rows:165px;gap:9px;
+.green-living {
+  background: #e9eee4;
 }
-.gallery a{display:block;overflow:hidden;border-radius:11px;background:#e2e7dc}
-.gallery a:first-child,.gallery a:nth-child(6){grid-row:span 2}
-.gallery img{transition:transform .35s}
-.gallery a:hover img{transform:scale(1.05)}
 
-/* LOCATION & CONTACT */
-.location{background:var(--cream)}
-.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
-.location-copy p{font-size:13px;color:var(--muted)}
-.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:20px}
-.contact-button{
-  display:flex;align-items:center;gap:9px;min-height:65px;padding:10px;
-  background:white;border:1px solid var(--border);border-radius:11px;
-  transition:.2s;
+.green-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
 }
-.contact-button:hover{border-color:#9db39d;transform:translateY(-2px)}
-.contact-icon{
-  width:34px;height:34px;flex:0 0 34px;border-radius:50%;
-  display:grid;place-items:center;background:#e6eee3;font-size:18px;
+
+.green-image {
+  height: 380px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #dce3d6;
 }
-.contact-button strong{display:block;font-size:11px}
-.contact-button small{display:block;font-size:10px;color:var(--muted)}
-.map-card{
-  min-height:320px;position:relative;overflow:hidden;border-radius:16px;
-  background:linear-gradient(135deg,#e1e8d8,#b8cbb4 55%,#e9e2d1);
+
+.green-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.map-card:before,.map-card:after{
-  content:"";position:absolute;inset:-20%;border:2px solid #ffffff75;
-  border-radius:45%;transform:rotate(-25deg);
+
+.green-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 25px;
 }
-.map-card:after{inset:10% -20%;transform:rotate(25deg)}
-.map-pin{position:absolute;top:38%;left:50%;font-size:34px;z-index:2}
-.map-label{position:absolute;bottom:15px;left:15px;z-index:3;background:white;border-radius:10px;padding:11px 14px}
-.map-label strong,.map-label small{display:block}
-.map-label small{font-size:10px;color:var(--muted)}
+
+.green-point {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.65);
+  font-size: 12px;
+}
+
+.green-point span {
+  color: #4b7553;
+  margin-right: 6px;
+}
+
+/* LOCATION */
+
+.location {
+  background: #f0ede3;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.location-description {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.location-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: white;
+  font-size: 20px;
+  transition: transform .2s;
+}
+
+.contact-icon:hover {
+  transform: translateY(-3px);
+  background: var(--forest-light);
+}
+
+.map-card {
+  min-height: 350px;
+  background: #dce3d6;
+  border-radius: var(--radius);
+  padding: 30px;
+  display: flex;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 70% 25%, #c6d4bd 0 2px, transparent 3px),
+    linear-gradient(135deg, #dce6d3, #b7cbb6);
+}
+
+.map-card::before,
+.map-card::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 90px;
+  left: -20%;
+  border: 2px solid rgba(255,255,255,.45);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+}
+
+.map-card::before {
+  top: 35%;
+}
+
+.map-card::after {
+  top: 58%;
+  transform: rotate(18deg);
+}
+
+.map-label {
+  position: relative;
+  z-index: 1;
+  background: #fffdf8;
+  padding: 18px 20px;
+  border-radius: 13px;
+  box-shadow: var(--shadow);
+}
+
+.map-label h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+}
+
+.map-label p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* STAY DETAILS */
+
+.stay-details {
+  background: var(--cream);
+}
+
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 15px;
+}
+
+.stay-card {
+  background: white;
+  border: 1px solid #ebe7dc;
+  border-radius: 14px;
+  padding: 23px 18px;
+}
+
+.stay-card .icon {
+  font-size: 24px;
+}
+
+.stay-card h3 {
+  font-size: 13px;
+  margin: 10px 0 5px;
+}
+
+.stay-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* BOOKING CTA */
+
+.booking {
+  background: var(--forest);
+  color: white;
+  text-align: center;
+}
+
+.booking .section-title {
+  color: white;
+  max-width: 700px;
+  margin: auto;
+}
+
+.booking .section-copy {
+  color: #d0d9ce;
+  margin: 18px auto 26px;
+}
+
+.booking-note {
+  color: #d9c99e;
+  font-size: 11px;
+  margin-top: 16px;
+}
 
 /* FOOTER */
-footer{background:#10291f;color:#edf1e9;padding:42px 0 18px}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:22px}
-.footer-title{font:23px Georgia,serif;letter-spacing:2px}
-.footer-col h4{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
-.footer-col a{display:block;font-size:11px;color:#cbd6cb;margin:7px 0}
-.footer-bottom{
-  border-top:1px solid #ffffff25;margin-top:25px;padding-top:14px;
-  display:flex;justify-content:space-between;gap:10px;color:#c0cdc1;font-size:10px;
+
+footer {
+  background: #0a2117;
+  color: #dfe5dc;
+  padding: 40px 0 25px;
 }
-.float-wa{
-  position:fixed;right:12px;bottom:12px;z-index:90;
-  background:#16814a;color:white;padding:10px 13px;
-  border-radius:40px;font-size:11px;font-weight:bold;box-shadow:0 5px 20px #0002;
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+
+footer .brand-name,
+footer .brand-sub {
+  color: white;
+}
+
+footer .brand-icon {
+  color: white;
+  border-color: #718a78;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  font-size: 18px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  font-size: 10px;
+  color: #aebcb0;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 900;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #168452;
+  color: white;
+  padding: 14px 19px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(0,0,0,.20);
+}
+
+/* IMAGE FALLBACK */
+
+img {
+  color: transparent;
+}
+
+img:not([src]),
+img[src=""] {
+  visibility: hidden;
 }
 
 /* TABLET */
-@media(max-width:850px){
-  .nav-links{gap:10px;font-size:11px}
-  .room-photo{height:205px}
-  .room-info{padding:13px}
-  .room-info h3{font-size:20px}
-  .about-grid,.split{gap:24px}
-  .footer-grid{grid-template-columns:repeat(2,1fr)}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .about-grid,
+  .experience-grid,
+  .green-grid {
+    gap: 30px;
+  }
+
+  .room-grid {
+    gap: 14px;
+  }
+
+  .room-image {
+    height: 210px;
+  }
+
+  .room-content {
+    padding: 18px;
+  }
+
+  .feature-grid,
+  .stay-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 160px;
+  }
 }
 
 /* MOBILE */
-@media(max-width:600px){
-  html{scroll-padding-top:63px}
-  section{padding:50px 0}
-  .wrap{width:calc(100% - 30px)}
-  .nav{min-height:62px}
-  .brand-icon{width:34px;height:34px;font-size:19px}
-  .brand-name{font-size:19px}
-  .menu-btn{display:block}
-  .nav-links{
-    display:none;position:absolute;top:62px;left:0;right:0;
-    padding:13px 15px;background:var(--paper);
-    box-shadow:0 12px 20px #18392c15;
-    flex-direction:column;align-items:stretch;gap:0;
+
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 72px;
   }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:9px 6px;font-size:13px}
-  .nav-links .btn{margin-top:5px}
-  .hero{
-    min-height:0;min-height:calc(100svh - 62px);
-    display:flex;align-items:center;
+
+  header {
+    height: 72px;
   }
-  .hero-image img{
-    object-fit:contain;
-    object-position:center;
+
+  .container {
+    width: 90%;
   }
-  .hero-image:after{
-    background:linear-gradient(90deg,rgba(7,22,15,.58),rgba(7,22,15,.12)),
-               linear-gradient(0deg,rgba(7,22,15,.72),rgba(7,22,15,.08));
+
+  .brand {
+    gap: 9px;
   }
-  .hero-content{padding:50px 0 44px}
-  .hero .eyebrow{font-size:9px;letter-spacing:1.5px;line-height:1.8}
-  .hero h1{font-size:clamp(44px,11.5vw,64px);line-height:.99;letter-spacing:-1.3px;margin:18px 0}
-  .hero p{font-size:13px;line-height:1.7;max-width:380px}
-  .hero-buttons{gap:8px;margin-top:18px}
-  .btn{font-size:10px;padding:10px 13px;min-height:38px}
-  .hero-points{font-size:9px;gap:8px 12px;margin-top:25px;padding-top:14px}
-  h2{font-size:clamp(29px,8vw,37px);letter-spacing:-.4px}
-  .section-head{margin-bottom:24px}
-  .section-head p{font-size:12px}
-  .about-grid,.split,.location-grid{grid-template-columns:1fr;gap:20px}
-  .about-photo{height:260px;order:-1}
-  .about-copy p{font-size:12px}
-  .room-grid,.place-grid{grid-template-columns:1fr;gap:14px}
-  .room-photo{height:230px}
-  .room-info{padding:16px}
-  .room-info h3{font-size:22px}
-  .room-info p{font-size:12px}
-  .feature-grid{grid-template-columns:repeat(2,1fr)}
-  .experience-photo,.dining-photo,.green-photo{height:260px}
-  .place-photo{height:210px}
-  .stay-photo{height:260px;order:-1}
-  .amenity{font-size:10px;padding:8px;gap:7px}
-  .amenity-icon{width:28px;height:28px;flex-basis:28px}
-  .green-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .green-item{font-size:10px;padding:9px}
-  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:130px;gap:8px}
-  .contact-grid{gap:8px}
-  .contact-button{padding:8px;gap:7px;min-height:62px}
-  .contact-icon{width:30px;height:30px;flex-basis:30px;font-size:16px}
-  .contact-button strong{font-size:10px}
-  .contact-button small{font-size:9px}
-  .map-card{min-height:240px}
-  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
-  .footer-title{font-size:21px}
-  .footer-col a{font-size:10px}
-  .footer-bottom{flex-direction:column;gap:5px}
-  .float-wa{right:9px;bottom:9px;padding:9px 11px;font-size:10px}
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .brand-name {
+    font-size: 23px;
+    letter-spacing: 2px;
+  }
+
+  .brand-sub {
+    font-size: 7px;
+    letter-spacing: 3.5px;
+    margin-top: 5px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 18px 5% 23px;
+    box-shadow: 0 14px 20px rgba(0,0,0,.08);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #e7e3d8;
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 12px;
+    text-align: center;
+    padding: 13px;
+  }
+
+  section {
+    padding: 68px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: 35px;
+    letter-spacing: -.5px;
+  }
+
+  .section-copy {
+    font-size: 13px;
+  }
+
+  /* Keep the entire hero image visible on phones */
+  .hero {
+    min-height: unset;
+    display: block;
+    background: #102b20;
+  }
+
+  .hero-photo {
+    inset: 0;
+    align-items: flex-start;
+    background: #102b20;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg,
+        rgba(5,22,15,.03) 0%,
+        rgba(5,22,15,.18) 22%,
+        rgba(5,22,15,.77) 49%,
+        #071b12 82%,
+        #071b12 100%);
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: clamp(260px, 72vw, 410px) 0 35px;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(47px, 12vw, 67px);
+    line-height: .99;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 19px 0 22px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 47px;
+  }
+
+  .hero-highlights {
+    gap: 10px 15px;
+    margin-top: 25px;
+    padding-top: 17px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .about-grid,
+  .experience-grid,
+  .green-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .room-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .room-content {
+    padding: 21px;
+  }
+
+  .room-content h3 {
+    font-size: 24px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .feature {
+    padding: 20px 10px;
+  }
+
+  .feature h3 {
+    font-size: 12px;
+  }
+
+  .experience-photo {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .dining-box {
+    grid-template-columns: 1fr;
+  }
+
+  .dining-image,
+  .dining-image img {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .dining-content {
+    padding: 28px 23px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-auto-rows: 145px;
+    gap: 9px;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
+  .green-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .green-points {
+    gap: 8px;
+  }
+
+  .green-point {
+    font-size: 11px;
+    padding: 11px 9px;
+  }
+
+  .location-grid {
+    gap: 25px;
+  }
+
+  .map-card {
+    min-height: 260px;
+    padding: 20px;
+  }
+
+  .stay-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .stay-card {
+    padding: 17px 13px;
+  }
+
+  .stay-card h3 {
+    font-size: 12px;
+  }
+
+  .stay-card p {
+    font-size: 11px;
+  }
+
+  .booking .section-title {
+    font-size: 34px;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 15px;
+    font-size: 11px;
+  }
 }
 
-/* EXTRA SMALL PHONES */
-@media(max-width:360px){
-  .wrap{width:calc(100% - 24px)}
-  .hero h1{font-size:43px}
-  .hero-buttons .btn{padding:9px 10px;font-size:9px}
-  .hero-points{font-size:8px;gap:7px}
-  .contact-button{gap:5px;padding:6px}
-  .contact-icon{width:27px;height:27px;flex-basis:27px}
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+  .hero-content {
+    padding-top: 72vw;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero-location {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .section-title {
+    font-size: 31px;
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 125px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
@@ -323,12 +1278,19 @@ footer{background:#10291f;color:#edf1e9;padding:42px 0 18px}
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Evara Woodhouse Home">
+  <div class="container navbar">
+
+    <a href="#home" class="brand" aria-label="Evara Woodhouse Home">
       <span class="brand-icon">⌂</span>
-      <span class="brand-name">EVARA<small>WOODHOUSE</small></span>
+      <span>
+        <span class="brand-name">EVARA</span>
+        <span class="brand-sub" style="display:block">WOODHOUSE</span>
+      </span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -337,323 +1299,643 @@ footer{background:#10291f;color:#edf1e9;padding:42px 0 18px}
       <a href="#dining">Dining</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
-      <a class="btn btn-dark" href="#location">Enquire Now ↗</a>
+      <a class="nav-cta" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
+        Enquire Now ↗
+      </a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
-<!-- HERO: image element ensures full image is visible -->
+<!-- HERO -->
+
 <section class="hero" id="home">
-  <div class="hero-image">
-    <img src="hero-night.png" alt="Evara Woodhouse illuminated against the night sky">
+
+  <div class="hero-photo">
+    <img src="hero-night.png"
+         alt="Evara Woodhouse illuminated against the Himalayan night sky"
+         fetchpriority="high">
   </div>
-  <div class="wrap hero-content">
-    <div class="eyebrow">Shangarh · Sainj Valley · Himachal Pradesh</div>
+
+  <div class="hero-content">
+
+    <p class="hero-location">
+      Shangarh · Sainj Valley · Himachal Pradesh
+    </p>
+
     <h1>Evara<br>Woodhouse</h1>
-    <p>A quiet mountain stay above Shangarh meadows. Discover wooden warmth, open views and the calming beauty of the Himalayas.</p>
-    <div class="hero-buttons">
-      <a class="btn btn-light" href="#rooms">Explore Rooms ↓</a>
-      <a class="btn btn-outline" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">WhatsApp Enquiry ↗</a>
+
+    <p class="hero-description">
+      A quiet mountain stay above Shangarh meadows.
+      Discover wooden warmth, open views and the calming
+      beauty of the Himalayas.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#rooms" class="btn btn-light">Explore Rooms ↓</a>
+
+      <a class="btn btn-outline"
+         href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
+        WhatsApp Enquiry ↗
+      </a>
     </div>
-    <div class="hero-points">
+
+    <div class="hero-highlights">
       <span>Mountain Views</span>
       <span>Wooden Architecture</span>
       <span>Beside Shangarh Meadow</span>
     </div>
+
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="about-copy">
-      <div class="eyebrow">Welcome to Evara</div>
-      <h2>Not just a stay,<br>a Himalayan abode.</h2>
-      <p>Evara Woodhouse is a boutique mountain stay in Shangarh, Himachal Pradesh. Come for the meadows, stay for the mountain air, warm wooden spaces and a slower rhythm of life.</p>
-      <p>Thoughtfully placed in nature, it is a welcoming base for exploring the beauty of Sainj Valley and the Great Himalayan National Park region.</p>
+<!-- ABOUT -->
+
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div>
+      <p class="eyebrow">Welcome to Evara</p>
+
+      <h2 class="section-title">
+        Not just a stay,<br>a Himalayan abode.
+      </h2>
+
+      <p class="section-copy">
+        Evara Woodhouse is a boutique mountain stay in Shangarh,
+        Himachal Pradesh. Come for the meadows, stay for the
+        mountain air, warm wooden spaces and a slower rhythm of life.
+      </p>
+
+      <p class="section-copy">
+        Thoughtfully placed in nature, it is a welcoming base
+        for exploring the beauty of Sainj Valley and the surrounding
+        Himalayan landscape.
+      </p>
+
       <a href="#experience" class="btn btn-dark">Discover Evara →</a>
     </div>
-    <div class="photo about-photo">
-      <img src="property-exterior.jpg" alt="Evara Woodhouse property exterior" loading="lazy">
+
+    <div class="about-image">
+      <img src="property-exterior.jpg"
+           alt="Evara Woodhouse property exterior"
+           loading="lazy">
     </div>
+
   </div>
 </section>
+
+<!-- ROOMS -->
 
 <section class="rooms" id="rooms">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Our Rooms</div>
-      <h2>Find your kind of quiet.</h2>
-      <p>Comfortable wooden rooms with big windows and running balconies. Choose the view that feels right for your stay.</p>
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Our Rooms</p>
+      <h2 class="section-title">Find your kind of quiet.</h2>
+      <p class="section-copy">
+        Comfortable wooden rooms with big windows and running
+        balconies. Choose the view that feels right for your stay.
+      </p>
     </div>
+
     <div class="room-grid">
+
       <article class="room-card">
-        <div class="room-photo"><img src="family-room.png" alt="Family Room" loading="lazy"></div>
-        <div class="room-info">
+        <div class="room-image">
+          <img src="family-room.png"
+               alt="Family Room at Evara Woodhouse"
+               loading="lazy">
+        </div>
+
+        <div class="room-content">
+          <span class="room-label">Room Collection 01</span>
           <h3>Family Room</h3>
-          <p>A welcoming space for families, with wooden warmth, big windows and a running balcony.</p>
-          <div class="tags"><span class="tag">Family Stay</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
-          <a class="btn btn-dark" href="https://wa.me/919667824966?text=I%27d%20like%20to%20enquire%20about%20the%20Family%20Room." target="_blank" rel="noopener">Enquire About Room ↗</a>
+          <p>
+            A welcoming wooden space for families, with big windows
+            and a running balcony.
+          </p>
+          <a class="btn btn-dark"
+             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Family%20Room.">
+            Enquire About This Room ↗
+          </a>
         </div>
       </article>
 
       <article class="room-card">
-        <div class="room-photo"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></div>
-        <div class="room-info">
-          <h3>Standard Room (Front View)</h3>
-          <p>A cosy wooden room with a bright window and running balcony.</p>
-          <div class="tags"><span class="tag">Front View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
-          <a class="btn btn-dark" href="https://wa.me/919667824966?text=I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Front%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
+        <div class="room-image">
+          <img src="standard-room-front.jpg"
+               alt="Standard Room with front view"
+               loading="lazy">
+        </div>
+
+        <div class="room-content">
+          <span class="room-label">Room Collection 02</span>
+          <h3>Standard Room — Front View</h3>
+          <p>
+            A warm wooden room with large windows and a running
+            balcony to enjoy the surroundings.
+          </p>
+          <a class="btn btn-dark"
+             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Standard%20Room%20Front%20View.">
+            Enquire About This Room ↗
+          </a>
         </div>
       </article>
 
       <article class="room-card">
-        <div class="room-photo"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></div>
-        <div class="room-info">
-          <h3>Standard Room (Back View)</h3>
-          <p>A peaceful wooden room with big windows and a running balcony.</p>
-          <div class="tags"><span class="tag">Back View</span><span class="tag">Big Windows</span><span class="tag">Balcony</span></div>
-          <a class="btn btn-dark" href="https://wa.me/919667824966?text=I%27d%20like%20to%20enquire%20about%20the%20Standard%20Room%20Back%20View." target="_blank" rel="noopener">Enquire About Room ↗</a>
+        <div class="room-image">
+          <img src="standard-room-back.jpg"
+               alt="Standard Room with back view"
+               loading="lazy">
+        </div>
+
+        <div class="room-content">
+          <span class="room-label">Room Collection 03</span>
+          <h3>Standard Room — Back View</h3>
+          <p>
+            A comfortable wooden retreat with big windows and
+            a running balcony.
+          </p>
+          <a class="btn btn-dark"
+             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20the%20Standard%20Room%20Back%20View.">
+            Enquire About This Room ↗
+          </a>
         </div>
       </article>
+
     </div>
   </div>
 </section>
+
+<!-- FACILITIES -->
+
+<section class="features" id="facilities">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Thoughtful Comforts</p>
+      <h2 class="section-title">The little things matter.</h2>
+      <p class="section-copy">
+        Essential comforts to make your mountain stay easy
+        and relaxing.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <span class="feature-icon">⌁</span>
+        <h3>Wi-Fi</h3>
+        <p>Stay connected during your visit.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🅿️</span>
+        <h3>Parking</h3>
+        <p>Parking facility for guests.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">♨️</span>
+        <h3>Hot Water</h3>
+        <p>Hot water for everyday comfort.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🧹</span>
+        <h3>Housekeeping</h3>
+        <p>Housekeeping and laundry facilities.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🔥</span>
+        <h3>Room Heater</h3>
+        <p>Available on request at an additional charge.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🌿</span>
+        <h3>Nature</h3>
+        <p>Peaceful surroundings and mountain air.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">💳</span>
+        <h3>Easy Payments</h3>
+        <p>Cash and UPI accepted.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🪵</span>
+        <h3>Wooden Interiors</h3>
+        <p>Warm wooden spaces throughout your stay.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
 
 <section class="experience" id="experience">
-  <div class="wrap split">
+  <div class="container experience-grid">
+
+    <div class="experience-photo">
+      <img src="common-area-terrace.jpg"
+           alt="Terrace and mountain views at Evara Woodhouse"
+           loading="lazy">
+    </div>
+
     <div>
-      <div class="eyebrow">The Evara Experience</div>
-      <h2>Slow down.<br>Breathe it all in.</h2>
-      <p class="muted">Wake up to fresh mountain air, step onto the balcony, take in the changing light and let the day unfold at its own pace.</p>
-      <div class="feature-grid">
-        <div class="feature"><span class="feature-icon">⌁</span>Mountain Air</div>
-        <div class="feature"><span class="feature-icon">⌂</span>Wooden Spaces</div>
-        <div class="feature"><span class="feature-icon">☼</span>Open Views</div>
-        <div class="feature"><span class="feature-icon">❋</span>Quiet Moments</div>
-      </div>
-      <p style="margin-top:22px"><a class="btn btn-light" href="https://wa.me/919667824966?text=Please%20share%20availability%20for%20my%20stay." target="_blank" rel="noopener">Plan Your Stay ↗</a></p>
+      <p class="eyebrow">Slow Down · Look Around</p>
+
+      <h2 class="section-title">
+        Let the mountains<br>set the pace.
+      </h2>
+
+      <p class="section-copy">
+        Make room for quiet mornings, fresh mountain air,
+        unhurried conversations and the natural beauty
+        of Shangarh.
+      </p>
+
+      <ul class="experience-list">
+        <li><span>✦</span> Mountain scenery and open views</li>
+        <li><span>✦</span> Wooden interiors and comfortable rooms</li>
+        <li><span>✦</span> Big windows and running balconies</li>
+        <li><span>✦</span> A peaceful base for exploring Sainj Valley</li>
+      </ul>
+
+      <a class="btn btn-dark"
+         href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20more%20details%20about%20the%20stay.">
+        Plan Your Stay ↗
+      </a>
     </div>
-    <div class="photo experience-photo">
-      <img src="balcony-mountain-view.png" alt="Balcony and mountain view" loading="lazy">
-    </div>
+
   </div>
 </section>
 
-<section id="nearby">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Explore Shangarh</div>
-      <h2>Nature, culture and open skies.</h2>
-      <p>Discover the landscapes and local heritage that make Shangarh special.</p>
-    </div>
-    <div class="place-grid">
-      <article class="place-card">
-        <div class="place-photo"><img src="gallery-green-meadow.jpg" alt="Green meadow near Shangarh" loading="lazy"></div>
-        <div class="place-info"><h3>Shangarh Meadows</h3><p>Open green meadows, mountain views and peaceful walks surrounded by nature.</p></div>
-      </article>
-      <article class="place-card">
-        <div class="place-photo"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></div>
-        <div class="place-info"><h3>Sainj Valley</h3><p>Take in mountain light, misty valleys and the quiet beauty of the Himalayas.</p></div>
-      </article>
-      <article class="place-card">
-        <div class="place-photo"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple near Shangarh" loading="lazy"></div>
-        <div class="place-info"><h3>Local Heritage</h3><p>Discover traditional architecture, village life and the culture of the region.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
+<!-- DINING -->
 
 <section class="dining" id="dining">
-  <div class="wrap split">
-    <div>
-      <div class="eyebrow">Dining at Evara</div>
-      <h2>Fresh food,<br>mountain flavours.</h2>
-      <p class="muted">Enjoy a warm, simple meal after a day outdoors. Contact the property team to ask about current dining options.</p>
-      <div class="note">Please confirm available meals and timings with the property team.</div>
-      <a class="btn btn-dark" href="https://wa.me/919667824966?text=Could%20you%20please%20share%20the%20current%20food%20menu%3F" target="_blank" rel="noopener">Ask About Dining ↗</a>
-    </div>
-    <div class="photo dining-photo">
-      <img src="common-area-interior-view.jpg" alt="Wooden shared interior" loading="lazy">
-    </div>
-  </div>
-</section>
+  <div class="container">
 
-<section id="stay">
-  <div class="wrap split">
-    <div class="photo stay-photo">
-      <img src="common-area-terrace.jpg" alt="Shared terrace at Evara Woodhouse" loading="lazy">
-    </div>
-    <div>
-      <div class="eyebrow">Booking & Stay Information</div>
-      <h2>Plan your stay.</h2>
-      <p class="muted">A few helpful details to make your visit smooth and comfortable.</p>
-      <div class="tiles">
-        <div class="tile"><small>Check-in</small><strong>12:00 PM</strong></div>
-        <div class="tile"><small>Check-out</small><strong>11:00 AM</strong></div>
-        <div class="tile"><small>Booking</small><strong>WhatsApp Enquiry</strong></div>
-        <div class="tile"><small>Payment</small><strong>Cash or UPI</strong></div>
+    <div class="dining-box">
+
+      <div class="dining-image">
+        <img src="common-area-interior-view.jpg"
+             alt="Warm shared interior space at Evara Woodhouse"
+             loading="lazy">
       </div>
-      <details>
-        <summary>Facilities at the Property</summary>
-        <div class="amenities">
-          <div class="amenity"><span class="amenity-icon">📶</span>Wi-Fi</div>
-          <div class="amenity"><span class="amenity-icon">🅿️</span>Parking</div>
-          <div class="amenity"><span class="amenity-icon">🚿</span>Hot Water</div>
-          <div class="amenity"><span class="amenity-icon">🧹</span>Housekeeping</div>
-          <div class="amenity"><span class="amenity-icon">🧺</span>Laundry</div>
-          <div class="amenity"><span class="amenity-icon">♨️</span>Room Heater</div>
-        </div>
-        <p>Room heater is available on request at an additional charge.</p>
-      </details>
-      <details>
-        <summary>Guest Information</summary>
-        <p>Please carry valid government photo identification for check-in. Contact the property team for special requirements.</p>
-      </details>
-      <details>
-        <summary>Bonfire & Transport</summary>
-        <p>Bonfire is available on request. Contact the property team to ask about transport or pick-up support.</p>
-      </details>
-      <details>
-        <summary>Road & Weather</summary>
-        <p>Mountain weather and road conditions can change. Check local conditions before travelling.</p>
-      </details>
+
+      <div class="dining-content">
+        <p class="eyebrow">A Taste of the Mountains</p>
+
+        <h2 class="section-title">
+          Good moments,<br>shared slowly.
+        </h2>
+
+        <p>
+          Enjoy the relaxed atmosphere of the property and ask
+          our team about dining options available during your stay.
+        </p>
+
+        <a class="btn btn-light"
+           href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20information%20about%20dining%20options.">
+          Ask About Dining ↗
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="green-living" id="green">
-  <div class="wrap split">
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Photo Gallery</p>
+      <h2 class="section-title">Moments from Evara.</h2>
+      <p class="section-copy">
+        A glimpse of our rooms, shared spaces and the landscapes
+        around Shangarh.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item tall">
+        <img src="family-room.png"
+             alt="Family Room"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="balcony-mountain-view.png"
+             alt="Balcony and mountain view"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="hero-night.png"
+             alt="Evara Woodhouse at night"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery-flower-meadow.jpg"
+             alt="Flowers in a mountain meadow"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="common-area-terrace.jpg"
+             alt="Terrace with a mountain view"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item tall">
+        <img src="gallery-mountain-pasture.jpg"
+             alt="Mountain pasture"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery-misty-valley.jpg"
+             alt="Misty mountain valley"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="property-exterior.jpg"
+             alt="Property exterior"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery-shangarh-temple.jpg"
+             alt="Traditional temple and meadow"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery-green-meadow.jpg"
+             alt="Green mountain meadow"
+             loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="standard-room-front.jpg"
+             alt="Standard room"
+             loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GREEN LIVING -->
+
+<section class="green-living">
+  <div class="container green-grid">
+
     <div>
-      <div class="eyebrow">Green Living</div>
-      <h2>Built with nature in mind.</h2>
-      <p class="muted">Evara Woodhouse brings together wooden architecture, natural surroundings and a slower mountain rhythm. Enjoy the landscape while helping keep the area peaceful and clean.</p>
-      <div class="green-list">
-        <div class="green-item">🌲 Wooden architecture</div>
-        <div class="green-item">☀️ Natural daylight</div>
-        <div class="green-item">💧 Water from a local source</div>
-        <div class="green-item">🥬 Local food sourcing</div>
-        <div class="green-item">♻️ Responsible waste practices</div>
-        <div class="green-item">🌿 Care for surroundings</div>
+      <p class="eyebrow">Closer to Nature</p>
+
+      <h2 class="section-title">
+        A gentler way<br>to experience the hills.
+      </h2>
+
+      <p class="section-copy">
+        Shangarh's landscapes invite us to slow down, appreciate
+        the natural surroundings and travel thoughtfully.
+      </p>
+
+      <div class="green-points">
+        <div class="green-point"><span>✓</span> Respect for nature</div>
+        <div class="green-point"><span>✓</span> Local surroundings</div>
+        <div class="green-point"><span>✓</span> Mindful travel</div>
+        <div class="green-point"><span>✓</span> A slower pace</div>
       </div>
     </div>
-    <div class="photo green-photo">
-      <img src="sunrise-mountain-view.jpg" alt="Mountain scenery near Shangarh" loading="lazy">
+
+    <div class="green-image">
+      <img src="gallery-green-meadow.jpg"
+           alt="Green meadow in the Himalayan landscape"
+           loading="lazy">
     </div>
+
   </div>
 </section>
 
-<section id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Photo Gallery</div>
-      <h2>Moments from Evara.</h2>
-      <p>A glimpse of the rooms, shared spaces and landscapes around Shangarh.</p>
-    </div>
-    <div class="gallery">
-      <a href="family-room.png" target="_blank"><img src="family-room.png" alt="Family Room" loading="lazy"></a>
-      <a href="balcony-mountain-view.png" target="_blank"><img src="balcony-mountain-view.png" alt="Balcony mountain view" loading="lazy"></a>
-      <a href="hero-night.png" target="_blank"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></a>
-      <a href="gallery-flower-meadow.jpg" target="_blank"><img src="gallery-flower-meadow.jpg" alt="Flowers in a mountain meadow" loading="lazy"></a>
-      <a href="common-area-interior-view.jpg" target="_blank"><img src="common-area-interior-view.jpg" alt="Wooden common area" loading="lazy"></a>
-      <a href="gallery-mountain-pasture.jpg" target="_blank"><img src="gallery-mountain-pasture.jpg" alt="Mountain pasture" loading="lazy"></a>
-      <a href="gallery-misty-valley.jpg" target="_blank"><img src="gallery-misty-valley.jpg" alt="Misty mountain valley" loading="lazy"></a>
-      <a href="property-exterior.jpg" target="_blank"><img src="property-exterior.jpg" alt="Property exterior" loading="lazy"></a>
-      <a href="gallery-shangarh-temple.jpg" target="_blank"><img src="gallery-shangarh-temple.jpg" alt="Traditional temple" loading="lazy"></a>
-      <a href="standard-room-front.jpg" target="_blank"><img src="standard-room-front.jpg" alt="Standard Room front view" loading="lazy"></a>
-      <a href="gallery-green-meadow.jpg" target="_blank"><img src="gallery-green-meadow.jpg" alt="Green mountain meadow" loading="lazy"></a>
-      <a href="standard-room-back.jpg" target="_blank"><img src="standard-room-back.jpg" alt="Standard Room back view" loading="lazy"></a>
-    </div>
-  </div>
-</section>
+<!-- LOCATION -->
 
 <section class="location" id="location">
-  <div class="wrap location-grid">
-    <div class="location-copy">
-      <div class="eyebrow">Location & Contact</div>
-      <h2>Find us in Shangarh.</h2>
-      <p>Evara Woodhouse<br>Shangarh, Sainj Valley, Kullu district,<br>Himachal Pradesh, India</p>
-      <a class="btn btn-dark" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener">Open Google Maps ↗</a>
+  <div class="container location-grid">
 
-      <div class="contact-grid">
-        <a class="contact-button" href="tel:+918920246727">
-          <span class="contact-icon">☎</span><span><strong>Call Us</strong><small>Tap to call</small></span>
+    <div>
+      <p class="eyebrow">Location & Contact</p>
+
+      <h2 class="section-title">Find us in Shangarh.</h2>
+
+      <p class="location-description">
+        Evara Woodhouse<br>
+        Shangarh, Sainj Valley<br>
+        Kullu district, Himachal Pradesh, India
+      </p>
+
+      <div class="location-buttons">
+        <a class="btn btn-dark"
+           href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7"
+           target="_blank" rel="noopener">
+          Open Google Maps ↗
         </a>
-        <a class="contact-button" href="https://wa.me/919667824966" target="_blank" rel="noopener">
-          <span class="contact-icon">◉</span><span><strong>WhatsApp</strong><small>Send an enquiry</small></span>
-        </a>
-        <a class="contact-button" href="mailto:evaraatshangarh@gmail.com">
-          <span class="contact-icon">✉</span><span><strong>Email Us</strong><small>Send an email</small></span>
-        </a>
-        <a class="contact-button" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">
-          <span class="contact-icon">◎</span><span><strong>Instagram</strong><small>View profile</small></span>
-        </a>
+      </div>
+
+      <p class="section-copy">
+        Have a question or planning a visit? Reach out using
+        any of the contact options below.
+      </p>
+
+      <div class="contact-icons">
+
+        <a class="contact-icon"
+           href="https://wa.me/919667824966"
+           target="_blank" rel="noopener"
+           aria-label="WhatsApp" title="WhatsApp">◉</a>
+
+        <a class="contact-icon"
+           href="https://www.instagram.com/evaraatshangarh/"
+           target="_blank" rel="noopener"
+           aria-label="Instagram" title="Instagram">◎</a>
+
+        <a class="contact-icon"
+           href="mailto:evaraatshangarh@gmail.com"
+           aria-label="Email" title="Email">✉</a>
+
+        <a class="contact-icon"
+           href="tel:+918920246727"
+           aria-label="Call property" title="Call">☎</a>
+
       </div>
     </div>
 
-    <a class="map-card" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener" aria-label="Open Google Maps">
-      <span class="map-pin">📍</span>
-      <span class="map-label"><strong>Evara Woodhouse</strong><small>Shangarh · Himachal Pradesh<br>Tap to open map ↗</small></span>
+    <a class="map-card"
+       href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7"
+       target="_blank" rel="noopener"
+       aria-label="Open Evara Woodhouse location in Google Maps">
+
+      <div class="map-label">
+        <h3>Evara Woodhouse</h3>
+        <p>Shangarh · Sainj Valley · Himachal Pradesh</p>
+        <p style="margin-top:8px">Open location ↗</p>
+      </div>
+
     </a>
+
+  </div>
+</section>
+
+<!-- STAY DETAILS -->
+
+<section class="stay-details">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Before You Arrive</p>
+      <h2 class="section-title">The details, made simple.</h2>
+      <p class="section-copy">
+        A few useful things to know before your mountain getaway.
+      </p>
+    </div>
+
+    <div class="stay-grid">
+
+      <div class="stay-card">
+        <span class="icon">🕛</span>
+        <h3>Check-in</h3>
+        <p>From 12:00 PM</p>
+      </div>
+
+      <div class="stay-card">
+        <span class="icon">🕚</span>
+        <h3>Check-out</h3>
+        <p>By 11:00 AM</p>
+      </div>
+
+      <div class="stay-card">
+        <span class="icon">💳</span>
+        <h3>Payments</h3>
+        <p>Cash and UPI accepted.</p>
+      </div>
+
+      <div class="stay-card">
+        <span class="icon">💬</span>
+        <h3>Reservations</h3>
+        <p>Contact us directly for availability and enquiries.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+
+<section class="booking">
+  <div class="container">
+
+    <p class="eyebrow">Your Mountains Are Calling</p>
+
+    <h2 class="section-title">
+      Find your quiet corner<br>in the Himalayas.
+    </h2>
+
+    <p class="section-copy">
+      Tell us your travel dates and room preference.
+      Our team will help you with your enquiry.
+    </p>
+
+    <a class="btn btn-light"
+       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.%20Please%20share%20availability.">
+      Enquire on WhatsApp ↗
+    </a>
+
+    <p class="booking-note">
+      Room availability and details are confirmed directly by the property.
+    </p>
+
   </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-title">EVARA<br>WOODHOUSE</div>
-        <p style="font-size:12px;color:#cbd6cb;margin-top:12px">A quiet stay above Shangarh meadows.</p>
+  <div class="container">
+
+    <div class="footer-main">
+
+      <a href="#home" class="brand">
+        <span class="brand-icon">⌂</span>
+        <span>
+          <span class="brand-name">EVARA</span>
+          <span class="brand-sub" style="display:block">WOODHOUSE</span>
+        </span>
+      </a>
+
+      <div class="footer-social">
+
+        <a href="https://wa.me/919667824966"
+           target="_blank" rel="noopener"
+           aria-label="WhatsApp">◉</a>
+
+        <a href="https://www.instagram.com/evaraatshangarh/"
+           target="_blank" rel="noopener"
+           aria-label="Instagram">◎</a>
+
+        <a href="mailto:evaraatshangarh@gmail.com"
+           aria-label="Email">✉</a>
+
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#rooms">Rooms</a>
-        <a href="#experience">Experience</a>
-      </div>
-      <div class="footer-col">
-        <h4>Discover</h4>
-        <a href="#dining">Dining</a>
-        <a href="#stay">Stay Information</a>
-        <a href="#green">Green Living</a>
-        <a href="#gallery">Gallery</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="tel:+918920246727">☎ Call Us</a>
-        <a href="https://wa.me/919667824966" target="_blank" rel="noopener">◉ WhatsApp</a>
-        <a href="mailto:evaraatshangarh@gmail.com">✉ Email</a>
-        <a href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">◎ Instagram</a>
-      </div>
+
     </div>
+
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Evara Woodhouse. All rights reserved.</span>
-      <span>Shangarh, Himachal Pradesh</span>
+      <p>© <span id="year"></span> Evara Woodhouse. All rights reserved.</p>
+      <p>Shangarh, Sainj Valley, Himachal Pradesh</p>
     </div>
+
   </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">◉ WhatsApp Enquiry ↗</a>
+<a class="whatsapp-float"
+   href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay."
+   target="_blank" rel="noopener">
+  ◉ WhatsApp Enquiry ↗
+</a>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
+const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", function(){
-  const opened = navLinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(opened));
-  menuBtn.textContent = opened ? "✕" : "☰";
+menuToggle.addEventListener("click", function () {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "✕" : "☰";
 });
 
-navLinks.querySelectorAll("a").forEach(function(link){
-  link.addEventListener("click", function(){
+document.querySelectorAll("#navLinks a").forEach(function (link) {
+  link.addEventListener("click", function () {
     navLinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
   });
 });
 
