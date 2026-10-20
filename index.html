@@ -787,6 +787,7 @@ header {
 }
 
 .contact-card small { display: block; font-size: 12.5px; font-weight: 700; color: var(--gold-dark); line-height: 1.3; }
+.contact-card small:only-child { font-size: 15px; font-weight: 600; color: var(--text); }
 .contact-card span.val { font-size: 13.5px; color: var(--text); word-break: break-word; line-height: 1.4; display: block; }
 
 /* FOOTER */
@@ -976,7 +977,7 @@ header .brand-icon img { height: 54px; width: auto; }
   right: -6%;
   top: -12%;
   bottom: -12%;
-  background: radial-gradient(ellipse at 40% 55%, rgba(255,190,100,.2) 0%, rgba(255,170,80,.2) 22%, transparent 10%);
+  background: radial-gradient(ellipse at 40% 55%, rgba(255,190,100,.32) 0%, rgba(255,170,80,.12) 42%, transparent 70%);
   filter: blur(14px);
   opacity: 0;
   pointer-events: none;
@@ -1003,7 +1004,7 @@ header .brand-icon img { height: 54px; width: auto; }
   height: var(--s);
   border-radius: 50%;
   background: #ffd98a;
-  box-shadow: 0 0 6px 2px rgba(255,200,110,.5), 0 0 14px 5px rgba(255,170,70,.2);
+  box-shadow: 0 0 6px 2px rgba(255,200,110,.55), 0 0 14px 5px rgba(255,170,70,.22);
   opacity: 0;
   animation: ffFloat var(--d) ease-in-out var(--dl) infinite;
 }
@@ -1634,12 +1635,12 @@ header .brand-icon img { height: 54px; width: auto; }
 
       <a class="contact-card" href="tel:+918920246727">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
-        <span><small>Call (Property)</small><span class="val">+91 89202 46727</span></span>
+        <span><small>Call (Property)</small></span>
       </a>
 
       <a class="contact-card" href="https://wa.me/919667824966" target="_blank" rel="noopener">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-        <span><small>WhatsApp</small><span class="val">+91 96678 24966</span></span>
+        <span><small>WhatsApp</small></span>
       </a>
 
       <a class="contact-card" href="mailto:evaraatshangarh@gmail.com">
@@ -1699,8 +1700,8 @@ header .brand-icon img { height: 54px; width: auto; }
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
-          <li><a href="tel:+918920246727"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>+91 89202 46727</a></li>
-          <li><a href="https://wa.me/919667824966" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>+91 96678 24966</a></li>
+          <li><a href="tel:+918920246727"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (Property)</a></li>
+          <li><a href="https://wa.me/919667824966" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
           <li><a href="mailto:evaraatshangarh@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>evaraatshangarh@gmail.com</a></li>
           <li><a href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg>@evaraatshangarh</a></li>
         </ul>
