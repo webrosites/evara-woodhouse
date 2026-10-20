@@ -787,7 +787,6 @@ header {
 }
 
 .contact-card small { display: block; font-size: 12.5px; font-weight: 700; color: var(--gold-dark); line-height: 1.3; }
-.contact-card small:only-child { font-size: 15px; font-weight: 600; color: var(--text); }
 .contact-card span.val { font-size: 13.5px; color: var(--text); word-break: break-word; line-height: 1.4; display: block; }
 
 /* FOOTER */
@@ -924,76 +923,34 @@ header .brand-icon img { height: 54px; width: auto; }
   header .brand-icon img { height: 46px; }
 }
 
-/* HERO TITLE: reveal, glow, shine, fireflies */
+/* HERO TITLE: shine inside the letters + a few fireflies */
 .hero-title-wrap { position: relative; width: fit-content; max-width: 100%; }
 
 .hero .hero-title {
-  position: relative;
-  z-index: 0;
   text-shadow: none;
   color: #fff;
 }
 
-.hero-title .word { display: inline-block; }
-
-.hero-title .ch {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(.4em);
-  filter: blur(5px);
-  background: linear-gradient(105deg, #ffffff 0%, #ffffff 42%, #ffe6ac 50%, #ffffff 58%, #ffffff 100%);
-  background-size: 300% 100%;
-  background-position: 100% 0;
-  animation:
-    chIn .9s cubic-bezier(.2,.7,.2,1) calc(.25s + var(--i) * 70ms) forwards,
-    chShine 8s ease-in-out calc(2.6s + var(--i) * 110ms) infinite;
-}
-
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .hero-title .ch {
+  .hero .hero-title {
+    background: linear-gradient(105deg, #ffffff 0%, #ffffff 38%, #ffe3a3 50%, #ffffff 62%, #ffffff 100%);
+    background-size: 300% 100%;
+    background-position: 100% 0;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    animation: titleShine 4s ease-in-out .5s infinite;
   }
 }
 
-@keyframes chIn {
-  to { opacity: 1; transform: none; filter: blur(0); }
-}
-
-@keyframes chShine {
+@keyframes titleShine {
   0%   { background-position: 100% 0; }
-  30%  { background-position: 0% 0; }
+  45%  { background-position: 0% 0; }
   100% { background-position: 0% 0; }
 }
 
-/* soft warm glow behind the title, like the lit windows in the photo */
-.hero-title::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -6%;
-  right: -6%;
-  top: -12%;
-  bottom: -12%;
-  background: radial-gradient(ellipse at 40% 55%, rgba(255,190,100,.32) 0%, rgba(255,170,80,.12) 42%, transparent 70%);
-  filter: blur(14px);
-  opacity: 0;
-  pointer-events: none;
-  animation:
-    glowIn 1.6s ease 1.2s both,
-    glowPulse 6s ease-in-out 2.8s infinite alternate;
-}
-
-@keyframes glowIn { to { opacity: .3; } }
-
-@keyframes glowPulse {
-  from { opacity: .3;  transform: scale(.97); }
-  to   { opacity: .95; transform: scale(1.04); }
-}
-
-/* fireflies */
+/* fireflies (few and soft) */
 .fireflies { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 
 .fireflies i {
@@ -1004,22 +961,21 @@ header .brand-icon img { height: 54px; width: auto; }
   height: var(--s);
   border-radius: 50%;
   background: #ffd98a;
-  box-shadow: 0 0 6px 2px rgba(255,200,110,.55), 0 0 14px 5px rgba(255,170,70,.22);
+  box-shadow: 0 0 6px 2px rgba(255,200,110,.28), 0 0 14px 5px rgba(255,170,70,.12);
   opacity: 0;
   animation: ffFloat var(--d) ease-in-out var(--dl) infinite;
 }
 
 @keyframes ffFloat {
   0%   { opacity: 0;   transform: translate(0, 0) scale(.6); }
-  18%  { opacity: .95; transform: translate(calc(var(--dx) * .3), calc(var(--dy) * .3)) scale(1); }
-  50%  { opacity: .4;  transform: translate(var(--dx), var(--dy)) scale(.85); }
-  78%  { opacity: .9;  transform: translate(calc(var(--dx) * .4), calc(var(--dy) * 1.4)) scale(1); }
+  18%  { opacity: .48; transform: translate(calc(var(--dx) * .3), calc(var(--dy) * .3)) scale(1); }
+  50%  { opacity: .2;  transform: translate(var(--dx), var(--dy)) scale(.85); }
+  78%  { opacity: .45; transform: translate(calc(var(--dx) * .4), calc(var(--dy) * 1.4)) scale(1); }
   100% { opacity: 0;   transform: translate(0, calc(var(--dy) * .2)) scale(.6); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-title .ch { opacity: 1; transform: none; filter: none; animation: none; }
-  .hero-title::before { animation: none; opacity: .3; }
+  .hero .hero-title { animation: none; }
   .fireflies { display: none; }
 }
 </style>
@@ -1104,20 +1060,13 @@ header .brand-icon img { height: 54px; width: auto; }
       </p>
 
       <div class="hero-title-wrap">
-        <h1 class="hero-title" aria-label="Evara Woodhouse"><span class="word" aria-hidden="true"><span class="ch" style="--i:0">E</span><span class="ch" style="--i:1">v</span><span class="ch" style="--i:2">a</span><span class="ch" style="--i:3">r</span><span class="ch" style="--i:4">a</span></span><br><span class="word" aria-hidden="true"><span class="ch" style="--i:5">W</span><span class="ch" style="--i:6">o</span><span class="ch" style="--i:7">o</span><span class="ch" style="--i:8">d</span><span class="ch" style="--i:9">h</span><span class="ch" style="--i:10">o</span><span class="ch" style="--i:11">u</span><span class="ch" style="--i:12">s</span><span class="ch" style="--i:13">e</span></span></h1>
+        <h1 class="hero-title">Evara<br>Woodhouse</h1>
         <div class="fireflies" aria-hidden="true">
-        <i style="--x:4%;--y:10%;--s:3px;--d:9s;--dl:1.6s;--dx:10px;--dy:-14px"></i>
-        <i style="--x:18%;--y:-8%;--s:4px;--d:11s;--dl:2.4s;--dx:-12px;--dy:-10px"></i>
-        <i style="--x:32%;--y:92%;--s:3px;--d:10s;--dl:3.1s;--dx:14px;--dy:-18px"></i>
-        <i style="--x:47%;--y:6%;--s:5px;--d:12s;--dl:1.9s;--dx:-10px;--dy:12px"></i>
-        <i style="--x:60%;--y:78%;--s:3px;--d:9s;--dl:4s;--dx:12px;--dy:-16px"></i>
-        <i style="--x:72%;--y:-6%;--s:4px;--d:13s;--dl:2.8s;--dx:-14px;--dy:14px"></i>
-        <i style="--x:86%;--y:30%;--s:3px;--d:10s;--dl:3.6s;--dx:10px;--dy:-12px"></i>
-        <i style="--x:94%;--y:70%;--s:4px;--d:11s;--dl:1.2s;--dx:-12px;--dy:-14px"></i>
-        <i style="--x:12%;--y:60%;--s:3px;--d:12s;--dl:5s;--dx:16px;--dy:-10px"></i>
-        <i style="--x:38%;--y:40%;--s:3px;--d:14s;--dl:4.4s;--dx:-10px;--dy:16px"></i>
-        <i style="--x:66%;--y:45%;--s:4px;--d:10s;--dl:6s;--dx:12px;--dy:-14px"></i>
-        <i style="--x:24%;--y:108%;--s:3px;--d:13s;--dl:3.3s;--dx:-14px;--dy:-12px"></i>
+        <i style="--x:12%;--y:60%;--s:3px;--d:12s;--dl:2s;--dx:16px;--dy:-10px"></i>
+        <i style="--x:47%;--y:6%;--s:4px;--d:12s;--dl:3s;--dx:-10px;--dy:12px"></i>
+        <i style="--x:86%;--y:30%;--s:3px;--d:10s;--dl:1.5s;--dx:10px;--dy:-12px"></i>
+        <i style="--x:32%;--y:92%;--s:3px;--d:10s;--dl:3.5s;--dx:14px;--dy:-18px"></i>
+        <i style="--x:66%;--y:45%;--s:4px;--d:11s;--dl:2.5s;--dx:12px;--dy:-14px"></i>
         </div>
       </div>
 
