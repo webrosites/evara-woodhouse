@@ -914,6 +914,14 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
+
+/* HEADER LOGO */
+header .brand-icon { width: auto; height: auto; border: 0; border-radius: 0; }
+header .brand-icon img { height: 54px; width: auto; }
+
+@media (max-width: 650px) {
+  header .brand-icon img { height: 46px; }
+}
 </style>
 </head>
 
@@ -956,7 +964,7 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   <div class="container navbar">
 
     <a href="#home" class="brand" aria-label="Evara Woodhouse Home">
-      <span class="brand-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
+      <span class="brand-icon"><img src="logo-icon.png" alt=""></span>
       <span class="brand-text">
         <span class="brand-name">EVARA</span>
         <span class="brand-sub">WOODHOUSE</span>
