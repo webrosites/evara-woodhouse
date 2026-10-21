@@ -311,7 +311,7 @@ header {
 
 .strip-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 14px;
 }
 
@@ -808,13 +808,19 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
 .wa-wrap {
   position: fixed;
   z-index: 900;
-  right: 20px;
-  bottom: 20px;
+  right: 18px;
+  bottom: 18px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 8px;
   transition: transform .45s ease, opacity .3s ease, visibility 0s;
+  animation: waPop .7s cubic-bezier(.34,1.56,.64,1) 1s backwards;
+}
+
+@keyframes waPop {
+  from { opacity: 0; transform: scale(.4) translateY(20px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .wa-wrap.wa-hide {
@@ -830,30 +836,51 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #168452;
   color: #fff;
-  padding: 13px 19px;
+  padding: 9px 14px;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
-  animation: waRipple 2.6s ease-out infinite;
-  transition: padding .3s ease, gap .3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
+  animation: waRipple 3s ease-out infinite, waFloat 3.8s ease-in-out infinite;
+  transition: padding .3s ease, gap .3s ease, transform .2s ease;
 }
 
-.whatsapp-float .ic { font-size: 22px; }
+.whatsapp-float:hover { transform: scale(1.05); }
+.whatsapp-float:active { transform: scale(.94); }
+
+.whatsapp-float .ic {
+  font-size: 19px;
+  transform-origin: 50% 60%;
+  animation: waWiggle 6s ease-in-out 3s infinite;
+}
+
+/* gentle floating, then a small phone-ring wiggle every few seconds */
+@keyframes waFloat {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -5px; }
+}
+
+@keyframes waWiggle {
+  0%, 78%, 100% { transform: rotate(0); }
+  82% { transform: rotate(-16deg); }
+  86% { transform: rotate(14deg); }
+  90% { transform: rotate(-9deg); }
+  94% { transform: rotate(5deg); }
+}
 
 .wa-label {
   display: inline-block;
-  max-width: 120px;
+  max-width: 100px;
   overflow: hidden;
   white-space: nowrap;
   transition: max-width .3s ease, opacity .25s ease;
 }
 
 .wa-wrap.compact .wa-label { max-width: 0; opacity: 0; }
-.wa-wrap.compact .whatsapp-float { padding: 13px; gap: 0; }
+.wa-wrap.compact .whatsapp-float { padding: 9px; gap: 0; }
 
 /* moving shine */
 .whatsapp-float::after {
@@ -863,7 +890,7 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   bottom: 0;
   left: -60%;
   width: 40%;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.3), transparent);
   transform: skewX(-20deg);
   animation: waShine 5s ease-in-out 1.5s infinite;
   pointer-events: none;
@@ -877,25 +904,25 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
 
 /* soft ripple ring */
 @keyframes waRipple {
-  0%   { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 0 rgba(22,132,82,.55); }
-  70%  { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 16px rgba(22,132,82,0); }
-  100% { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 0 rgba(22,132,82,0); }
+  0%   { box-shadow: 0 6px 18px rgba(0,0,0,.22), 0 0 0 0 rgba(22,132,82,.45); }
+  70%  { box-shadow: 0 6px 18px rgba(0,0,0,.22), 0 0 0 12px rgba(22,132,82,0); }
+  100% { box-shadow: 0 6px 18px rgba(0,0,0,.22), 0 0 0 0 rgba(22,132,82,0); }
 }
 
 /* greeting bubble */
 .wa-bubble {
   position: relative;
-  max-width: 235px;
+  max-width: 190px;
   background: #fff;
   color: var(--text);
-  border-radius: 16px 16px 4px 16px;
-  padding: 12px 40px 12px 15px;
-  font-size: 13.5px;
-  line-height: 1.45;
-  box-shadow: 0 10px 30px rgba(0,0,0,.22);
+  border-radius: 12px 12px 4px 12px;
+  padding: 9px 30px 9px 12px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px) scale(.96);
+  transform: translateY(8px) scale(.96);
   transition: opacity .35s ease, transform .35s ease, visibility 0s .35s;
 }
 
@@ -910,17 +937,17 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
 
 .wa-bubble-x {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 28px;
-  height: 28px;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
   border: 0;
   border-radius: 50%;
   background: transparent;
   color: var(--muted);
   display: grid;
   place-items: center;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -958,6 +985,7 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   .footer-main { grid-template-columns: 1fr 1fr; }
   .strip-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
   .strip-item { justify-content: flex-start; padding-left: 8%; }
+  .strip-item:last-child { grid-column: 1 / -1; justify-content: center; padding-left: 0; }
 }
 
 /* MOBILE */
@@ -1001,9 +1029,10 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-main { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 6px; }
-  .wa-wrap { right: 12px; bottom: 12px; }
-  .whatsapp-float { padding: 12px 16px; font-size: 13px; }
-  .wa-wrap.compact .whatsapp-float { padding: 12px; }
+  .wa-wrap { right: 14px; bottom: 14px; }
+  .wa-label { display: none; }
+  .whatsapp-float, .wa-wrap.compact .whatsapp-float { width: 44px; height: 44px; padding: 0; gap: 0; justify-content: center; }
+  .whatsapp-float .ic { font-size: 22px; }
 }
 
 @media (max-width: 380px) {
@@ -1113,6 +1142,7 @@ body:has(dialog[open]) { overflow: hidden; }
   width: min(900px, 94vw);
   max-height: 92vh;
   overflow: auto;
+  overscroll-behavior: contain;
   border-radius: 20px;
   background: var(--paper);
   color: var(--text);
@@ -1144,13 +1174,12 @@ body:has(dialog[open]) { overflow: hidden; }
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .rm-track::-webkit-scrollbar { display: none; }
-.rm-slide { flex: 0 0 100%; scroll-snap-align: start; aspect-ratio: 4 / 3; background: #dcd0b8; }
+.rm-slide { flex: 0 0 100%; scroll-snap-align: start; aspect-ratio: 4 / 3; background: #dcd0b8; contain: paint; }
 .rm-slide img { width: 100%; height: 100%; object-fit: cover; }
 
 .rm-nav {
@@ -1296,6 +1325,23 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 420px) {
   .form-row.dates { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* keep the page calm while a popup is open (smoother swiping on phones) */
+.modal-open .fireflies i,
+.modal-open .hero .hero-title,
+.modal-open .whatsapp-float,
+.modal-open .whatsapp-float .ic,
+.modal-open .whatsapp-float::after { animation-play-state: paused; }
+.modal-open header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+.modal-open .wa-wrap { visibility: hidden; }
+
+@media (hover: none) {
+  .rm-nav { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-wrap, .whatsapp-float, .whatsapp-float::after, .whatsapp-float .ic { animation: none; }
+}
 </style>
 </head>
 
@@ -1324,7 +1370,6 @@ body:has(dialog[open]) { overflow: hidden; }
     <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7"/><path d="M3 14h18v4"/><path d="M21 14v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="1.5"/></symbol>
     <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 12V6a2 2 0 0 1 2-2h1"/><path d="M7 19l-1 2M17 19l1 2"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
     <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 15a2 2 0 0 1 4 0v1h10v-1a2 2 0 0 1 4 0v4H3z"/><path d="M5 19v2M19 19v2"/></symbol>
     <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-6"/><path d="M12 3 6 11h3l-4 6h14l-4-6h3z"/></symbol>
@@ -1418,7 +1463,6 @@ body:has(dialog[open]) { overflow: hidden; }
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg> <span><b class="count" data-to="12">12</b> Rooms</span></div>
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-mountain"/></svg> Mountain Views</div>
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> In front of Shangarh Meadow</div>
-    <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg> Café Coming Soon</div>
   </div>
 </div>
 
@@ -2110,7 +2154,7 @@ body:has(dialog[open]) { overflow: hidden; }
 <div class="wa-wrap" id="waWrap">
   <div class="wa-bubble" id="waBubble">
     <a target="_blank" rel="noopener"
-       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">Hi! Planning a stay?<br><strong>Chat with us on WhatsApp</strong></a>
+       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">Planning a stay?<br><strong>Chat with us</strong></a>
     <button type="button" class="wa-bubble-x" id="waBubbleX" aria-label="Dismiss message"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
   </div>
   <a class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
@@ -2324,13 +2368,19 @@ galItems.forEach(function (item) {
     const img = item.querySelector("img");
     lightboxImg.src = img.getAttribute("src");
     lightboxImg.alt = img.alt;
-    if (typeof lightbox.showModal === "function") lightbox.showModal();
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+      document.documentElement.classList.add("modal-open");
+    }
   });
 });
 
 document.getElementById("lightboxClose").addEventListener("click", function () { lightbox.close(); });
 lightbox.addEventListener("click", function (e) {
   if (e.target === lightbox || e.target === lightboxImg) lightbox.close();
+});
+lightbox.addEventListener("close", function () {
+  document.documentElement.classList.remove("modal-open");
 });
 
 /* ---------- Scroll reveal ---------- */
@@ -2395,7 +2445,7 @@ lightbox.addEventListener("click", function (e) {
     if (seen || wrap.classList.contains("wa-hide")) return;
     bubble.classList.add("show");
     markSeen();
-    setTimeout(function () { bubble.classList.remove("show"); }, 8000);
+    setTimeout(function () { bubble.classList.remove("show"); }, 6000);
   }, 5000);
 
   bubbleX.addEventListener("click", function () {
@@ -2452,7 +2502,8 @@ lightbox.addEventListener("click", function (e) {
   const feats = document.getElementById("rmFeats");
   const whats = document.getElementById("rmWhats");
 
-  /* Add more photos by uploading files with these names. Missing files are skipped automatically. */
+  /* Add more photos by uploading files with these names. Missing files are skipped automatically.
+     shared: false = do not add the common balcony photo at the end of this room's slider. */
   const SHARED = { src: "balcony-mountain-view.png", alt: "View from the balcony" };
   const ROOMS = {
     suite: {
@@ -2477,7 +2528,8 @@ lightbox.addEventListener("click", function (e) {
       name: "Standard Rooms (Back)", count: "4 Rooms", select: "Standard Room (Back View)",
       feats: [["i-bed", "1 Double Bed"], ["i-bath", "1 Washroom"], ["i-eye", "Village & greenery view"]],
       photos: ["standard-room-back.jpg", "standard-room-back-2.jpg", "standard-room-back-3.jpg"],
-      fallback: []
+      fallback: [],
+      shared: false
     }
   };
 
@@ -2497,10 +2549,16 @@ lightbox.addEventListener("click", function (e) {
   let token = 0;
   let current = null;
   let slides = 0;
+  let active = 0;
+  let slideEls = [];
+  let slideIO = null;
 
-  function updateSlider() {
-    const w = track.clientWidth || 1;
-    const i = Math.min(Math.max(Math.round(track.scrollLeft / w), 0), Math.max(slides - 1, 0));
+  function setLock(on) {
+    document.documentElement.classList.toggle("modal-open", on);
+  }
+
+  function setActive(i) {
+    active = i;
     counter.textContent = (i + 1) + " / " + slides;
     dotsBox.querySelectorAll(".rm-dot").forEach(function (d, k) {
       d.classList.toggle("active", k === i);
@@ -2509,34 +2567,57 @@ lightbox.addEventListener("click", function (e) {
     next.disabled = i >= slides - 1;
   }
 
+  function goTo(i) {
+    if (i < 0 || i >= slides) return;
+    track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
+  }
+
   function build(list) {
+    if (slideIO) { slideIO.disconnect(); slideIO = null; }
     track.innerHTML = "";
     dotsBox.innerHTML = "";
+    slideEls = [];
+
     list.forEach(function (it, k) {
       const slide = document.createElement("div");
       slide.className = "rm-slide";
       const im = document.createElement("img");
+      im.decoding = "async";
       im.src = it.src;
       im.alt = it.alt;
       slide.appendChild(im);
       track.appendChild(slide);
+      slideEls.push(slide);
+      if (im.decode) im.decode().catch(function () {});
 
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "rm-dot";
       dot.setAttribute("aria-label", "Photo " + (k + 1));
-      dot.addEventListener("click", function () {
-        track.scrollTo({ left: k * track.clientWidth, behavior: "smooth" });
-      });
+      dot.addEventListener("click", function () { goTo(k); });
       dotsBox.appendChild(dot);
     });
+
     slides = list.length;
     const multi = slides > 1;
     prev.hidden = !multi;
     next.hidden = !multi;
     counter.hidden = !multi;
     dotsBox.hidden = !multi;
-    updateSlider();
+    setActive(0);
+
+    /* no work on every scroll frame: an observer tells us which photo is in view */
+    if (multi && "IntersectionObserver" in window) {
+      slideIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && e.intersectionRatio >= 0.6) {
+            const idx = slideEls.indexOf(e.target);
+            if (idx > -1) setActive(idx);
+          }
+        });
+      }, { root: track, threshold: 0.6 });
+      slideEls.forEach(function (sl) { slideIO.observe(sl); });
+    }
   }
 
   function openRoom(key) {
@@ -2557,6 +2638,7 @@ lightbox.addEventListener("click", function (e) {
     whats.href = "https://wa.me/919667824966?text=" +
       encodeURIComponent("Hello Evara Woodhouse, I would like details about the " + r.name + ".");
 
+    if (slideIO) { slideIO.disconnect(); slideIO = null; }
     track.innerHTML = "";
     dotsBox.innerHTML = "";
     slides = 0;
@@ -2566,6 +2648,7 @@ lightbox.addEventListener("click", function (e) {
 
     if (typeof modal.showModal === "function") {
       if (!modal.open) modal.showModal();
+      setLock(true);
     } else {
       modal.setAttribute("open", "");
     }
@@ -2577,7 +2660,7 @@ lightbox.addEventListener("click", function (e) {
       const items = list.map(function (src, i) {
         return { src: src, alt: r.name + " photo " + (i + 1) };
       });
-      items.push({ src: SHARED.src, alt: SHARED.alt });
+      if (r.shared !== false) items.push({ src: SHARED.src, alt: SHARED.alt });
       build(items);
     });
   }
@@ -2588,25 +2671,15 @@ lightbox.addEventListener("click", function (e) {
     if (e.target.closest(".room-image") || e.target.closest("button")) openRoom(card.dataset.room);
   });
 
-  let sTick = false;
-  track.addEventListener("scroll", function () {
-    if (sTick) return;
-    sTick = true;
-    requestAnimationFrame(function () { updateSlider(); sTick = false; });
-  }, { passive: true });
-
-  prev.addEventListener("click", function () {
-    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-  });
-  next.addEventListener("click", function () {
-    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
-  });
+  prev.addEventListener("click", function () { goTo(active - 1); });
+  next.addEventListener("click", function () { goTo(active + 1); });
 
   modal.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
-    if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); goTo(active - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); goTo(active + 1); }
   });
 
+  modal.addEventListener("close", function () { setLock(false); });
   document.getElementById("rmClose").addEventListener("click", function () { modal.close(); });
   modal.addEventListener("click", function (e) { if (e.target === modal) modal.close(); });
 
