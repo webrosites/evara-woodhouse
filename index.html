@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#14301f">
+<script>document.documentElement.classList.add("js");</script>
 
 <title>Evara Woodhouse | A Mountain Stay in Shangarh</title>
 <meta name="description" content="Evara Woodhouse is a boutique wooden mountain stay in Shangarh, Himachal Pradesh, at the edge of the Great Himalayan National Park. Rooms, kitchen, bonfire evenings and mountain views.">
@@ -804,11 +805,29 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 13px; color: #b3c0ae; }
 
 /* FLOATING WHATSAPP */
-.whatsapp-float {
+.wa-wrap {
   position: fixed;
   z-index: 900;
   right: 20px;
   bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  transition: transform .45s ease, opacity .3s ease, visibility 0s;
+}
+
+.wa-wrap.wa-hide {
+  transform: translateY(150%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform .45s ease, opacity .3s ease, visibility 0s .45s;
+}
+
+.whatsapp-float {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -819,9 +838,91 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  animation: waRipple 2.6s ease-out infinite;
+  transition: padding .3s ease, gap .3s ease;
 }
 
 .whatsapp-float .ic { font-size: 22px; }
+
+.wa-label {
+  display: inline-block;
+  max-width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width .3s ease, opacity .25s ease;
+}
+
+.wa-wrap.compact .wa-label { max-width: 0; opacity: 0; }
+.wa-wrap.compact .whatsapp-float { padding: 13px; gap: 0; }
+
+/* moving shine */
+.whatsapp-float::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  transform: skewX(-20deg);
+  animation: waShine 5s ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes waShine {
+  0%   { left: -60%; }
+  25%  { left: 130%; }
+  100% { left: 130%; }
+}
+
+/* soft ripple ring */
+@keyframes waRipple {
+  0%   { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 0 rgba(22,132,82,.55); }
+  70%  { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 16px rgba(22,132,82,0); }
+  100% { box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 0 rgba(22,132,82,0); }
+}
+
+/* greeting bubble */
+.wa-bubble {
+  position: relative;
+  max-width: 235px;
+  background: #fff;
+  color: var(--text);
+  border-radius: 16px 16px 4px 16px;
+  padding: 12px 40px 12px 15px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  box-shadow: 0 10px 30px rgba(0,0,0,.22);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(.96);
+  transition: opacity .35s ease, transform .35s ease, visibility 0s .35s;
+}
+
+.wa-bubble.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity .35s ease, transform .35s ease, visibility 0s;
+}
+
+.wa-bubble strong { color: #168452; }
+
+.wa-bubble-x {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 /* TABLET */
 @media (max-width: 980px) {
@@ -900,7 +1001,9 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-main { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 6px; }
-  .whatsapp-float { right: 12px; bottom: 12px; padding: 12px 16px; font-size: 13px; }
+  .wa-wrap { right: 12px; bottom: 12px; }
+  .whatsapp-float { padding: 12px 16px; font-size: 13px; }
+  .wa-wrap.compact .whatsapp-float { padding: 12px; }
 }
 
 @media (max-width: 380px) {
@@ -978,6 +1081,221 @@ header .brand-icon img { height: 54px; width: auto; }
   .hero .hero-title { animation: none; }
   .fireflies { display: none; }
 }
+
+/* SCROLL REVEAL */
+.js .reveal { opacity: 0; }
+.js .reveal.in { opacity: 1; animation: revealUp .75s cubic-bezier(.2,.7,.2,1) backwards; }
+.js .reveal.in:nth-child(4n+2) { animation-delay: .08s; }
+.js .reveal.in:nth-child(4n+3) { animation-delay: .16s; }
+.js .reveal.in:nth-child(4n+4) { animation-delay: .24s; }
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; }
+  .js .reveal.in { animation: none; }
+}
+
+.count { display: inline-block; min-width: 1.2em; text-align: right; font-variant-numeric: tabular-nums; }
+
+body:has(dialog[open]) { overflow: hidden; }
+
+/* ROOM DETAILS MODAL + PHOTO SLIDER */
+.room-card .room-image { cursor: pointer; }
+
+.room-modal {
+  border: 0;
+  padding: 0;
+  margin: auto;
+  width: min(900px, 94vw);
+  max-height: 92vh;
+  overflow: auto;
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--text);
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+
+.room-modal::backdrop { background: rgba(8,20,12,.82); }
+
+.rm-closebar { position: sticky; top: 0; height: 0; z-index: 5; display: flex; justify-content: flex-end; }
+
+.rm-close {
+  margin: 12px 12px 0 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(10,25,16,.62);
+  color: #fff;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.rm-inner { display: grid; grid-template-columns: 1.15fr 1fr; align-items: start; }
+.rm-media { position: relative; background: #dcd0b8; }
+
+.rm-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rm-track::-webkit-scrollbar { display: none; }
+.rm-slide { flex: 0 0 100%; scroll-snap-align: start; aspect-ratio: 4 / 3; background: #dcd0b8; }
+.rm-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.rm-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,250,240,.92);
+  color: var(--brown-dark);
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+
+.rm-nav.prev { left: 10px; }
+.rm-nav.next { right: 10px; }
+.rm-nav[disabled] { opacity: .35; cursor: default; }
+.rm-nav[hidden], .rm-counter[hidden], .rm-dots[hidden] { display: none; }
+
+.rm-counter {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(10,25,16,.66);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 20px;
+}
+
+.rm-dots { display: flex; justify-content: center; gap: 7px; padding: 14px 0 16px; }
+
+.rm-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: #cdbf9f;
+  cursor: pointer;
+  transition: width .25s, background .25s;
+}
+
+.rm-dot.active { width: 22px; border-radius: 6px; background: var(--brown); }
+
+.rm-body { padding: 30px 28px 30px 24px; }
+
+.rm-body h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.rm-note { font-size: 13.5px; color: var(--muted); margin-bottom: 20px; }
+.rm-actions { display: grid; gap: 10px; }
+.rm-actions .btn { width: 100%; }
+
+@media (max-width: 760px) {
+  .rm-inner { grid-template-columns: 1fr; }
+  .rm-dots { padding-bottom: 6px; }
+  .rm-body { padding: 14px 20px 26px; }
+  .rm-body h3 { font-size: 25px; }
+}
+
+/* ENQUIRY FORM */
+.enquiry { background: var(--sand); }
+.enquiry-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+.enquiry-points { margin-top: 24px; display: grid; gap: 12px; }
+.enquiry-points li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--muted); }
+.enquiry-points .ic { font-size: 22px; color: var(--gold-dark); }
+
+.enquiry-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: var(--shadow);
+}
+
+.enquiry-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field { margin-bottom: 14px; min-width: 0; }
+.field label { display: block; font-size: 13px; font-weight: 600; color: var(--brown-dark); margin-bottom: 6px; }
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.field textarea { min-height: 96px; resize: vertical; }
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b4a32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 42px;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(216,184,120,.45);
+}
+
+.enq-error { color: #a3402f; font-size: 13.5px; font-weight: 600; min-height: 20px; margin: 2px 0 10px; }
+.enq-actions { display: grid; gap: 10px; }
+.enq-actions .btn { width: 100%; }
+.btn-wa { background: #168452; color: #fff; }
+.btn-wa:hover { background: #126f45; }
+.enq-note, .enq-status { font-size: 12.5px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+.enq-status a { color: var(--brown); font-weight: 700; text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .enquiry-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 420px) {
+  .form-row.dates { grid-template-columns: 1fr; gap: 0; }
+}
 </style>
 </head>
 
@@ -1013,6 +1331,10 @@ header .brand-icon img { height: 54px; width: auto; }
     <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2-5-6-5 0 3 2 5 6 5z"/></symbol>
     <symbol id="i-recycle" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></symbol>
     <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10h7"/><path d="M8.5 13.5h4"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
   </defs>
 </svg>
 
@@ -1036,7 +1358,7 @@ header .brand-icon img { height: 54px; width: auto; }
       <a href="#dining">Dining</a>
       <a href="#location">Location</a>
       <a href="#gallery">Gallery</a>
-      <a class="nav-cta" href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">Book Your Stay</a>
+      <a class="nav-cta" href="#enquiry">Book Your Stay</a>
     </nav>
 
   </div>
@@ -1092,8 +1414,8 @@ header .brand-icon img { height: 54px; width: auto; }
 
 <!-- QUICK STRIP -->
 <div class="strip">
-  <div class="container strip-grid">
-    <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg> 12 Rooms</div>
+  <div class="container strip-grid reveal">
+    <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg> <span><b class="count" data-to="12">12</b> Rooms</span></div>
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-mountain"/></svg> Mountain Views</div>
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> In front of Shangarh Meadow</div>
     <div class="strip-item"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg> Café Coming Soon</div>
@@ -1104,7 +1426,7 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="about" id="about">
   <div class="container split">
 
-    <div>
+    <div class="reveal">
       <p class="eyebrow">About Us</p>
       <h2 class="section-title">Not just a stay,<br>a Himalayan abode.</h2>
 
@@ -1121,7 +1443,7 @@ header .brand-icon img { height: 54px; width: auto; }
       <a href="#experience" class="btn btn-brown">Our Story →</a>
     </div>
 
-    <div class="photo">
+    <div class="photo reveal">
       <img src="property-exterior.jpg" alt="Evara Woodhouse property exterior" loading="lazy">
     </div>
 
@@ -1132,7 +1454,7 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="rooms" id="rooms">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Our Rooms</p>
       <h2 class="section-title">Four Stays, One Beautiful Place</h2>
       <p class="section-copy">All rooms have big windows and running balconies.</p>
@@ -1140,7 +1462,7 @@ header .brand-icon img { height: 54px; width: auto; }
 
     <div class="room-grid">
 
-      <article class="room-card">
+      <article class="room-card reveal" data-room="suite">
         <div class="room-image">
           <img src="family-room.png" alt="Family Suite at Evara Woodhouse" loading="lazy">
         </div>
@@ -1152,12 +1474,11 @@ header .brand-icon img { height: 54px; width: auto; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <a class="btn btn-brown" target="_blank" rel="noopener"
-             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20details%20about%20the%20Family%20Suite.">View Details →</a>
+          <button type="button" class="btn btn-brown">View Details →</button>
         </div>
       </article>
 
-      <article class="room-card">
+      <article class="room-card reveal" data-room="big">
         <div class="room-image">
           <!-- Add big-family-room.jpg to the folder. Until then the Family Suite photo is shown. -->
           <img src="big-family-room.jpg" alt="Big Family Room at Evara Woodhouse" loading="lazy"
@@ -1171,12 +1492,11 @@ header .brand-icon img { height: 54px; width: auto; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <a class="btn btn-brown" target="_blank" rel="noopener"
-             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20details%20about%20the%20Big%20Family%20Room.">View Details →</a>
+          <button type="button" class="btn btn-brown">View Details →</button>
         </div>
       </article>
 
-      <article class="room-card">
+      <article class="room-card reveal" data-room="front">
         <div class="room-image">
           <img src="standard-room-front.jpg" alt="Standard Room with front view" loading="lazy">
         </div>
@@ -1188,12 +1508,11 @@ header .brand-icon img { height: 54px; width: auto; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <a class="btn btn-brown" target="_blank" rel="noopener"
-             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20details%20about%20the%20Standard%20Room%20Front%20View.">View Details →</a>
+          <button type="button" class="btn btn-brown">View Details →</button>
         </div>
       </article>
 
-      <article class="room-card">
+      <article class="room-card reveal" data-room="back">
         <div class="room-image">
           <img src="standard-room-back.jpg" alt="Standard Room with back view" loading="lazy">
         </div>
@@ -1205,8 +1524,7 @@ header .brand-icon img { height: 54px; width: auto; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Village &amp; greenery view</li>
           </ul>
-          <a class="btn btn-brown" target="_blank" rel="noopener"
-             href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20details%20about%20the%20Standard%20Room%20Back%20View.">View Details →</a>
+          <button type="button" class="btn btn-brown">View Details →</button>
         </div>
       </article>
 
@@ -1218,21 +1536,21 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="features" id="facilities">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Thoughtful Comforts</p>
       <h2 class="section-title">The little things matter.</h2>
       <p class="section-copy">Essential comforts to make your mountain stay easy and relaxing.</p>
     </div>
 
     <div class="feature-grid">
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-wifi"/></svg></span><h3>Wi-Fi</h3><p>Stay connected during your visit.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-parking"/></svg></span><h3>Parking</h3><p>Parking facility for guests.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-water"/></svg></span><h3>Hot Water</h3><p>Hot water for everyday comfort.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span><h3>Housekeeping</h3><p>Housekeeping and laundry facilities.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg></span><h3>Room Heater</h3><p>Available on request at an additional charge.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></span><h3>Nature</h3><p>Peaceful surroundings and mountain air.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><h3>Easy Payments</h3><p>Cash and UPI accepted.</p></div>
-      <div class="feature"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><h3>Wooden Interiors</h3><p>Warm wooden spaces throughout your stay.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-wifi"/></svg></span><h3>Wi-Fi</h3><p>Stay connected during your visit.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-parking"/></svg></span><h3>Parking</h3><p>Parking facility for guests.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-water"/></svg></span><h3>Hot Water</h3><p>Hot water for everyday comfort.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span><h3>Housekeeping</h3><p>Housekeeping and laundry facilities.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg></span><h3>Room Heater</h3><p>Available on request at an additional charge.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></span><h3>Nature</h3><p>Peaceful surroundings and mountain air.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><h3>Easy Payments</h3><p>Cash and UPI accepted.</p></div>
+      <div class="feature reveal"><span class="feature-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><h3>Wooden Interiors</h3><p>Warm wooden spaces throughout your stay.</p></div>
     </div>
 
   </div>
@@ -1252,21 +1570,21 @@ header .brand-icon img { height: 54px; width: auto; }
     </p>
 
     <div class="exp-grid">
-      <div class="exp-item">
+      <div class="exp-item reveal">
         <span class="exp-icon"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></span>
         <h3>Sunny Courtyard</h3>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal">
         <span class="exp-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
         <h3>Social Balcony</h3>
         <p>(First Floor)</p>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal">
         <span class="exp-icon"><svg class="ic" aria-hidden="true"><use href="#i-sofa"/></svg></span>
         <h3>Quiet Lounge</h3>
         <p>(Second Floor)</p>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal">
         <span class="exp-icon"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg></span>
         <h3>Bonfire Evenings</h3>
         <p>(₹500/hour)</p>
@@ -1287,14 +1605,14 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="nearby" id="nearby">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Nearby Attractions</p>
       <h2 class="section-title">Explore around Shangarh</h2>
     </div>
 
     <div class="nearby-grid">
 
-      <article class="near-card">
+      <article class="near-card reveal">
         <div class="near-img"><img src="gallery-green-meadow.jpg" alt="Shangarh Meadow" loading="lazy"></div>
         <div class="near-text">
           <h3>Shangarh Meadow</h3>
@@ -1302,7 +1620,7 @@ header .brand-icon img { height: 54px; width: auto; }
         </div>
       </article>
 
-      <article class="near-card">
+      <article class="near-card reveal">
         <div class="near-img">
           <!-- Add pundrik-rishi-lake.jpg to the folder. -->
           <img src="pundrik-rishi-lake.jpg" alt="Pundrik Rishi Lake" loading="lazy"
@@ -1314,7 +1632,7 @@ header .brand-icon img { height: 54px; width: auto; }
         </div>
       </article>
 
-      <article class="near-card">
+      <article class="near-card reveal">
         <div class="near-img">
           <!-- Add barshangarh-waterfall.jpg to the folder. -->
           <img src="barshangarh-waterfall.jpg" alt="Barshangarh Waterfall" loading="lazy"
@@ -1333,7 +1651,7 @@ header .brand-icon img { height: 54px; width: auto; }
 <!-- DINING BANNER -->
 <section class="dining" id="dining">
   <div class="container">
-    <div class="dining-box">
+    <div class="dining-box reveal">
 
       <div class="dining-image">
         <img src="common-area-interior-view.jpg" alt="Warm shared interior space at Evara Woodhouse" loading="lazy">
@@ -1361,7 +1679,7 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="menu" id="menu">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Our Menu</p>
       <h2 class="section-title">Simple Food, Great Views</h2>
       <p class="section-copy">
@@ -1378,7 +1696,7 @@ header .brand-icon img { height: 54px; width: auto; }
       <button class="menu-tab" role="tab" aria-selected="false" data-key="desserts">Desserts</button>
     </div>
 
-    <div class="menu-panel" id="menuPanel" role="tabpanel" aria-live="polite">
+    <div class="menu-panel reveal" id="menuPanel" role="tabpanel" aria-live="polite">
       <noscript>Please open the complete menu using the button below.</noscript>
     </div>
 
@@ -1402,22 +1720,22 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="plan" id="plan">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Booking &amp; Stay Info</p>
       <h2 class="section-title">Plan Your Stay</h2>
       <p class="section-copy">A few important details to make your stay smooth and enjoyable.</p>
     </div>
 
     <div class="stay-grid">
-      <div class="stay-card">
+      <div class="stay-card reveal">
         <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg></span>
         <div><small>Check-in</small><strong>12:00 PM</strong></div>
       </div>
-      <div class="stay-card">
+      <div class="stay-card reveal">
         <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-logout"/></svg></span>
         <div><small>Check-out</small><strong>11:00 AM</strong></div>
       </div>
-      <div class="stay-card">
+      <div class="stay-card reveal">
         <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span>
         <div><small>Payment</small><strong>Cash or UPI</strong></div>
       </div>
@@ -1426,7 +1744,7 @@ header .brand-icon img { height: 54px; width: auto; }
     <div class="split">
 
       <!-- CLIENT TO CONFIRM: replace the text below with the real policies -->
-      <div class="accordion">
+      <div class="accordion reveal">
         <details>
           <summary>Cancellation Policy</summary>
           <p>Cancellation and date-change terms are shared when you book. Please
@@ -1456,7 +1774,7 @@ header .brand-icon img { height: 54px; width: auto; }
         </details>
       </div>
 
-      <div class="photo">
+      <div class="photo reveal">
         <img src="balcony-mountain-view.png" alt="Balcony with mountain view at Evara Woodhouse" loading="lazy">
       </div>
 
@@ -1468,11 +1786,11 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="green-living" id="green">
   <div class="container split">
 
-    <div class="photo">
+    <div class="photo reveal">
       <img src="gallery-green-meadow.jpg" alt="Green meadow in the Himalayan landscape" loading="lazy">
     </div>
 
-    <div>
+    <div class="reveal">
       <p class="eyebrow">Green Living</p>
       <h2 class="section-title">Built with Nature in Mind</h2>
 
@@ -1498,7 +1816,7 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="gallery" id="gallery">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Photo Gallery</p>
       <h2 class="section-title">Moments from Evara</h2>
       <p class="section-copy">Tap any photo to view it larger.</p>
@@ -1512,7 +1830,7 @@ header .brand-icon img { height: 54px; width: auto; }
       <button class="gal-tab" role="tab" aria-selected="false" data-cat="experience">Experience</button>
     </div>
 
-    <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-grid reveal" id="galleryGrid">
       <div class="gallery-item" data-cat="rooms"><img src="family-room.png" alt="Family Suite" loading="lazy"></div>
       <div class="gallery-item" data-cat="views"><img src="balcony-mountain-view.png" alt="Balcony and mountain view" loading="lazy"></div>
       <div class="gallery-item" data-cat="property"><img src="hero-night.png" alt="Evara Woodhouse at night" loading="lazy"></div>
@@ -1536,11 +1854,39 @@ header .brand-icon img { height: 54px; width: auto; }
   <button id="lightboxClose" aria-label="Close photo">✕</button>
 </dialog>
 
+<!-- ROOM DETAILS + PHOTO SLIDER -->
+<dialog id="roomModal" class="room-modal" aria-labelledby="rmTitle">
+  <div class="rm-closebar">
+    <button type="button" class="rm-close" id="rmClose" aria-label="Close room details"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="rm-inner">
+    <div class="rm-left">
+      <div class="rm-media">
+        <div class="rm-track" id="rmTrack" tabindex="0" aria-label="Room photos"></div>
+        <button type="button" class="rm-nav prev" id="rmPrev" aria-label="Previous photo"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <button type="button" class="rm-nav next" id="rmNext" aria-label="Next photo"><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        <div class="rm-counter" id="rmCounter"></div>
+      </div>
+      <div class="rm-dots" id="rmDots"></div>
+    </div>
+    <div class="rm-body">
+      <p class="room-count" id="rmCountTxt"></p>
+      <h3 id="rmTitle"></h3>
+      <ul class="room-feats" id="rmFeats"></ul>
+      <p class="rm-note">All rooms have big windows and running balconies. Wi-Fi, parking, hot water, housekeeping and laundry are available. Room heater is available on request at an additional charge.</p>
+      <div class="rm-actions">
+        <button type="button" class="btn btn-brown" id="rmEnquire">Enquire About This Room</button>
+        <a class="btn btn-ghost" id="rmWhats" target="_blank" rel="noopener" href="https://wa.me/919667824966">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
 <!-- LOCATION -->
 <section class="location" id="location">
   <div class="container location-grid">
 
-    <div>
+    <div class="reveal">
       <p class="eyebrow">Location</p>
       <h2 class="section-title">Find Us in Shangarh</h2>
 
@@ -1558,7 +1904,7 @@ header .brand-icon img { height: 54px; width: auto; }
       </div>
     </div>
 
-    <a class="map-card" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener"
+    <a class="map-card reveal" href="https://maps.app.goo.gl/niD1ekmT1T8Nxigm7" target="_blank" rel="noopener"
        aria-label="Open Evara Woodhouse location in Google Maps">
       <span class="map-pin"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span>
       <div class="map-label">
@@ -1575,34 +1921,128 @@ header .brand-icon img { height: 54px; width: auto; }
 <section class="contact" id="contact">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <p class="eyebrow">Get in Touch</p>
       <h2 class="section-title">We're Here to Help</h2>
     </div>
 
     <div class="contact-grid">
 
-      <a class="contact-card" href="tel:+918920246727">
+      <a class="contact-card reveal" href="tel:+918920246727">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
         <span><small>Call (Property)</small></span>
       </a>
 
-      <a class="contact-card" href="https://wa.me/919667824966" target="_blank" rel="noopener">
+      <a class="contact-card reveal" href="https://wa.me/919667824966" target="_blank" rel="noopener">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
         <span><small>WhatsApp</small></span>
       </a>
 
-      <a class="contact-card" href="mailto:evaraatshangarh@gmail.com">
+      <a class="contact-card reveal" href="mailto:evaraatshangarh@gmail.com">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span>
         <span><small>Email</small><span class="val">evaraatshangarh@gmail.com</span></span>
       </a>
 
-      <a class="contact-card" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">
+      <a class="contact-card reveal" href="https://www.instagram.com/evaraatshangarh/" target="_blank" rel="noopener">
         <span class="contact-icon"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg></span>
         <span><small>Instagram</small><span class="val">@evaraatshangarh</span></span>
       </a>
 
     </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="enquiry" id="enquiry">
+  <div class="container enquiry-grid">
+
+    <div class="enquiry-intro reveal">
+      <p class="eyebrow">Send an Enquiry</p>
+      <h2 class="section-title">Plan Your Stay with Us</h2>
+      <p class="section-copy">
+        Tell us your dates and room preference. Your enquiry opens in WhatsApp, ready to send,
+        and our team will confirm availability directly.
+      </p>
+
+      <ul class="enquiry-points">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg> Fill the form once, we get all the details</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg> Check-in from 12:00 PM, check-out by 11:00 AM</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg> Cash and UPI accepted</li>
+      </ul>
+    </div>
+
+    <form class="enquiry-card reveal" id="enquiryForm" novalidate>
+      <h3>Your stay details</h3>
+
+      <div class="field">
+        <label for="enqName">Full name</label>
+        <input type="text" id="enqName" autocomplete="name" placeholder="Your name" required>
+      </div>
+
+      <div class="form-row dates">
+        <div class="field">
+          <label for="enqIn">Check-in</label>
+          <input type="date" id="enqIn" required>
+        </div>
+        <div class="field">
+          <label for="enqOut">Check-out</label>
+          <input type="date" id="enqOut" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="enqAdults">Adults</label>
+          <select id="enqAdults">
+            <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option>
+            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enqKids">Children</label>
+          <select id="enqKids">
+            <option value="0" selected>0</option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="enqRoom">Room preference</label>
+        <select id="enqRoom">
+          <option value="No preference">No preference</option>
+          <option value="Family Suite">Family Suite</option>
+          <option value="Big Family Room">Big Family Room</option>
+          <option value="Standard Room (Front View)">Standard Room (Front View)</option>
+          <option value="Standard Room (Back View)">Standard Room (Back View)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="enqMsg">Message (optional)</label>
+        <textarea id="enqMsg" rows="3" placeholder="Anything we should know?"></textarea>
+      </div>
+
+      <p class="enq-error" id="enqError" role="alert"></p>
+
+      <div class="enq-actions">
+        <button type="submit" class="btn btn-wa">
+          <svg class="ic" aria-hidden="true" style="font-size:19px"><use href="#i-whatsapp"/></svg>
+          Send Enquiry on WhatsApp
+        </button>
+        <button type="button" class="btn btn-ghost" id="enqMail">
+          <svg class="ic" aria-hidden="true" style="font-size:18px"><use href="#i-mail"/></svg>
+          Send by Email instead
+        </button>
+      </div>
+
+      <p class="enq-status" id="enqStatus" aria-live="polite"></p>
+      <p class="enq-note">Your details are only used to prepare this message. Room availability and rates are confirmed directly by the property.</p>
+    </form>
+
   </div>
 </section>
 
@@ -1642,6 +2082,7 @@ header .brand-icon img { height: 54px; width: auto; }
         <ul>
           <li><a href="#plan">Booking Policy</a></li>
           <li><a href="#plan">FAQs</a></li>
+          <li><a href="#enquiry">Send Enquiry</a></li>
           <li><a href="#green">Green Living</a></li>
         </ul>
       </div>
@@ -1666,11 +2107,18 @@ header .brand-icon img { height: 54px; width: auto; }
   </div>
 </footer>
 
-<a class="whatsapp-float" target="_blank" rel="noopener"
-   href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
-  <svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-  WhatsApp
-</a>
+<div class="wa-wrap" id="waWrap">
+  <div class="wa-bubble" id="waBubble">
+    <a target="_blank" rel="noopener"
+       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">Hi! Planning a stay?<br><strong>Chat with us on WhatsApp</strong></a>
+    <button type="button" class="wa-bubble-x" id="waBubbleX" aria-label="Dismiss message"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <a class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+     href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.">
+    <svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    <span class="wa-label">WhatsApp</span>
+  </a>
+</div>
 
 <script>
 /* Mobile menu */
@@ -1884,6 +2332,395 @@ document.getElementById("lightboxClose").addEventListener("click", function () {
 lightbox.addEventListener("click", function (e) {
   if (e.target === lightbox || e.target === lightboxImg) lightbox.close();
 });
+
+/* ---------- Scroll reveal ---------- */
+(function () {
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(function (n) { n.classList.add("in"); });
+    return;
+  }
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+  items.forEach(function (n) { io.observe(n); });
+})();
+
+/* ---------- Counting numbers ---------- */
+(function () {
+  const counters = document.querySelectorAll(".count");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  function run(el) {
+    const to = parseInt(el.dataset.to, 10) || 0;
+    const dur = 1400;
+    const t0 = performance.now();
+    function tick(t) {
+      const p = Math.min((t - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * eased);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    el.textContent = "0";
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(function (c) { io.observe(c); });
+})();
+
+/* ---------- WhatsApp button: bubble, shrink on scroll, hide near form/footer ---------- */
+(function () {
+  const wrap = document.getElementById("waWrap");
+  const bubble = document.getElementById("waBubble");
+  const bubbleX = document.getElementById("waBubbleX");
+  if (!wrap || !bubble) return;
+
+  let seen = false;
+  try { seen = sessionStorage.getItem("waBubbleSeen") === "1"; } catch (e) {}
+  function markSeen() {
+    seen = true;
+    try { sessionStorage.setItem("waBubbleSeen", "1"); } catch (e) {}
+  }
+
+  setTimeout(function () {
+    if (seen || wrap.classList.contains("wa-hide")) return;
+    bubble.classList.add("show");
+    markSeen();
+    setTimeout(function () { bubble.classList.remove("show"); }, 8000);
+  }, 5000);
+
+  bubbleX.addEventListener("click", function () {
+    bubble.classList.remove("show");
+    markSeen();
+  });
+
+  let lastY = window.scrollY;
+  let ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      const y = window.scrollY;
+      if (y > 400 && y > lastY + 4) wrap.classList.add("compact");
+      else if (y < lastY - 4 || y <= 400) wrap.classList.remove("compact");
+      lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
+
+  if ("IntersectionObserver" in window) {
+    const zones = new Set();
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) zones.add(e.target); else zones.delete(e.target);
+      });
+      const hide = zones.size > 0;
+      wrap.classList.toggle("wa-hide", hide);
+      if (hide) bubble.classList.remove("show");
+    });
+    ["contact", "enquiry"].forEach(function (id) {
+      const n = document.getElementById(id);
+      if (n) io.observe(n);
+    });
+    const f = document.querySelector("footer");
+    if (f) io.observe(f);
+  }
+})();
+
+/* ---------- Room details + photo slider ---------- */
+(function () {
+  const modal = document.getElementById("roomModal");
+  const grid = document.querySelector(".room-grid");
+  if (!modal || !grid) return;
+
+  const track = document.getElementById("rmTrack");
+  const prev = document.getElementById("rmPrev");
+  const next = document.getElementById("rmNext");
+  const counter = document.getElementById("rmCounter");
+  const dotsBox = document.getElementById("rmDots");
+  const title = document.getElementById("rmTitle");
+  const countTxt = document.getElementById("rmCountTxt");
+  const feats = document.getElementById("rmFeats");
+  const whats = document.getElementById("rmWhats");
+
+  /* Add more photos by uploading files with these names. Missing files are skipped automatically. */
+  const SHARED = { src: "balcony-mountain-view.png", alt: "View from the balcony" };
+  const ROOMS = {
+    suite: {
+      name: "Family Suite", count: "1 Room", select: "Family Suite",
+      feats: [["i-bed", "2 Bedrooms"], ["i-bath", "1 Washroom"], ["i-eye", "Mountain & meadow view"]],
+      photos: ["family-room.png", "family-room-2.jpg", "family-room-3.jpg", "family-room-4.jpg"],
+      fallback: []
+    },
+    big: {
+      name: "Big Family Room", count: "1 Room", select: "Big Family Room",
+      feats: [["i-bed", "2 Double Beds"], ["i-bath", "1 Washroom"], ["i-eye", "Mountain & meadow view"]],
+      photos: ["big-family-room.jpg", "big-family-room-2.jpg", "big-family-room-3.jpg", "big-family-room-4.jpg"],
+      fallback: ["family-room.png"]
+    },
+    front: {
+      name: "Standard Rooms (Front)", count: "6 Rooms", select: "Standard Room (Front View)",
+      feats: [["i-bed", "1 Double Bed"], ["i-bath", "1 Washroom"], ["i-eye", "Mountain & meadow view"]],
+      photos: ["standard-room-front.jpg", "standard-room-front-2.jpg", "standard-room-front-3.jpg"],
+      fallback: []
+    },
+    back: {
+      name: "Standard Rooms (Back)", count: "4 Rooms", select: "Standard Room (Back View)",
+      feats: [["i-bed", "1 Double Bed"], ["i-bath", "1 Washroom"], ["i-eye", "Village & greenery view"]],
+      photos: ["standard-room-back.jpg", "standard-room-back-2.jpg", "standard-room-back-3.jpg"],
+      fallback: []
+    }
+  };
+
+  const cache = {};
+  function check(src) {
+    if (!cache[src]) {
+      cache[src] = new Promise(function (resolve) {
+        const im = new Image();
+        im.onload = function () { resolve(true); };
+        im.onerror = function () { resolve(false); };
+        im.src = src;
+      });
+    }
+    return cache[src];
+  }
+
+  let token = 0;
+  let current = null;
+  let slides = 0;
+
+  function updateSlider() {
+    const w = track.clientWidth || 1;
+    const i = Math.min(Math.max(Math.round(track.scrollLeft / w), 0), Math.max(slides - 1, 0));
+    counter.textContent = (i + 1) + " / " + slides;
+    dotsBox.querySelectorAll(".rm-dot").forEach(function (d, k) {
+      d.classList.toggle("active", k === i);
+    });
+    prev.disabled = i <= 0;
+    next.disabled = i >= slides - 1;
+  }
+
+  function build(list) {
+    track.innerHTML = "";
+    dotsBox.innerHTML = "";
+    list.forEach(function (it, k) {
+      const slide = document.createElement("div");
+      slide.className = "rm-slide";
+      const im = document.createElement("img");
+      im.src = it.src;
+      im.alt = it.alt;
+      slide.appendChild(im);
+      track.appendChild(slide);
+
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "rm-dot";
+      dot.setAttribute("aria-label", "Photo " + (k + 1));
+      dot.addEventListener("click", function () {
+        track.scrollTo({ left: k * track.clientWidth, behavior: "smooth" });
+      });
+      dotsBox.appendChild(dot);
+    });
+    slides = list.length;
+    const multi = slides > 1;
+    prev.hidden = !multi;
+    next.hidden = !multi;
+    counter.hidden = !multi;
+    dotsBox.hidden = !multi;
+    updateSlider();
+  }
+
+  function openRoom(key) {
+    const r = ROOMS[key];
+    if (!r) return;
+    current = r;
+    const mine = ++token;
+
+    title.textContent = r.name;
+    countTxt.textContent = r.count;
+    feats.innerHTML = "";
+    r.feats.forEach(function (f) {
+      const li = document.createElement("li");
+      li.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#' + f[0] + '"/></svg> ';
+      li.appendChild(document.createTextNode(f[1]));
+      feats.appendChild(li);
+    });
+    whats.href = "https://wa.me/919667824966?text=" +
+      encodeURIComponent("Hello Evara Woodhouse, I would like details about the " + r.name + ".");
+
+    track.innerHTML = "";
+    dotsBox.innerHTML = "";
+    slides = 0;
+    prev.hidden = true;
+    next.hidden = true;
+    counter.hidden = true;
+
+    if (typeof modal.showModal === "function") {
+      if (!modal.open) modal.showModal();
+    } else {
+      modal.setAttribute("open", "");
+    }
+
+    Promise.all(r.photos.map(check)).then(function (ok) {
+      if (mine !== token) return;
+      let list = r.photos.filter(function (_, i) { return ok[i]; });
+      if (!list.length) list = r.fallback.slice();
+      const items = list.map(function (src, i) {
+        return { src: src, alt: r.name + " photo " + (i + 1) };
+      });
+      items.push({ src: SHARED.src, alt: SHARED.alt });
+      build(items);
+    });
+  }
+
+  grid.addEventListener("click", function (e) {
+    const card = e.target.closest(".room-card");
+    if (!card) return;
+    if (e.target.closest(".room-image") || e.target.closest("button")) openRoom(card.dataset.room);
+  });
+
+  let sTick = false;
+  track.addEventListener("scroll", function () {
+    if (sTick) return;
+    sTick = true;
+    requestAnimationFrame(function () { updateSlider(); sTick = false; });
+  }, { passive: true });
+
+  prev.addEventListener("click", function () {
+    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+  });
+  next.addEventListener("click", function () {
+    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+  });
+
+  modal.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
+    if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
+  });
+
+  document.getElementById("rmClose").addEventListener("click", function () { modal.close(); });
+  modal.addEventListener("click", function (e) { if (e.target === modal) modal.close(); });
+
+  document.getElementById("rmEnquire").addEventListener("click", function () {
+    const sel = document.getElementById("enqRoom");
+    if (sel && current) sel.value = current.select;
+    modal.close();
+    const target = document.getElementById("enquiry");
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+})();
+
+/* ---------- Enquiry form (opens WhatsApp or email with the details filled in) ---------- */
+(function () {
+  const form = document.getElementById("enquiryForm");
+  if (!form) return;
+
+  const nameEl = document.getElementById("enqName");
+  const inEl = document.getElementById("enqIn");
+  const outEl = document.getElementById("enqOut");
+  const adultsEl = document.getElementById("enqAdults");
+  const kidsEl = document.getElementById("enqKids");
+  const roomEl = document.getElementById("enqRoom");
+  const msgEl = document.getElementById("enqMsg");
+  const err = document.getElementById("enqError");
+  const status = document.getElementById("enqStatus");
+  const mailBtn = document.getElementById("enqMail");
+
+  function iso(d) {
+    return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  }
+  function parse(v) {
+    const p = v.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function pretty(d) {
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  }
+  function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today.getTime());
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  inEl.min = iso(today);
+  outEl.min = iso(tomorrow);
+
+  inEl.addEventListener("change", function () {
+    if (!inEl.value) return;
+    const nextDay = parse(inEl.value);
+    nextDay.setDate(nextDay.getDate() + 1);
+    outEl.min = iso(nextDay);
+    if (outEl.value && parse(outEl.value) < nextDay) outEl.value = iso(nextDay);
+  });
+
+  function validate() {
+    if (!nameEl.value.trim()) return "Please enter your name.";
+    if (!inEl.value || !outEl.value) return "Please choose your check-in and check-out dates.";
+    if (parse(inEl.value) < today) return "Check-in date cannot be in the past.";
+    if (parse(outEl.value) <= parse(inEl.value)) return "Check-out must be after check-in.";
+    return "";
+  }
+
+  function message() {
+    const dIn = parse(inEl.value);
+    const dOut = parse(outEl.value);
+    const nights = Math.round((dOut - dIn) / 86400000);
+    const adults = parseInt(adultsEl.value, 10);
+    const kids = parseInt(kidsEl.value, 10);
+    let guests = plural(adults, "adult", "adults");
+    if (kids > 0) guests += ", " + plural(kids, "child", "children");
+
+    const lines = [
+      "Hello Evara Woodhouse, I would like to enquire about a stay.",
+      "",
+      "Name: " + nameEl.value.trim(),
+      "Check-in: " + pretty(dIn),
+      "Check-out: " + pretty(dOut) + " (" + plural(nights, "night", "nights") + ")",
+      "Guests: " + guests,
+      "Room: " + roomEl.value
+    ];
+    const extra = msgEl.value.trim();
+    if (extra) lines.push("Message: " + extra);
+    lines.push("", "Please share availability and rates. Thank you.");
+    return lines.join("\n");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const problem = validate();
+    err.textContent = problem;
+    status.textContent = "";
+    if (problem) return;
+
+    const url = "https://wa.me/919667824966?text=" + encodeURIComponent(message());
+    window.open(url, "_blank", "noopener");
+
+    status.appendChild(document.createTextNode("Opening WhatsApp. If it did not open, "));
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "tap here to continue.";
+    status.appendChild(a);
+  });
+
+  mailBtn.addEventListener("click", function () {
+    const problem = validate();
+    err.textContent = problem;
+    if (problem) return;
+    window.location.href = "mailto:evaraatshangarh@gmail.com?subject=" +
+      encodeURIComponent("Stay enquiry - Evara Woodhouse") + "&body=" + encodeURIComponent(message());
+  });
+})();
 </script>
 
 </body>
