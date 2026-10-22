@@ -428,12 +428,32 @@ header {
 
 /* EXPERIENCE */
 .experience {
+  position: relative;
+  overflow: hidden;
   color: #fff;
-  background:
-    linear-gradient(rgba(8,26,16,.80), rgba(8,26,16,.88)),
-    url("common-area-terrace.jpg") center / cover no-repeat,
-    var(--forest-deep);
+  background: var(--forest-deep);
 }
+
+.exp-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -70px;
+  bottom: -70px;
+  z-index: 0;
+  background: url("common-area-terrace.jpg") center / cover no-repeat;
+  will-change: transform;
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(8,26,16,.80), rgba(8,26,16,.88));
+}
+
+.experience .container { position: relative; z-index: 2; }
 
 .experience .eyebrow { color: var(--gold); }
 .experience .section-copy { color: rgba(255,255,255,.88); max-width: 640px; }
@@ -497,18 +517,36 @@ header {
 .dining-text { font-size: 15px; color: #d7dfd3; margin: 16px 0 8px; }
 .dining-sig { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--gold); margin-bottom: 22px; }
 
-/* MENU */
+/* MENU (classic restaurant-menu look) */
 .menu { background: var(--sand); padding-top: 40px; }
 
 .menu-tabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 22px;
+  gap: 4px 28px;
+  margin-bottom: 26px;
 }
 
-.menu-tab, .gal-tab {
+.menu-tab {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 8px 2px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .25s, border-color .25s;
+}
+
+.menu-tab:hover { color: var(--brown-dark); }
+.menu-tab[aria-selected="true"] { color: var(--forest); border-bottom-color: var(--gold-dark); }
+
+.gal-tab {
   padding: 9px 18px;
   border-radius: 30px;
   border: 1px solid var(--line);
@@ -520,54 +558,113 @@ header {
   transition: background .2s, color .2s;
 }
 
-.menu-tab[aria-selected="true"], .gal-tab[aria-selected="true"] {
+.gal-tab[aria-selected="true"] {
   background: var(--forest);
   border-color: var(--forest);
   color: #fff;
 }
 
 .menu-panel {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: clamp(22px, 4vw, 40px);
-  box-shadow: 0 8px 26px rgba(60,40,20,.06);
+  position: relative;
+  background: radial-gradient(120% 80% at 50% 0%, #fffdf6 0%, #fbf3e1 60%, #f6ecd5 100%);
+  border: 1px solid #cdb27c;
+  border-radius: 6px;
+  padding: clamp(32px, 5vw, 58px) clamp(22px, 5vw, 64px);
+  box-shadow:
+    inset 0 0 0 7px #fbf3e1,
+    inset 0 0 0 8px #cdb27c,
+    0 18px 50px rgba(60,40,20,.16);
 }
 
-.menu-meta {
+.menu-head { text-align: center; margin-bottom: 28px; animation: menuIn .5s ease both; }
+
+.menu-crest {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.menu-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--forest);
+  margin: 8px 0 12px;
+}
+
+.orn {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 20px;
-  font-size: 13px;
-  color: var(--muted);
-  padding-bottom: 16px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--line);
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 240px;
+  margin: 0 auto 12px;
 }
 
-.menu-legend { display: flex; gap: 16px; }
+.orn::before, .orn::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c4a468);
+}
+
+.orn::after { transform: scaleX(-1); }
+.orn i { display: block; width: 8px; height: 8px; background: var(--gold-dark); transform: rotate(45deg); }
+
+.menu-time { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+.menu-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
 .menu-legend span { display: inline-flex; align-items: center; gap: 7px; }
 
-.menu-cols { column-count: 2; column-gap: 48px; }
-.menu-group { break-inside: avoid; margin-bottom: 26px; }
+.menu-cols { column-count: 2; column-gap: 64px; }
+.menu-group { break-inside: avoid; margin-bottom: 30px; animation: menuIn .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 80ms); }
 
-.menu-group h4 {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: var(--brown-dark);
-  padding-bottom: 8px;
-  margin-bottom: 6px;
-  border-bottom: 1.5px solid var(--brown);
+@keyframes menuIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
 }
 
-.menu-row { display: flex; align-items: baseline; gap: 8px; padding: 6px 0; font-size: 14.5px; }
+.menu-group h4 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brown-dark);
+}
+
+.menu-group h4::before, .menu-group h4::after { content: ""; flex: 1; height: 1px; background: #d5bf92; }
+
+.menu-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16.5px;
+  color: var(--text);
+}
+
 .menu-row .nm { flex-shrink: 1; }
-.menu-row .dots { flex: 1; min-width: 12px; border-bottom: 1.5px dotted #c9b995; transform: translateY(-3px); }
-.menu-row .pr { font-weight: 700; color: var(--brown-dark); white-space: nowrap; }
-.menu-group-note { font-size: 13px; font-style: italic; color: var(--muted); margin-top: 6px; }
+.menu-row .dots { flex: 1; min-width: 12px; border-bottom: 1.5px dotted #bda676; transform: translateY(-3px); }
+.menu-row .pr { font-weight: 600; color: var(--brown); white-space: nowrap; font-variant-numeric: lining-nums; }
+.menu-group-note { font-family: "Playfair Display", Georgia, serif; font-size: 13.5px; font-style: italic; color: var(--muted); margin-top: 6px; }
 
 .mk {
   display: inline-block;
@@ -595,16 +692,19 @@ header {
 }
 
 .menu-reco {
-  margin-top: 8px;
-  padding: 16px 18px;
-  border: 1px solid var(--brown);
-  border-radius: 10px;
+  position: relative;
+  max-width: 460px;
+  margin: 6px auto 0;
+  padding: 20px 24px;
   text-align: center;
-  font-size: 14px;
+  border: 1px solid #cdb27c;
+  background: rgba(255,255,255,.4);
+  animation: menuIn .6s ease .3s both;
 }
 
-.menu-reco b { display: block; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
-.menu-reco span { font-family: "Playfair Display", Georgia, serif; font-size: 18px; }
+.menu-reco::before { content: ""; position: absolute; inset: 4px; border: 1px solid #e1d0a8; pointer-events: none; }
+.menu-reco b { display: block; font-size: 11.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 6px; }
+.menu-reco span { font-family: "Playfair Display", Georgia, serif; font-size: 19px; font-style: italic; color: var(--forest); }
 
 .menu-foot { text-align: center; margin-top: 26px; }
 .menu-kitchen { max-width: 640px; margin: 16px auto 0; font-size: 13.5px; color: var(--muted); }
@@ -655,7 +755,7 @@ header {
 .accordion summary::-webkit-details-marker { display: none; }
 .accordion summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--brown); }
 .accordion details[open] summary::after { content: "−"; }
-.accordion details p { padding: 0 18px 16px; font-size: 14px; color: var(--muted); }
+.accordion details p { padding: 0 18px 16px; font-size: 14px; color: var(--muted); overflow: hidden; }
 .accordion details p a { color: var(--brown); font-weight: 700; text-decoration: underline; }
 .plan .photo { height: 100%; min-height: 320px; }
 
@@ -1020,7 +1120,11 @@ footer .brand-icon { color: #fff; border-color: #6f8a74; }
   .dining-content { padding: 28px 22px; }
 
   .menu-cols { column-count: 1; }
-  .menu-tab, .gal-tab { padding: 8px 14px; font-size: 13px; }
+  .menu-tabs { gap: 2px 18px; }
+  .menu-tab { font-size: 12px; letter-spacing: 1.8px; }
+  .gal-tab { padding: 8px 14px; font-size: 13px; }
+  .menu-row { font-size: 15.5px; }
+  .menu-panel { padding: 34px 20px; }
 
   .stay-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 26px; }
   .green-points { grid-template-columns: 1fr; }
@@ -1328,6 +1432,7 @@ body:has(dialog[open]) { overflow: hidden; }
 
 /* keep the page calm while a popup is open (smoother swiping on phones) */
 .modal-open .fireflies i,
+.modal-open .hero-photo img,
 .modal-open .hero .hero-title,
 .modal-open .whatsapp-float,
 .modal-open .whatsapp-float .ic,
@@ -1341,6 +1446,116 @@ body:has(dialog[open]) { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .wa-wrap, .whatsapp-float, .whatsapp-float::after, .whatsapp-float .ic { animation: none; }
+}
+
+/* ---------- MOTION EXTRAS ---------- */
+
+/* 1) slow zoom on the hero photo */
+.hero-photo img {
+  --kb: 1.06;
+  transform-origin: 50% 35%;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(var(--kb)); }
+}
+
+@media (max-width: 900px) {
+  .hero-photo img { --kb: 1.035; }
+}
+
+/* 2) scroll progress line + header shadow */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 1100;
+  pointer-events: none;
+  background: linear-gradient(90deg, #d8b878, #8a6a2f);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+header { transition: box-shadow .35s ease; }
+header.scrolled { box-shadow: 0 10px 30px rgba(60,40,20,.14); }
+
+/* 5) gold line that draws under every heading */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transition: width .9s cubic-bezier(.2,.7,.2,1) .25s;
+}
+
+.section-heading .section-title::after { margin-left: auto; margin-right: auto; }
+.reveal.in .section-title::after { width: 64px; }
+
+/* 7) arrows nudge forward on hover */
+.arr { display: inline-block; transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.btn:hover .arr, .btn:focus-visible .arr { transform: translateX(5px); }
+
+/* 6) gallery popup: zoom-in, arrows, counter */
+#lightbox[open] img { animation: lbIn .38s cubic-bezier(.2,.7,.2,1); touch-action: pan-y pinch-zoom; }
+#lightbox[open]::backdrop { animation: lbFade .38s ease; }
+
+@keyframes lbIn {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+
+.lb-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.lb-nav.prev { left: 14px; }
+.lb-nav.next { right: 14px; }
+.lb-nav[hidden], .lb-count[hidden] { display: none; }
+
+.lb-count {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 13px;
+  background: rgba(0,0,0,.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+@media (hover: none) {
+  .lb-nav { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo img { animation: none; }
+  .section-title::after { transition: none; }
+  .reveal .section-title::after { width: 64px; }
+  #lightbox[open] img, #lightbox[open]::backdrop { animation: none; }
+  .menu-head, .menu-group, .menu-reco { animation: none; }
+  .arr { transition: none; }
 }
 </style>
 </head>
@@ -1382,6 +1597,8 @@ body:has(dialog[open]) { overflow: hidden; }
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
   </defs>
 </svg>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header>
   <div class="container navbar">
@@ -1484,7 +1701,7 @@ body:has(dialog[open]) { overflow: hidden; }
         The feel is quiet, upscale and premium, at an affordable price.
       </p>
 
-      <a href="#experience" class="btn btn-brown">Our Story →</a>
+      <a href="#experience" class="btn btn-brown">Our Story <span class="arr">→</span></a>
     </div>
 
     <div class="photo reveal">
@@ -1518,7 +1735,7 @@ body:has(dialog[open]) { overflow: hidden; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <button type="button" class="btn btn-brown">View Details →</button>
+          <button type="button" class="btn btn-brown">View Details <span class="arr">→</span></button>
         </div>
       </article>
 
@@ -1536,7 +1753,7 @@ body:has(dialog[open]) { overflow: hidden; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <button type="button" class="btn btn-brown">View Details →</button>
+          <button type="button" class="btn btn-brown">View Details <span class="arr">→</span></button>
         </div>
       </article>
 
@@ -1552,7 +1769,7 @@ body:has(dialog[open]) { overflow: hidden; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Mountain &amp; meadow view</li>
           </ul>
-          <button type="button" class="btn btn-brown">View Details →</button>
+          <button type="button" class="btn btn-brown">View Details <span class="arr">→</span></button>
         </div>
       </article>
 
@@ -1568,7 +1785,7 @@ body:has(dialog[open]) { overflow: hidden; }
             <li><svg class="ic" aria-hidden="true"><use href="#i-bath"/></svg> 1 Washroom</li>
             <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> Village &amp; greenery view</li>
           </ul>
-          <button type="button" class="btn btn-brown">View Details →</button>
+          <button type="button" class="btn btn-brown">View Details <span class="arr">→</span></button>
         </div>
       </article>
 
@@ -1602,8 +1819,10 @@ body:has(dialog[open]) { overflow: hidden; }
 
 <!-- EXPERIENCE -->
 <section class="experience" id="experience">
+  <div class="exp-bg" id="expBg" aria-hidden="true"></div>
   <div class="container">
 
+    <div class="exp-head reveal">
     <p class="eyebrow">The Evara Experience</p>
     <h2 class="section-title">Mountains, Meadows and More</h2>
 
@@ -1612,6 +1831,7 @@ body:has(dialog[open]) { overflow: hidden; }
       National Park, our property offers stunning views, wooden architecture and a
       peaceful escape.
     </p>
+    </div>
 
     <div class="exp-grid">
       <div class="exp-item reveal">
@@ -1640,7 +1860,7 @@ body:has(dialog[open]) { overflow: hidden; }
     </p>
 
     <a class="btn btn-outline" target="_blank" rel="noopener"
-       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20more%20details%20about%20the%20stay.">Plan Your Stay →</a>
+       href="https://wa.me/919667824966?text=Hello%20Evara%20Woodhouse%2C%20please%20share%20more%20details%20about%20the%20stay.">Plan Your Stay <span class="arr">→</span></a>
 
   </div>
 </section>
@@ -1712,7 +1932,7 @@ body:has(dialog[open]) { overflow: hidden; }
 
         <p class="dining-sig">Masala Tea &amp; Himachali Siddu</p>
 
-        <a class="btn btn-light" href="#menu">View Full Menu →</a>
+        <a class="btn btn-light" href="#menu">View Full Menu <span class="arr">→</span></a>
       </div>
 
     </div>
@@ -1895,6 +2115,9 @@ body:has(dialog[open]) { overflow: hidden; }
 
 <dialog id="lightbox" aria-label="Photo viewer">
   <img id="lightboxImg" src="" alt="">
+  <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Previous photo"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+  <button type="button" class="lb-nav next" id="lbNext" aria-label="Next photo"><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
   <button id="lightboxClose" aria-label="Close photo">✕</button>
 </dialog>
 
@@ -2190,6 +2413,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
    Item format: [name, price, type]  type: "v" = vegetarian, "n" = contains egg or chicken, "" = no marker */
 const MENU = {
   breakfast: {
+    title: "Breakfast",
     meta: "Breakfast 8:00 – 11:00 AM · Kitchen 8:00 AM – 10:30 PM",
     mark: true,
     reco: "Masala Tea & Traditional Himachali Siddu",
@@ -2209,6 +2433,7 @@ const MENU = {
     ]
   },
   main: {
+    title: "Main Course",
     meta: "Lunch 1:00 – 3:30 PM · Dinner 7:30 – 10:00 PM · Last orders 10:00 PM",
     mark: true,
     reco: "Rajma & Dal Tadka",
@@ -2235,6 +2460,7 @@ const MENU = {
     ]
   },
   snacks: {
+    title: "Snacks",
     meta: "All-day bites 8:00 AM – 10:00 PM · Depending on ingredients",
     mark: true,
     groups: [
@@ -2259,6 +2485,7 @@ const MENU = {
     ]
   },
   beverages: {
+    title: "Beverages",
     meta: "Kitchen 8:00 AM – 10:30 PM · Last orders 10:00 PM",
     mark: false,
     groups: [
@@ -2273,6 +2500,7 @@ const MENU = {
     ]
   },
   desserts: {
+    title: "Desserts",
     meta: "Lunch 1:00 – 3:30 PM · Dinner 7:30 – 10:00 PM · Last orders 10:00 PM",
     mark: true,
     groups: [
@@ -2297,21 +2525,27 @@ function renderMenu(key) {
   const data = MENU[key];
   menuPanel.innerHTML = "";
 
-  const meta = el("div", "menu-meta");
-  meta.appendChild(el("span", "", data.meta));
+  const head = el("div", "menu-head");
+  head.appendChild(el("div", "menu-crest", "Evara Woodhouse"));
+  head.appendChild(el("h3", "menu-title", data.title));
+  const orn = el("div", "orn");
+  orn.appendChild(el("i"));
+  head.appendChild(orn);
+  head.appendChild(el("p", "menu-time", data.meta));
 
   if (data.mark) {
     const legend = el("div", "menu-legend");
     const a = el("span"); a.appendChild(el("i", "mk v")); a.appendChild(document.createTextNode("Vegetarian"));
     const b = el("span"); b.appendChild(el("i", "mk n")); b.appendChild(document.createTextNode("Contains egg or chicken"));
     legend.appendChild(a); legend.appendChild(b);
-    meta.appendChild(legend);
+    head.appendChild(legend);
   }
-  menuPanel.appendChild(meta);
+  menuPanel.appendChild(head);
 
   const cols = el("div", "menu-cols");
-  data.groups.forEach(function (g) {
+  data.groups.forEach(function (g, gi) {
     const group = el("div", "menu-group");
+    group.style.setProperty("--i", String(gi + 1));
     group.appendChild(el("h4", "", g[0]));
     g[1].forEach(function (item) {
       const row = el("div", "menu-row");
@@ -2359,15 +2593,39 @@ galTabs.forEach(function (tab) {
   });
 });
 
-/* Gallery lightbox */
+/* Gallery lightbox (zoom-in, arrows, swipe) */
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
+const lbPrev = document.getElementById("lbPrev");
+const lbNext = document.getElementById("lbNext");
+const lbCount = document.getElementById("lbCount");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let lbList = [];
+let lbIndex = 0;
+
+function lbShow(i, dir) {
+  if (!lbList.length) return;
+  lbIndex = (i + lbList.length) % lbList.length;
+  const img = lbList[lbIndex].querySelector("img");
+  lightboxImg.src = img.getAttribute("src");
+  lightboxImg.alt = img.alt;
+  lbCount.textContent = (lbIndex + 1) + " / " + lbList.length;
+  if (dir && !reduceMotion && lightboxImg.animate) {
+    lightboxImg.animate(
+      [{ opacity: 0, transform: "translateX(" + (dir * 40) + "px)" }, { opacity: 1, transform: "none" }],
+      { duration: 280, easing: "cubic-bezier(.2,.7,.2,1)" }
+    );
+  }
+}
 
 galItems.forEach(function (item) {
   item.addEventListener("click", function () {
-    const img = item.querySelector("img");
-    lightboxImg.src = img.getAttribute("src");
-    lightboxImg.alt = img.alt;
+    lbList = Array.prototype.filter.call(galItems, function (it) { return !it.classList.contains("hide"); });
+    const multi = lbList.length > 1;
+    lbPrev.hidden = !multi;
+    lbNext.hidden = !multi;
+    lbCount.hidden = !multi;
+    lbShow(lbList.indexOf(item), 0);
     if (typeof lightbox.showModal === "function") {
       lightbox.showModal();
       document.documentElement.classList.add("modal-open");
@@ -2375,9 +2633,32 @@ galItems.forEach(function (item) {
   });
 });
 
+lbPrev.addEventListener("click", function () { lbShow(lbIndex - 1, -1); });
+lbNext.addEventListener("click", function () { lbShow(lbIndex + 1, 1); });
+
+lightbox.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowLeft") { e.preventDefault(); lbShow(lbIndex - 1, -1); }
+  if (e.key === "ArrowRight") { e.preventDefault(); lbShow(lbIndex + 1, 1); }
+});
+
+let lbX = 0;
+let lbY = 0;
+lightbox.addEventListener("touchstart", function (e) {
+  lbX = e.touches[0].clientX;
+  lbY = e.touches[0].clientY;
+}, { passive: true });
+lightbox.addEventListener("touchend", function (e) {
+  if (lbList.length < 2) return;
+  const dx = e.changedTouches[0].clientX - lbX;
+  const dy = e.changedTouches[0].clientY - lbY;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    lbShow(lbIndex + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+  }
+}, { passive: true });
+
 document.getElementById("lightboxClose").addEventListener("click", function () { lightbox.close(); });
 lightbox.addEventListener("click", function (e) {
-  if (e.target === lightbox || e.target === lightboxImg) lightbox.close();
+  if (e.target === lightbox) lightbox.close();
 });
 lightbox.addEventListener("close", function () {
   document.documentElement.classList.remove("modal-open");
@@ -2793,6 +3074,113 @@ lightbox.addEventListener("close", function () {
     window.location.href = "mailto:evaraatshangarh@gmail.com?subject=" +
       encodeURIComponent("Stay enquiry - Evara Woodhouse") + "&body=" + encodeURIComponent(message());
   });
+})();
+
+/* ---------- Scroll progress line, header shadow, soft parallax ---------- */
+(function () {
+  const bar = document.getElementById("progress");
+  const header = document.querySelector("header");
+  const sec = document.getElementById("experience");
+  const bg = document.getElementById("expBg");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let ticking = false;
+  let inView = false;
+
+  function update() {
+    ticking = false;
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
+    if (header) header.classList.toggle("scrolled", y > 10);
+    if (inView && bg) {
+      const r = sec.getBoundingClientRect();
+      const mid = r.top + r.height / 2 - window.innerHeight / 2;
+      const off = Math.max(-60, Math.min(60, -mid * 0.1));
+      bg.style.transform = "translate3d(0," + off.toFixed(1) + "px,0)";
+    }
+  }
+
+  if (sec && bg && !reduce && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      if (inView) update();
+    }, { rootMargin: "100px 0px" }).observe(sec);
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+
+/* ---------- Smooth open/close for the stay-info boxes ---------- */
+(function () {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll(".accordion details").forEach(function (d) {
+    const sum = d.querySelector("summary");
+    const body = d.querySelector("p");
+    let anim = null;
+    if (!sum || !body) return;
+
+    sum.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (anim) return;
+      if (reduce || !body.animate) { d.open = !d.open; return; }
+
+      if (!d.open) {
+        d.open = true;
+        const h = body.offsetHeight;
+        anim = body.animate(
+          [{ height: "0px", paddingBottom: "0px", opacity: 0 }, { height: h + "px", paddingBottom: "16px", opacity: 1 }],
+          { duration: 340, easing: "cubic-bezier(.2,.7,.2,1)" }
+        );
+        anim.onfinish = function () { anim = null; };
+      } else {
+        const h = body.offsetHeight;
+        anim = body.animate(
+          [{ height: h + "px", paddingBottom: "16px", opacity: 1 }, { height: "0px", paddingBottom: "0px", opacity: 0 }],
+          { duration: 260, easing: "ease", fill: "forwards" }
+        );
+        anim.onfinish = function () {
+          d.open = false;
+          anim.cancel();
+          anim = null;
+        };
+      }
+    });
+  });
+})();
+
+/* ---------- Soft pop sound on the WhatsApp button ---------- */
+(function () {
+  const targets = [document.querySelector(".whatsapp-float"), document.querySelector("#waBubble a")];
+  let ctx = null;
+
+  function pop() {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      if (!ctx) ctx = new AC();
+      if (ctx.state === "suspended") ctx.resume();
+      const t = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(420, t);
+      osc.frequency.exponentialRampToValueAtTime(900, t + 0.09);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(0.16, t + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t);
+      osc.stop(t + 0.18);
+    } catch (e) {}
+  }
+
+  targets.forEach(function (n) { if (n) n.addEventListener("click", pop); });
 })();
 </script>
 
